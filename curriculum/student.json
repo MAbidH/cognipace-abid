@@ -1,0 +1,20 @@
+{
+  "_doc": "cognipace-abid: Abid's own instance (19 Nov 2026). mode adult switches off the child rules (desk check, night stop, exam mode, keybr/drill/maths/key-move warm-up parts, the child tutor prompt). The Python line starts the day the first PY1 step is completed; the line bank's module ids map onto this curriculum.",
+  "name": "Abid",
+  "guardian": "Abid",
+  "mode": "adult",
+  "timezone": "America/St_Johns",
+  "home": "St. John's, Newfoundland",
+  "pronoun": "he",
+  "english": "native",
+  "siteName": "CogniPace",
+  "codeLineStart": "PY1",
+  "codeLineModules": {
+    "CS2A": "PY1",
+    "CS2B": "PY2",
+    "CS2C": "PY2",
+    "CS3": "LNX1",
+    "M8B": "PY1",
+    "LV2": "PY2"
+  }
+}

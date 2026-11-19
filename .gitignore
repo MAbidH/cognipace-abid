@@ -1,0 +1,9 @@
+node_modules
+.next
+# Secrets and local settings never go to GitHub (29 Oct 2026). .env.example (placeholders only) is the one exception.
+.env
+.env.*
+!.env.example
+.vercel
+# Backups hold her chats: keep them encrypted and outside the project folder (docs/RUNBOOK.md). Never commit one.
+*backup*.json

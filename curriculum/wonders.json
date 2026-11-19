@@ -1,0 +1,1387 @@
+{
+  "_note": "Wonders (Abid, 4 Oct 2026; every day from 5 Oct): ten minutes of timeless general knowledge - geography, biology, chemistry, physics, philosophy, how societies work, and mostly technology. Things that do not change. No test, ever. Each one: a short story in B1 English with one Bangla gloss, three 'also' facts, one question to think about, a picture key. Facts here must be true and durable; nothing dated. | 1 Nov 2026: +30 security wonders (cat 'security', fact-checked, with sources and year - not shown to her); lib/wonders.js alternates security / other by day and moves on daily even when not saved.",
+  "wonders": [
+    {
+      "id": "sec-binance-2026",
+      "cat": "security",
+      "pic": "coin",
+      "showOn": "2026-11-02",
+      "title": "The biggest crypto robbery ever took about 20 minutes",
+      "story": "On 29 October 2026, thieves took about 6.3 billion US dollars in cryptocurrency (digital money) from Binance, the biggest crypto exchange in the world - a market where people buy and sell digital money. The money left Binance's hot wallets - the online wallets used for everyday withdrawals - on 10 different blockchains in about 20 minutes. Binance's first clue was one engineer's laptop that had been broken into; later it found more ways in. Two investigation companies, TRM Labs and Chainalysis, say a North Korean government hacking team called TraderTraitor did it. Binance itself has not named anyone. About 3 billion dollars was frozen fast, because companies like Tether and Circle can lock their own digital coins. Binance stopped withdrawals for a short time and promised to pay back every user with its own money. The lesson: one person's computer can be the door to billions, so defenders protect people, not only code.",
+      "also": [
+        "Most customers' money was in cold wallets - kept offline - and those were not touched. Offline is a strong lock.",
+        "Teams like TraderTraitor often begin with a fake job offer: a friendly 'recruiter' sends a 'coding test' that is really a hidden program. The defence is one rule: never run a stranger's program on your computer.",
+        "Following stolen crypto is a real job. Every blockchain move is public, so investigators follow the money step by step - like Cliff Stoll followed his intruder with a logbook."
+      ],
+      "think": "If you protected a company, would you guard the computers first or the people first - and why?",
+      "sources": [
+        "https://www.aljazeera.com/news/2026/10/30/binance-says-6-3bn-stolen-in-biggest-crypto-heist-in-history-what-we-know",
+        "https://www.pbs.org/newshour/world/what-to-know-about-the-6-3b-hack-on-binance-likely-the-biggest-ever-crypto-theft",
+        "https://www.forbes.com/sites/digital-assets/2026/10/30/binances-63-billion-hack-started-with-one-engineers-laptop/",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-108a"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "penguins",
+      "cat": "biology",
+      "pic": "globe-south",
+      "title": "Penguins live at the bottom of the world - and on the equator",
+      "story": "Every penguin on Earth lives in the southern half of the world: Antarctica, the cold coasts of South Africa, Australia, New Zealand and South America. There are no penguins at the North Pole - the Arctic has polar bears, and a penguin there would be lunch. But one penguin breaks the rule. The Galápagos penguin lives on islands sitting right on the equator (বিষুবরেখা - the imaginary line around the middle of the Earth), because a cold ocean current flows up from the south and brings the cold water, and the fish, with it.",
+      "also": [
+        "A penguin's black back and white belly is camouflage: dark from above against deep water, light from below against the bright sky.",
+        "Emperor penguins can dive deeper than 500 metres and hold their breath for about 20 minutes.",
+        "Polar bears and penguins have never met in the wild - they live at opposite ends of the planet."
+      ],
+      "think": "If the cold current to the Galápagos stopped, what do you think would happen to those penguins, and why?"
+    },
+    {
+      "id": "water-floats",
+      "cat": "chemistry",
+      "pic": "ice",
+      "title": "Ice floats - and that is why lakes do not freeze solid",
+      "story": "Almost everything shrinks when it freezes. Water does the opposite: when it turns to ice, its tiny parts (molecules - অণু) lock into a pattern with gaps, so ice takes more space and is lighter than the water around it. That is why ice floats. It matters more than it sounds: in winter a lake freezes from the top down, the ice on top becomes a lid, and the water underneath stays liquid, so fish survive until spring. If ice sank, lakes would freeze from the bottom up and almost nothing in them could live.",
+      "also": [
+        "A full bottle of water left in a freezer can crack, because the ice needs more room than the water did.",
+        "About nine-tenths of a floating iceberg is under the water.",
+        "Water is one of the only common substances that is heavier as a liquid than as a solid."
+      ],
+      "think": "Why would the fish be in trouble if the lake froze from the bottom?"
+    },
+    {
+      "id": "mt-everest-grows",
+      "cat": "geography",
+      "pic": "mountain",
+      "title": "The Himalayas are still rising",
+      "story": "The ground you stand on is a plate - a huge slab of rock floating on hotter rock below. India is on one plate, the rest of Asia on another, and for about fifty million years India has been pushing north into Asia. Where they meet, the land crumples upward: that is the Himalayas (হিমালয়), and Everest is the highest fold. The push has not stopped. The mountains grow about half a centimetre a year - but wind, ice and rain wear them down almost as fast, so the race is slow.",
+      "also": [
+        "Bangladesh's rivers - the Padma, Jamuna and Meghna - carry the Himalayas away, grain by grain, and built the delta the country stands on.",
+        "Earthquakes in the region are the plates slipping, suddenly, after years of pushing.",
+        "Fossils of sea creatures are found near the top of Everest: that rock was once a seabed."
+      ],
+      "think": "If the mountains grow and are worn down at nearly the same speed, what decides whether Everest gets taller or shorter?"
+    },
+    {
+      "id": "light-is-old",
+      "cat": "physics",
+      "pic": "stars",
+      "title": "When you look at a star, you look into the past",
+      "story": "Light is the fastest thing there is, but it still takes time to travel. Sunlight needs about eight minutes to reach Earth, so the Sun you see is the Sun as it was eight minutes ago. The nearest star after the Sun is so far that its light takes four years. Some stars you can see with your eyes are thousands of light-years (আলোকবর্ষ - the distance light travels in a year) away, so you are seeing light that left them before Dhaka existed. A telescope is a time machine that only goes backwards.",
+      "also": [
+        "If the Sun vanished, you would keep seeing it for eight more minutes.",
+        "The Moon's light reaches you in about one and a quarter seconds.",
+        "Some stars you see tonight may already have died; their last light is still on its way."
+      ],
+      "think": "Could anyone ever see Earth as it is right now from another star? Why or why not?"
+    },
+    {
+      "id": "transistor",
+      "cat": "technology",
+      "pic": "chip",
+      "title": "Inside every chip: billions of tiny switches",
+      "story": "The clerk in your laptop (the CPU) is made of transistors - switches with no moving parts, turned on and off by electricity, like the lamps in your binary table. One switch is simple. The trick is the number: a modern chip holds billions of them, each far smaller than a germ, all switching billions of times a second. Every photo, every game, every word on your screen is, underneath, just those switches going on and off in patterns - the 1s and 0s you already know.",
+      "also": [
+        "The first transistor, in 1947, was about the size of a fingernail. Today thousands would fit across one hair.",
+        "Chips are made from silicon, which is refined from ordinary sand.",
+        "Switching makes heat - that is why your laptop has a fan and why Task Manager shows the CPU getting busy."
+      ],
+      "think": "If a switch can only be on or off, how can billions of them show a colour photo?"
+    },
+    {
+      "id": "internet-cables",
+      "cat": "technology",
+      "pic": "cable",
+      "title": "The internet is mostly cables under the sea",
+      "story": "When a page loads on your laptop, the data usually did not come through the air. It came through cables - glass fibres as thin as hair, carrying light - laid along the ocean floor between continents. There are hundreds of them, some longer than 10,000 kilometres. Bangladesh is connected by its own undersea cables that come ashore at Cox's Bazar and Kuakata. Satellites exist, but cables carry almost all of the world's internet, because light in glass is faster and cheaper than radio to space.",
+      "also": [
+        "Ships lay the cables slowly from giant drums; repair ships lift broken ones from the seabed to fix them.",
+        "The first undersea cable, in 1858, sent telegraph taps, and the first message took 16 hours.",
+        "A sharp anchor or a hungry shark has, in real cases, cut an internet cable."
+      ],
+      "think": "Why might a country want more than one cable to the outside world?"
+    },
+    {
+      "id": "why-sky-blue",
+      "cat": "physics",
+      "pic": "prism",
+      "title": "Why the sky is blue and sunsets are red",
+      "story": "Sunlight looks white but is really every colour mixed together - a prism, or a rainbow, pulls them apart. When sunlight passes through the air, the tiny molecules of air scatter (ছড়িয়ে দেওয়া) blue light much more than red, throwing blue in every direction. So wherever you look, blue is coming at you: a blue sky. At sunset the light travels through much more air to reach you, so almost all the blue is scattered away before it arrives, and what is left is orange and red.",
+      "also": [
+        "On the Moon there is no air, so the sky is black even in daytime.",
+        "Clouds are white because water droplets scatter all colours equally.",
+        "The same effect makes distant hills look blue."
+      ],
+      "think": "What colour do you think the sky would be on a planet with much thicker air?"
+    },
+    {
+      "id": "dna",
+      "cat": "biology",
+      "pic": "dna",
+      "title": "A recipe book inside every cell",
+      "story": "Every living thing is built from cells, and inside almost every cell is a very long molecule called DNA. It is a recipe book written in only four letters - A, T, G and C - repeated billions of times. The order of the letters tells the cell how to build everything: eyes, leaves, feathers. You got half of your letters from each parent, which is why you look a bit like both. If you stretched the DNA from one of your cells, it would be about two metres long, folded into a space too small to see.",
+      "also": [
+        "Humans and bananas share roughly half their genes - we are all built from the same kit.",
+        "Identical twins start with the same DNA; they are nature's copy-paste.",
+        "DNA is itself a code - four symbols, like binary has two."
+      ],
+      "think": "Four letters is not many. How can four letters describe something as complicated as an eye?"
+    },
+    {
+      "id": "atoms-empty",
+      "cat": "chemistry",
+      "pic": "atom",
+      "title": "You are mostly empty space",
+      "story": "Everything is made of atoms, and an atom is almost all nothing. In the middle is a tiny heavy core (the nucleus); far outside it, electrons move. If the nucleus were the size of a football in the middle of a stadium, the electrons would be like dust at the outer seats, with empty space between. So why can't you walk through a wall? Because the electrons of your hand and the electrons of the wall push each other away, hard. What feels solid is really a push.",
+      "also": [
+        "There are about as many atoms in one glass of water as there are glasses of water in all the oceans.",
+        "The atoms in your body were made inside stars that died before the Sun was born.",
+        "Nothing you touch ever really touches - it is always that push between electrons."
+      ],
+      "think": "If atoms are mostly empty, why does a stone feel heavy?"
+    },
+    {
+      "id": "writing",
+      "cat": "society",
+      "pic": "tablet",
+      "title": "Writing was invented to count sheep",
+      "story": "For most of human history nobody could write; stories and rules lived only in memory. The first writing, about 5,000 years ago in what is now Iraq, was not poetry - it was accounting. Farmers and traders pressed marks into clay to record how many sheep, how much grain, who owed whom. Only later did people use the marks for names, laws and stories. Every computer file, every message you type, is the great-grandchild of a clay tablet counting goats.",
+      "also": [
+        "The Bangla script grows from Brahmi, an Indian script more than 2,000 years old.",
+        "Alphabets, where a letter stands for a sound, came after pictures-for-things; they need far fewer symbols.",
+        "A text file on your laptop is, underneath, numbers standing for letters - just a different clay."
+      ],
+      "think": "Why do you think counting came before stories?"
+    },
+    {
+      "id": "maps-lie",
+      "cat": "geography",
+      "pic": "globe",
+      "title": "Every flat map lies",
+      "story": "The Earth is round and paper is flat, and there is no honest way to peel a ball onto a page. The usual map in classrooms stretches the far north and south, so Greenland looks as big as Africa. In truth Africa is about fourteen times bigger. Bangladesh, near the equator, is drawn almost truthfully; places near the poles are blown up. Map-makers choose what to keep right - shapes, sizes or directions - and what to sacrifice. A globe is the only map that does not lie.",
+      "also": [
+        "Sailors liked the stretched map because a straight line on it is a straight course to steer.",
+        "There are maps that keep sizes true and make shapes look squashed instead.",
+        "Phone maps use the same stretched map, zoomed in so the lie is too small to see."
+      ],
+      "think": "If you had to draw the whole Earth on a page, what would you choose to get right?"
+    },
+    {
+      "id": "vaccines",
+      "cat": "biology",
+      "pic": "shield",
+      "title": "A vaccine is a training exercise for your body",
+      "story": "Your body has an army - the immune system - that learns to recognise invaders and remembers them. The first fight with a germ can be slow and dangerous. A vaccine shows the army a harmless piece or copy of the germ, so it trains, builds the right weapons, and remembers - without the real illness. If the real germ comes later, the army is ready in hours instead of days. Smallpox, a disease that killed millions for thousands of years, was wiped out by vaccines; it no longer exists anywhere on Earth.",
+      "also": [
+        "The word vaccine comes from vacca, Latin for cow: the first one used a mild cow disease to protect against smallpox.",
+        "Memory cells in your blood can remember a germ for decades.",
+        "Washing hands works on a different principle: it removes germs before the army ever meets them."
+      ],
+      "think": "Why does training the army before the battle work better than fighting the battle first?"
+    },
+    {
+      "id": "gravity-orbit",
+      "cat": "physics",
+      "pic": "orbit",
+      "title": "The Moon is falling - and keeps missing",
+      "story": "Throw a ball and it curves down to the ground. Throw it harder and it lands farther away. Throw it hard enough, and the ground curves away beneath it as fast as it falls - it never lands. It is in orbit (কক্ষপথ). That is the Moon: falling toward Earth every second, but moving sideways so fast that it keeps missing. Satellites, the space station and the internet dishes in the sky all do the same trick. Nothing holds them up; they are just falling, forever, around the corner.",
+      "also": [
+        "Astronauts float not because there is no gravity up there, but because they and their ship are falling together.",
+        "The Moon is slowly drifting away from Earth, about four centimetres a year.",
+        "To orbit the Earth you need to move about 28,000 kilometres an hour."
+      ],
+      "think": "If the Moon suddenly stopped moving sideways, what would happen?"
+    },
+    {
+      "id": "boolean",
+      "cat": "technology",
+      "pic": "logic",
+      "title": "A man who turned thinking into arithmetic",
+      "story": "In the 1800s, long before computers, an English teacher named George Boole asked a strange question: could you do arithmetic with true and false instead of numbers? He invented a system where AND, OR and NOT work like adding and multiplying. Nobody had a use for it for almost a hundred years. Then engineers building electrical switches realised that on/off is true/false, and Boole's arithmetic was exactly how to wire them. Every if in your Python programs, every decision a computer makes, is Boole's idea running on electricity.",
+      "also": [
+        "In Python, True and False are a type named after him: bool.",
+        "AND is like a corridor with two doors: you pass only if both are open. OR: if either is open.",
+        "Ideas often wait decades for the machine that needs them."
+      ],
+      "think": "Can you think of a rule in your life that is an AND, and one that is an OR?"
+    },
+    {
+      "id": "rivers-of-bengal",
+      "cat": "geography",
+      "pic": "delta",
+      "title": "Bangladesh is a gift of three rivers",
+      "story": "Most countries sit on old, hard rock. Bangladesh sits on the largest river delta on Earth, built from mud carried down from the Himalayas by the Ganges (Padma), the Brahmaputra (Jamuna) and the Meghna. Every year the rivers bring new soil, which is why the land is so fertile and why the rivers also move: a channel that was here a generation ago may be kilometres away now. The whole country is young land, still being made - and because it is flat and low, water is both its wealth and its danger.",
+      "also": [
+        "The Sundarbans, the world's largest mangrove forest, is where the delta meets the sea.",
+        "A delta gets its name from the Greek letter delta, a triangle, which is its shape from above.",
+        "The mud of the delta is Himalayan mountain, ground down and carried a thousand kilometres."
+      ],
+      "think": "Why would land made of river mud be good for farming and bad for building tall things?"
+    },
+    {
+      "id": "philosophy-ship",
+      "cat": "philosophy",
+      "pic": "ship",
+      "title": "The ship of Theseus",
+      "story": "An old Greek puzzle. A famous ship is kept in a harbour. Over the years, as planks rot, each one is replaced with a new plank. After a long time, every single piece has been replaced. Is it still the same ship? Now suppose someone collected all the old planks and built a ship from them. Which one is the real ship of Theseus? There is no agreed answer. Philosophy (দর্শন) is the habit of asking questions like this carefully, and noticing that the words 'same' and 'thing' are trickier than they look.",
+      "also": [
+        "Your body replaces most of its cells over the years - are you the same person you were at five?",
+        "A program whose every line has been rewritten: same program, or a new one?",
+        "A good philosophy question is one where smart people disagree after thinking hard."
+      ],
+      "think": "What do you think makes something the same thing over time: its parts, its shape, its name, or something else?"
+    },
+    {
+      "id": "lightning",
+      "cat": "physics",
+      "pic": "lightning",
+      "title": "Lightning is a very big spark",
+      "story": "Inside a storm cloud, ice and water drops rush past each other and rub, building up electric charge, the way a balloon rubbed on hair does. The bottom of the cloud becomes strongly charged, the ground below becomes the opposite, and when the difference is too large to hold, the air itself breaks and a channel of electricity jumps across: lightning. It is hotter than the surface of the Sun for a fraction of a second. The thunder you hear is the air exploding outward from that heat.",
+      "also": [
+        "Light reaches you instantly; sound takes about three seconds per kilometre. Count the gap to know how far the strike was.",
+        "Lightning rods on tall buildings give the spark a safe metal path into the ground.",
+        "Bangladesh has some of the most lightning strikes in the world; being in an open field in a storm is the main danger."
+      ],
+      "think": "Why would a tall metal rod on a roof make a building safer, not more dangerous?"
+    },
+    {
+      "id": "money",
+      "cat": "society",
+      "pic": "coin",
+      "title": "Money is a story everyone agrees to believe",
+      "story": "A 500-taka note is paper. It is worth something only because everyone agrees it is - the shop, the bank, the government, you. Long ago people traded things directly: rice for cloth. That is slow, so people chose something everyone wanted - shells, salt, later gold - to stand in between. Coins and notes came next, and now most money is just numbers in a computer. The agreement is the whole thing. Money works because of trust, and when trust breaks, money stops working even though the paper has not changed.",
+      "also": [
+        "The word salary comes from the Latin word for salt - a hint of how valuable salt once was.",
+        "Bank balances are a number in a database - which is exactly why databases are protected so carefully.",
+        "Counterfeiting is an attack on the agreement, which is why it is treated so seriously."
+      ],
+      "think": "If everyone decided tomorrow that paper money was worthless, would anything about the paper have changed?"
+    },
+    {
+      "id": "turing",
+      "cat": "technology",
+      "pic": "tape",
+      "title": "One machine that can be any machine",
+      "story": "In 1936 a young mathematician, Alan Turing, imagined the simplest possible machine: a strip of tape, a head that reads one symbol at a time, and a short list of rules. He proved something astonishing: such a machine, given the right rules, can compute anything that any machine can compute. You do not need a different machine for maths, for music, for pictures - one machine, fed different instructions, does them all. That is why your laptop can be a calculator, a cinema and a telephone. Every computer is a Turing machine wearing nice clothes.",
+      "also": [
+        "Turing's idea came before any electronic computer was built - it was pure thought.",
+        "Software is the 'list of rules'; hardware is the tape and the head.",
+        "During the Second World War Turing helped break secret codes, which is where cryptography and computing first met."
+      ],
+      "think": "If one machine can do anything, what decides what it actually does?"
+    },
+    {
+      "id": "sleep",
+      "cat": "biology",
+      "pic": "moon",
+      "title": "Your brain tidies up while you sleep",
+      "story": "Every animal with a brain sleeps, even though a sleeping animal cannot eat, run or watch for danger. Why risk it? Part of the answer: sleep is maintenance. During the day the brain fills with waste from working; at night a cleaning system flushes it out. Sleep is also when the day's learning is sorted and stored - the things you practised become skills, the things you read become memories. Study late and sleep little, and you keep less than if you had slept. Sleep is not time off from learning; it is the part where it sticks.",
+      "also": [
+        "Dolphins sleep with one half of the brain at a time, so they can keep swimming and breathing.",
+        "Teenagers' body clocks really do run late; wanting to sleep late is biology, not laziness.",
+        "The record for staying awake is about eleven days, and the person could barely think by the end."
+      ],
+      "think": "If sleep is when learning gets stored, when is the worst time to stop sleeping - before a test, or after studying?"
+    },
+    {
+      "id": "encryption-key",
+      "cat": "technology",
+      "pic": "lock",
+      "title": "A secret that two strangers can share in public",
+      "story": "For thousands of years, if you wanted to send a secret you first had to meet and agree on a key - like the shift of 3 in your cipher. That is a problem on the internet: you have never met the bank's computer. In the 1970s mathematicians found a trick that sounds impossible: two people can shout numbers to each other across a crowded room, and end up with a shared secret that nobody listening can work out. It uses maths that is easy one way and extremely hard backwards, like mixing two paint colours. Every padlock in your browser's address bar uses it.",
+      "also": [
+        "Your shift cipher has 25 possible keys; real keys have more possibilities than there are atoms in the universe.",
+        "The lock symbol in the browser means the maths worked and nobody in between can read the page.",
+        "The trick is called public-key cryptography: one key you share with the world, one you keep."
+      ],
+      "think": "Why would 'easy one way, hard the other way' be useful for keeping a secret?"
+    },
+    {
+      "id": "oxygen-plants",
+      "cat": "biology",
+      "pic": "leaf",
+      "title": "The air you breathe was made by living things",
+      "story": "The early Earth had almost no oxygen in its air; nothing could have breathed. Then tiny living things in the sea learned to use sunlight to make food from water and air, and oxygen was their waste. Over hundreds of millions of years they filled the atmosphere with it. Every breath you take is borrowed from plants, trees and ocean algae doing the same trick today. The Amazon is not the planet's only lung - at least half of the oxygen comes from tiny algae in the sea.",
+      "also": [
+        "A tree is mostly made of air: the carbon in its wood came in through the leaves, not up from the ground.",
+        "Plants breathe too - at night, with no sunlight, they take oxygen in.",
+        "The green in leaves is the machinery that catches the light."
+      ],
+      "think": "If plants make oxygen from sunlight, what happens to the air on a planet with no sunlight?"
+    },
+    {
+      "id": "zero",
+      "cat": "philosophy",
+      "pic": "zero",
+      "title": "The number that took the longest to invent",
+      "story": "People counted for thousands of years without a zero. The Romans had no symbol for nothing - try writing 105 in Roman numerals and see how clumsy it gets. Zero as a real number, with its own symbol and its own place in the column, was worked out in India about 1,500 years ago, in the place-value system you use every day. It travelled through the Arab world to Europe, where some people first refused it as a trick. Without zero there is no 10, no 100, no binary, no computers.",
+      "also": [
+        "The word zero comes, through Arabic and Italian, from a Sanskrit word for empty.",
+        "In binary, zero is half of everything a computer knows.",
+        "Dividing by zero has no answer, and programs crash when they try - a bug you will meet one day."
+      ],
+      "think": "Why is 'nothing' so hard to write down, when it is so easy to understand?"
+    },
+    {
+      "id": "ants",
+      "cat": "biology",
+      "pic": "ant",
+      "title": "No ant is in charge",
+      "story": "An ant colony looks organised: roads, farms, soldiers, nurseries. But there is no boss. The queen only lays eggs; she gives no orders. Each ant follows a few simple rules - follow the scent, carry what you find, help when you are touched - and from millions of ants following tiny rules, the colony's clever behaviour appears by itself. Scientists call this emergence (আবির্ভাব): the whole does things that no single part understands. Traffic jams, flocks of birds and the internet work the same way.",
+      "also": [
+        "Some ants farm fungus and some keep aphids like cows, milking them for sweet liquid.",
+        "A colony finds the shortest path to food because the shortest path collects the most scent.",
+        "The whole internet has no central controller either; it is rules, running everywhere."
+      ],
+      "think": "Can you think of something people do together that nobody is actually in charge of?"
+    },
+    {
+      "id": "sound",
+      "cat": "physics",
+      "pic": "wave",
+      "title": "Sound is air pushing air",
+      "story": "When you speak, your throat makes the air next to it vibrate - pushed, released, pushed, released. Each push shoves the air next to it, and the shove travels outward like a wave through a crowd, until it reaches an ear and pushes a tiny drum inside. Nothing moves from your mouth to the ear; the air only jiggles in place and passes the jiggle along. That is why there is no sound in space: no air, nothing to push. And it is why sound is slow enough that you see fireworks before you hear them.",
+      "also": [
+        "Sound travels faster through water and even faster through steel than through air.",
+        "A microphone is an ear in reverse: a drum that turns pushes into electricity. A speaker turns it back.",
+        "High notes are fast jiggles, low notes are slow ones."
+      ],
+      "think": "If sound needs air to push, how do you think whales can sing to each other across the ocean?"
+    },
+    {
+      "id": "democracy-rules",
+      "cat": "society",
+      "pic": "scales",
+      "title": "Why countries write their rules down",
+      "story": "Every group of people needs rules, and the oldest question is: who makes them, and what stops the rule-maker from doing anything they like? One answer, worked out over centuries in many places, is to write the biggest rules down in a constitution (সংবিধান) that even the rulers must obey, and to split power between different people - those who make laws, those who carry them out, and judges who check both. Elections let people replace rulers without fighting. None of it is perfect; all of it is an attempt to make power safe to hand to someone.",
+      "also": [
+        "Bangladesh's constitution dates from 1972, the year after independence.",
+        "The idea of splitting power so no one holds all of it is called separation of powers.",
+        "In computing the same idea appears: a standard user cannot do what an admin can, so one mistake cannot break everything."
+      ],
+      "think": "Why might it be safer to split power between people who disagree than to give it to one wise person?"
+    },
+    {
+      "id": "fire",
+      "cat": "chemistry",
+      "pic": "flame",
+      "title": "Fire is air eating wood",
+      "story": "A flame is not a thing; it is an event. Heat breaks wood into gases, the gases mix with oxygen from the air, and they join together violently, giving off light and more heat - which breaks more wood, which feeds more fire. That is why fire needs three things: fuel, oxygen and heat. Take away any one and it stops: water takes the heat, a lid takes the oxygen, a firebreak takes the fuel. The glow is the hot gases themselves; the smoke is the pieces that did not burn.",
+      "also": [
+        "A candle's wax is the fuel; the wick only lifts it to where the air is.",
+        "Rust is the same reaction as fire - iron joining with oxygen - just very, very slow.",
+        "Your body 'burns' food the same way, slowly and without flames, to keep you warm."
+      ],
+      "think": "Which of the three things does blowing on a tiny flame give it, and which does blowing out a candle take away?"
+    },
+    {
+      "id": "evolution",
+      "cat": "biology",
+      "pic": "finch",
+      "title": "Small differences, millions of years",
+      "story": "In every family, children are a little different from their parents. Some differences help - a slightly longer beak reaches food others cannot. The animals that survive have more babies, and pass the helpful difference on. Repeat for millions of years, and the differences add up until the descendants are a new kind of animal. That is evolution (বিবর্তন), and it explains why a bat's wing, a whale's flipper and your hand all have the same bones inside: they are the same old arm, reshaped by what helped.",
+      "also": [
+        "On the Galápagos Islands, finches on different islands have different beak shapes for different foods.",
+        "Germs evolve fast, which is why medicines that worked for decades can stop working.",
+        "You share an ancestor with every living thing, including the tree outside."
+      ],
+      "think": "If a beak that reaches food helps a bird survive, what might help a bird that lives where the food is in the water?"
+    },
+    {
+      "id": "open-source",
+      "cat": "technology",
+      "pic": "share",
+      "title": "Most of the internet runs on software given away for free",
+      "story": "Most programs you buy hide their recipe; you get the cake, not the instructions. But a large part of the world's software - the Linux you will learn, the Python you write in, the servers behind most websites - is open source: the recipe is public, anyone may read it, fix it, and share it. It works because thousands of people improve it together, and because bugs are found faster when everyone can look. The school you are using is built on open-source pieces. One day your own code can be a piece that someone else builds on.",
+      "also": [
+        "Linux was started by a student in 1991 as a hobby and now runs most of the internet's servers and every Android phone.",
+        "'Open' does not mean unsafe: with many eyes, security bugs are often found and fixed sooner.",
+        "Giving code away for free and still having a career is normal in this field - people pay for skill and support."
+      ],
+      "think": "Why might a program that everyone can read be safer than one that nobody can?"
+    },
+    {
+      "id": "stomach",
+      "cat": "biology",
+      "pic": "body",
+      "title": "Your stomach is a bag of acid that does not eat itself",
+      "story": "Your stomach makes an acid strong enough to dissolve metal. It breaks food into pieces your body can use and kills most germs that come in with it. So why does it not dissolve the stomach itself? Because the inside wall is coated with a thick layer of slime that is replaced constantly - the cells of the lining are renewed every few days. When the slime fails in one spot, the acid makes a sore called an ulcer. The body is full of these balances: something powerful, and something that keeps it in its place.",
+      "also": [
+        "The rumble of a hungry stomach is the muscles squeezing an empty bag.",
+        "Most of the real digesting happens after the stomach, in a tube several metres long.",
+        "Germs in your gut help you digest; by number there are about as many of them as there are cells of you."
+      ],
+      "think": "Where else in a system - a body, a computer, a country - do you need something powerful plus something to keep it in check?"
+    },
+    {
+      "id": "time-zones",
+      "cat": "geography",
+      "pic": "clock",
+      "title": "Why it is tomorrow in Dhaka while it is today in Canada",
+      "story": "The Earth spins once a day, so the Sun rises in different places at different times. Before trains, every town set its clocks by its own noon. Trains made that chaos, so the world was divided into time zones, roughly one for each hour of the spin. Dhaka is six hours ahead of the line through Greenwich in London; St John's in Canada is three and a half hours behind it. So when Abid finishes dinner, Faiza's next day has already begun. Somewhere on Earth there is a line where crossing it moves you one whole day.",
+      "also": [
+        "Newfoundland's half-hour zone is one of the few in the world; most are whole hours.",
+        "Computers keep time in one world clock (UTC) and convert to local time only for display - your school does exactly that.",
+        "China uses one time zone for a country five hours wide, so in the west the Sun rises at 10 am."
+      ],
+      "think": "If a message leaves Dhaka at 9 pm Saturday and arrives instantly, what day is it in Canada when it lands?"
+    },
+    {
+      "id": "elephants",
+      "cat": "biology",
+      "pic": "elephant",
+      "title": "Elephants mourn their dead",
+      "story": "Elephants are among the few animals, with us, that seem to understand death. When an elephant finds the bones of another, it slows, touches them with its trunk, sometimes stays for hours; herds have been seen returning to the place a family member died. They recognise themselves in mirrors, which very few animals do, and they remember water holes and old friends for decades. Intelligence did not appear only once, in humans; it grew separately in elephants, in dolphins, in crows - built on different brains, reaching similar places.",
+      "also": [
+        "An elephant's trunk has tens of thousands of muscles and can pick up a single grain of rice.",
+        "Elephants talk in rumbles too low for human ears, which travel kilometres through the ground.",
+        "Asian elephants, the kind found in Bangladesh, are smaller than African ones, with smaller ears."
+      ],
+      "think": "If intelligence appeared separately in such different animals, what might that tell us about what intelligence is for?"
+    },
+    {
+      "id": "bits-of-sand",
+      "cat": "technology",
+      "pic": "sand",
+      "title": "How a photo fits on a chip",
+      "story": "A photo on your laptop is a grid of tiny dots, each with a colour, and each colour is three numbers - how much red, green and blue. Your eye mixes them. A 12-million-dot photo is 36 million numbers, each a byte, each eight lamps on or off. That is why photos are big files and why the SSD, the filing cabinet, has to hold so many bytes. Zoom all the way in on any photo and the lie shows: it is squares. Everything on a screen is numbers pretending to be the world.",
+      "also": [
+        "Red, green and blue light mixed at full strength make white; paint works the opposite way.",
+        "A screen's pixel is three tiny lamps, so close together your eye blends them.",
+        "Compressing a photo means finding patterns in the numbers so fewer bytes can describe the same picture."
+      ],
+      "think": "If every dot is three numbers, how could you make a photo file smaller without losing the picture?"
+    },
+    {
+      "id": "speed-of-light-limit",
+      "cat": "physics",
+      "pic": "orbit",
+      "title": "Nothing can go faster than light - and that makes time bend",
+      "story": "Light moves at about 300,000 kilometres a second, and this is not just fast - it is the universe's speed limit (গতিসীমা - a limit on speed). Nothing with mass can reach it. Stranger still: the closer something goes to light speed, the slower its own clock ticks compared to yours. This is not a trick of the clock; time itself stretches. Astronauts who travelled fast have returned a tiny fraction of a second younger than they would have been on Earth. The faster you move through space, the slower you move through time.",
+      "also": [
+        "GPS satellites must correct for this time-bending, or your map would be wrong by kilometres within a day.",
+        "The limit is really the speed of cause and effect; light just happens to travel at it.",
+        "If you could ride a beam of light, no time would pass for you at all."
+      ],
+      "think": "If moving fast slows your clock, is there one single 'now' for the whole universe?"
+    },
+    {
+      "id": "atoms-mostly-empty",
+      "cat": "physics",
+      "pic": "atom",
+      "title": "You are almost entirely empty space",
+      "story": "An atom is a tiny nucleus (নিউক্লিয়াস - the dense centre) with electrons far, far away from it. If the nucleus were the size of a marble, the nearest electron would be hundreds of metres away, with nothing in between. So the solid-feeling chair you sit on is more than 99.9999% empty space. What stops your hand passing through the table is not stuff hitting stuff - it is the electric push between electrons. You never actually touch anything; you feel the force.",
+      "also": [
+        "The 'solidness' of matter comes from a quantum rule that says two electrons cannot share the same state.",
+        "All the empty space removed, the entire human race would fit in the volume of a sugar cube.",
+        "The same force that stops your hand is the force that lets you type on a keyboard."
+      ],
+      "think": "If atoms are mostly empty, why does a wall feel so solid?"
+    },
+    {
+      "id": "dna-information",
+      "cat": "biology",
+      "pic": "dna",
+      "title": "Your body runs on four-letter code",
+      "story": "Every living thing is built from instructions written in DNA using just four chemical letters: A, T, G and C. Three letters make a 'word' that stands for a building block, and strings of these words are the recipes for everything your body makes. It is a code - real information, like the binary (বাইনারি - a code of just two symbols, 0 and 1) you learned the computer uses. A single cell holds about two metres of DNA, folded up, carrying more instructions than a very long book.",
+      "also": [
+        "Your DNA is about 99.9% identical to every other human's; the 0.1% is all the difference.",
+        "You share roughly half your genes with a banana, because life reuses what works.",
+        "Scientists can now read and write this code, which is how some medicines are made."
+      ],
+      "think": "If DNA is a code, what is the difference between it and the code you write in Python?"
+    },
+    {
+      "id": "bacteria-outnumber",
+      "cat": "biology",
+      "pic": "ant",
+      "title": "You are carrying trillions of tiny helpers",
+      "story": "Your body has roughly as many bacterial cells as human cells - tens of trillions of them, mostly in your gut. Far from being dirty, most are essential: they help digest your food, make vitamins, and train your immune system (রোগ প্রতিরোধ ব্যবস্থা - the body's defence against disease). You are not a single creature but a walking community. When you eat, you are feeding them too, and what you feed them changes which ones thrive - and that can change how you feel.",
+      "also": [
+        "A baby gets its first bacteria from its mother during birth.",
+        "The bacteria in your gut weigh roughly as much as your brain.",
+        "Different people's gut communities are as unique as fingerprints."
+      ],
+      "think": "If helpful bacteria live inside you, where is the line between 'you' and 'not you'?"
+    },
+    {
+      "id": "deep-time",
+      "cat": "geography",
+      "pic": "mountain",
+      "title": "Mountains are rivers of rock, moving too slowly to see",
+      "story": "The ground under your feet is not still. Continents drift about as fast as your fingernails grow - a few centimetres a year - carried on vast plates (প্লেট - huge slabs of the Earth's shell) floating on hot rock below. Over millions of years this pushes up mountains, opens oceans, and closes them again. The Himalayas are still rising because India is still pushing into Asia. Everything that feels permanent - a mountain, a coastline - is just a slow-motion photograph of something moving.",
+      "also": [
+        "The Atlantic Ocean grows a few centimetres wider every year.",
+        "Mount Everest is made partly of rock that was once the bottom of a sea.",
+        "In 250 million years the continents may join into one supercontinent again."
+      ],
+      "think": "If mountains move, what does it mean to say any place is 'where it has always been'?"
+    },
+    {
+      "id": "ocean-currents",
+      "cat": "geography",
+      "pic": "wave",
+      "title": "A river of warm water keeps Europe from freezing",
+      "story": "The ocean has rivers inside it. One, the Gulf Stream, carries warm water from the tropics up past western Europe, keeping places like Britain far milder than their northern latitude (অক্ষাংশ - how far north or south a place is) should allow. These currents are driven by wind, by the spin of the Earth, and by water sinking as it cools and grows salty. They move more water than every river on land combined, and they share the planet's heat from the equator to the poles.",
+      "also": [
+        "Without the Gulf Stream, London's winters could resemble Canada's.",
+        "A rubber-duck spill in 1992 helped scientists map ocean currents as the ducks washed up for years.",
+        "These currents also carry heat that feeds storms."
+      ],
+      "think": "If the ocean shares heat around the planet, what might happen if one current slowed down?"
+    },
+    {
+      "id": "prime-numbers-guard",
+      "cat": "technology",
+      "pic": "lock",
+      "title": "Huge prime numbers guard your secrets",
+      "story": "A prime number can only be divided by 1 and itself: 2, 3, 5, 7, 11... Multiplying two large primes together is easy, but taking the answer apart to find the original primes is so hard that even the fastest computers would need longer than the age of the universe. This one-way difficulty is the lock on your messages, your bank, and your passwords (পাসওয়ার্ড). The security of almost the whole internet rests on a fact about numbers that mathematicians have studied for over two thousand years.",
+      "also": [
+        "There are infinitely many primes - the Greeks proved it long ago.",
+        "The largest known prime has more than 24 million digits.",
+        "If someone found a fast way to split big numbers into primes, much of today's encryption would break."
+      ],
+      "think": "Why is it safe to build secrets on something being hard, rather than impossible?"
+    },
+    {
+      "id": "packet-switching",
+      "cat": "technology",
+      "pic": "cable",
+      "title": "Your messages travel in pieces, by different roads",
+      "story": "When you send a photo, it does not travel as one piece. It is chopped into small packets (প্যাকেট - small bundles of data), each labelled with where it is going, and they are sent separately - often by different routes across the world - then reassembled at the other end. This is why the internet is so hard to break: if one road is blocked, the packets simply take another. The whole global network is built on this one clever idea, invented so that a message could always find a way through.",
+      "also": [
+        "A single web page can arrive as hundreds of packets from several different servers.",
+        "Packets can arrive out of order; your computer puts them back in sequence.",
+        "The same idea means a damaged network can heal around the damage."
+      ],
+      "think": "If messages can always find another road, who could ever fully block the internet - and how?"
+    },
+    {
+      "id": "photosynthesis",
+      "cat": "biology",
+      "pic": "leaf",
+      "title": "Plants eat light and breathe out the air you need",
+      "story": "A leaf is a solar machine. It takes sunlight, water, and the carbon dioxide you breathe out, and builds sugar - its food - releasing oxygen (অক্সিজেন) as the leftover. Almost every scrap of food you have ever eaten traces back to this, and almost every breath of oxygen you have ever taken came from a plant or tiny ocean algae doing it. The energy in your body right now is sunlight, caught by a leaf, passed up the food chain to you.",
+      "also": [
+        "Most of the world's oxygen comes not from forests but from tiny plankton in the sea.",
+        "A large tree can release enough oxygen in a year for two people.",
+        "The green colour is a pigment called chlorophyll, which catches the light."
+      ],
+      "think": "If your energy came from sunlight caught by a plant, in what sense are you 'powered by the Sun'?"
+    },
+    {
+      "id": "moon-tides",
+      "cat": "physics",
+      "pic": "moon",
+      "title": "The Moon lifts the whole ocean twice a day",
+      "story": "The Moon's gravity (মহাকর্ষ - the pull between any two masses) tugs on the Earth, and the oceans, being liquid, bulge toward it. As the Earth spins beneath this bulge, every coast rises and falls - the tides - usually twice a day. The Sun pulls too, and when Sun and Moon line up, the tides grow largest. The Moon is slowly stealing a little of Earth's spin through these tides, so our days are getting longer by a tiny fraction of a second each century.",
+      "also": [
+        "The Moon is drifting away from Earth by about 4 centimetres a year.",
+        "Long ago, when the Moon was closer, a day lasted only about six hours.",
+        "Even the solid ground rises and falls a little with the tides."
+      ],
+      "think": "If the tides are slowing Earth's spin, what does that tell you about where that energy goes?"
+    },
+    {
+      "id": "fire-is-sunlight",
+      "cat": "chemistry",
+      "pic": "flame",
+      "title": "A fire is sunlight escaping from wood",
+      "story": "Burning is the opposite of what a plant did to grow. The tree used sunlight to lock energy into wood; fire breaks those bonds and lets the energy out again as heat and light, combining the wood with oxygen (জারণ - combining with oxygen) from the air. The flame is glowing gas, so hot it shines. When you sit by a fire, you are warmed by sunlight that a tree caught years ago and stored - you are feeling an old summer being released.",
+      "also": [
+        "A candle flame is hottest and bluest at its base, where oxygen is richest.",
+        "Fire needs three things - fuel, heat and oxygen; remove any one and it stops.",
+        "In space, with no gravity to pull hot air up, a flame burns as a small blue ball."
+      ],
+      "think": "If fire releases stored sunlight, what are coal and oil, which also burn?"
+    },
+    {
+      "id": "evolution-finch",
+      "cat": "biology",
+      "pic": "finch",
+      "title": "Living things are shaped by who survives to have young",
+      "story": "In any group of animals, the young differ a little. If a difference helps one survive and raise young in its surroundings, that difference becomes more common in the next generation. Over very long times, this slow sorting - called natural selection (প্রাকৃতিক নির্বাচন) - reshapes a species to fit its world. On one group of islands, finches' beaks changed shape over generations to match the seeds they could find. Nobody designed the beak; the island's hard seeds did the choosing, one generation at a time.",
+      "also": [
+        "The same process gave whales their shape from land-walking ancestors.",
+        "Bacteria evolve fast, which is why some medicines stop working over time.",
+        "Evolution has no goal; it only ever fits a creature to right now."
+      ],
+      "think": "If no one is choosing, how can a process with no plan produce something as fitting as a beak?"
+    },
+    {
+      "id": "zero-invention",
+      "cat": "philosophy",
+      "pic": "zero",
+      "title": "Someone had to invent nothing",
+      "story": "It sounds obvious, but writing a symbol for 'nothing' was one of the hardest ideas humans ever had. For most of history, counting systems had no zero, which made arithmetic clumsy and a number like 105 hard to write without confusion. The idea of zero as a number you can calculate with grew in ancient India and travelled the world. Without it there would be no place value, no algebra as you know it, and no computers - because the whole machine is built on the difference between something and nothing, 1 and 0.",
+      "also": [
+        "The word 'zero' travelled from Sanskrit through Arabic into European languages.",
+        "Roman numerals had no zero, which is why they are so awkward to add.",
+        "Every computer is, at heart, a vast arrangement of zeros and ones."
+      ],
+      "think": "If zero means 'nothing', why is it one of the most powerful ideas in all of mathematics?"
+    },
+    {
+      "id": "logic-gates",
+      "cat": "technology",
+      "pic": "logic",
+      "title": "A computer is millions of tiny yes-or-no switches",
+      "story": "Underneath every app and game, a computer does only one kind of thing, billions of times a second: it answers true-or-false questions with tiny switches called logic gates (গেট - a switch that follows a rule). One gate says 'true only if both inputs are true'; another says 'true if either is'. Wire enough of them together and you can add numbers, store memory, and run everything. The whole dazzling machine is built from the simplest idea there is - on or off - repeated at an unimaginable scale.",
+      "also": [
+        "A modern chip can hold tens of billions of these switches.",
+        "The same and/or/not logic runs in your if-statements in Python.",
+        "The switches are so small that thousands would fit across a human hair."
+      ],
+      "think": "How can something as rich as a video game be built from only 'on' and 'off'?"
+    },
+    {
+      "id": "half-life",
+      "cat": "chemistry",
+      "pic": "tape",
+      "title": "Some atoms carry a clock that never speeds up or slows down",
+      "story": "Certain atoms are unstable and break apart at random - but a huge pile of them decays at a perfectly steady rate called a half-life (অর্ধায়ু - the time for half to decay): the time for half of them to go. Nothing changes it - not heat, not pressure. This makes radioactive atoms into natural clocks. By measuring how much of a certain atom is left in an old bone or rock, scientists can read its age - how we know some fossils are millions of years old, and how the age of the Earth was found.",
+      "also": [
+        "Carbon dating uses a form of carbon to date things up to about 50,000 years old.",
+        "The Earth's age, about 4.5 billion years, was found this way.",
+        "A single atom's moment of decay is one of nature's purely random events."
+      ],
+      "think": "If each atom decays at random, how can a whole pile keep such perfect time?"
+    },
+    {
+      "id": "compound-interest",
+      "cat": "society",
+      "pic": "coin",
+      "title": "Growth that feeds on itself becomes astonishing",
+      "story": "If something grows by the same fraction each step, and the growth is added back in, it does not grow in a straight line - it curves upward, faster and faster. This is compound growth (চক্রবৃদ্ধি - growth added back on itself). A small saving that grows 10% a year more than doubles in under eight years, and keeps accelerating. The same maths rules a spreading rumour, a virus, a population, and the interest on a debt. People are famously bad at feeling how fast it goes, which is why it surprises everyone, for good and for ill.",
+      "also": [
+        "Fold a paper 42 times and it would reach the Moon - doubling is that powerful.",
+        "The same curve describes both savings growing and debts spiralling.",
+        "A single grain of rice doubled on each square of a chessboard would bury a country."
+      ],
+      "think": "Why are humans so bad at guessing where fast-compounding growth will end up?"
+    },
+    {
+      "id": "placebo",
+      "cat": "biology",
+      "pic": "body",
+      "title": "Believing a cure works can make it work a little",
+      "story": "If you give someone a sugar pill but tell them it is medicine, a surprising number feel genuinely better - less pain, less worry. This is the placebo effect (প্লাসিবো - a fake treatment that still helps): the mind's expectation changing the body. It is real enough that every new medicine must beat a placebo in testing, or we cannot tell if the medicine itself did anything. The brain is not separate from the body; what you expect can shift your heartbeat, your pain, even your immune response.",
+      "also": [
+        "Placebos can work even when people are told they are placebos.",
+        "A bigger or more colourful pill often produces a stronger placebo effect.",
+        "This is why medical tests hide who got the real treatment from everyone involved."
+      ],
+      "think": "If expecting to feel better can help, how would you ever prove a real medicine actually works?"
+    },
+    {
+      "id": "timezones",
+      "cat": "geography",
+      "pic": "clock",
+      "title": "Noon is a different moment everywhere",
+      "story": "The Sun cannot be overhead everywhere at once, so 'noon' happens at different real moments around the world. To keep clocks sensible, humans sliced the planet into time zones (সময় অঞ্চল - regions that share one clock time). Cross a line, change your clock by an hour. It is a human invention, barely over a century old, created because trains and telegraphs suddenly let people coordinate across distances where the Sun no longer agreed with the timetable. When it is afternoon in Dhaka, it is the middle of the night in Canada.",
+      "also": [
+        "Before railways, each town kept its own time by the Sun.",
+        "A few places use half-hour or 45-minute offsets.",
+        "The date itself changes at an imaginary line in the Pacific Ocean."
+      ],
+      "think": "If time zones are a human invention, is there any such thing as the 'real' time?"
+    },
+    {
+      "id": "redundancy",
+      "cat": "technology",
+      "pic": "share",
+      "title": "The internet survives because nothing important has just one copy",
+      "story": "Important data is never kept in one place. It is copied across many machines in many buildings, so that if one fails - a fire, a flood, a broken cable - the others carry on and the lost copy is rebuilt from the rest. This is redundancy (অপ্রয়োজনীয় নকল - keeping spare copies on purpose), and it is why a video you watch is still there when a whole data centre goes dark. The same idea runs in nature: you have two kidneys, two lungs. Survival is built from spare copies.",
+      "also": [
+        "Your own backup habit - a second copy of your files - is redundancy at home.",
+        "Big services copy your data to several continents at once.",
+        "A system with no spare copy has a 'single point of failure' - the thing engineers fear most."
+      ],
+      "think": "Where in your own life would a single point of failure hurt you, and what is the spare copy?"
+    },
+    {
+      "id": "sound-speed",
+      "cat": "physics",
+      "pic": "wave",
+      "title": "You hear the past, and see a slightly older past",
+      "story": "Sound is slow. It travels about 340 metres a second through air - fast for a runner, crawling for a wave. That is why you see a distant firework burst before you hear it, and why thunder lags behind lightning: count the seconds between and you can measure how far the storm is. Light is almost a million times faster, so it arrives first. Every sound you hear is a tiny bit of the past, and the farther the source, the older the moment reaching your ears.",
+      "also": [
+        "Sound travels faster in water and faster still in steel than in air.",
+        "A thunderclap three seconds after the flash is about one kilometre away.",
+        "In the emptiness of space there is no air, so no sound travels at all."
+      ],
+      "think": "If both light and sound carry the past, is anything you sense truly happening 'now'?"
+    },
+    {
+      "id": "keystone-species",
+      "cat": "biology",
+      "pic": "leaf",
+      "title": "Remove one animal and a whole landscape can change",
+      "story": "Some species hold an entire ecosystem (বাস্তুতন্ত্র - a community of living things and their surroundings) together far beyond their numbers. When wolves were returned to one American park, they thinned the deer, so young trees grew back, so riverbanks held firm, so the rivers themselves changed course. One predator reshaped the land. These are keystone species - like the central stone of an arch; pull it out and the arch falls. It is a reminder that in a living system, everything is connected to everything, often in ways no one predicted.",
+      "also": [
+        "Sea otters protect kelp forests by eating the urchins that would devour them.",
+        "Elephants dig water holes and clear paths that dozens of other species use.",
+        "Losing a keystone species can collapse a web no one knew depended on it."
+      ],
+      "think": "If one species can reshape a whole landscape, how carefully should we remove any part of a system?"
+    },
+    {
+      "id": "map-projection",
+      "cat": "geography",
+      "pic": "globe",
+      "title": "Every flat map of the world is a lie - it has to be",
+      "story": "You cannot flatten a ball onto paper without stretching it somewhere. So every world map distorts (বিকৃত - changed from the true shape) something - size, shape, or distance. The most familiar map makes countries near the poles look huge: it shows Greenland as large as Africa, though Africa is really fourteen times bigger. There is no 'correct' flat map, only different honest compromises for different jobs. The map is never the territory; it is a chosen distortion, and knowing which one is chosen is how you read it wisely.",
+      "also": [
+        "Greenland looks bigger than Africa on common maps but is a fraction of its size.",
+        "Sailors' maps distort size to keep directions straight and true.",
+        "The only truly undistorted map of Earth is a globe."
+      ],
+      "think": "If every flat map distorts something, how would you choose which distortion to trust for a given purpose?"
+    },
+    {
+      "id": "catalyst",
+      "cat": "chemistry",
+      "pic": "atom",
+      "title": "Some things make change happen without being used up",
+      "story": "A catalyst (অনুঘটক - a helper that speeds a reaction) is a substance that makes a chemical change happen faster, yet comes out unchanged at the end, ready to help again. A tiny amount can transform mountains of material. Your body runs on them: enzymes are catalysts that let reactions which would otherwise take years happen in a blink, at body temperature. Factories use them to make fuels and medicines. It is a strange, powerful idea - a thing that causes enormous change while giving up nothing of itself.",
+      "also": [
+        "The enzymes in your spit begin breaking down food before you swallow.",
+        "A catalyst in your car's exhaust turns poison gases into safer ones.",
+        "Without enzymes, digesting a single meal could take far longer than a lifetime."
+      ],
+      "think": "Where else - not just in chemistry - does a small, unchanged thing cause a huge change?"
+    },
+    {
+      "id": "exponential-brain",
+      "cat": "philosophy",
+      "pic": "share",
+      "title": "Your brain has more connections than there are stars in the galaxy",
+      "story": "Your brain holds roughly 86 billion nerve cells, and each one may connect to thousands of others, making trillions of links. The number of possible paths through this network is larger than the count of stars in our galaxy. And it is not fixed: every time you learn something - a key, a word, a proof - the connections (সংযোগ - the links between brain cells) physically change. Learning is not filling a container; it is rewiring a living network. The brain you finish today's lesson with is not quite the one you started it with.",
+      "also": [
+        "The brain uses about a fifth of your body's energy though it weighs only a fiftieth.",
+        "Connections you use grow stronger; ones you ignore fade - 'use it or lose it'.",
+        "No two brains, not even twins', are wired the same way."
+      ],
+      "think": "If learning physically rewires your brain, what does it mean to say you 'are' a fixed person?"
+    },
+    {
+      "id": "friction-fire",
+      "cat": "physics",
+      "pic": "flame",
+      "title": "Rubbing turns motion into heat - and once made every fire",
+      "story": "When two surfaces slide, tiny bumps catch and drag; that resistance is friction (ঘর্ষণ - the force that resists sliding), and it turns the energy of motion into heat. Rub your hands and they warm; for most of human history, rubbing wood fast enough was how people made fire at all. Friction is why a ball rolling on grass stops, why brakes work, and why a spacecraft returning to Earth glows red-hot as it pushes through the air. The same humble force that slows you down also warms you, stops you, and once lit the first fires.",
+      "also": [
+        "A spacecraft re-entering the atmosphere can heat to over 1,500°C from friction.",
+        "Without friction you could not walk, write, or hold anything.",
+        "Oil works by slipping between surfaces so they barely touch."
+      ],
+      "think": "If friction both helps and hinders, when would you want more of it and when less?"
+    },
+    {
+      "id": "law-of-large-numbers",
+      "cat": "philosophy",
+      "pic": "scales",
+      "title": "Chance is wild up close and calm from far away",
+      "story": "Flip a coin ten times and you might get seven heads - chance looks lumpy. Flip it ten thousand times and heads will sit very near half. Single events are unpredictable, but huge numbers of them settle into steady patterns. This is the law of large numbers (বৃহৎ সংখ্যার সূত্র), and it is why insurance works, why casinos always win in the end, and why a poll of a few thousand people can predict millions. Randomness does not disappear; it averages out, and the average is astonishingly reliable.",
+      "also": [
+        "An insurance company cannot predict one house fire, but can predict thousands closely.",
+        "This is why a small, fair sample can speak for a huge population.",
+        "The next coin flip is still fifty-fifty, no matter what came before."
+      ],
+      "think": "If single events stay unpredictable, how can the average of many be so sure?"
+    },
+    {
+      "id": "water-anomaly",
+      "cat": "chemistry",
+      "pic": "ice",
+      "title": "Ice floats, and that is why there is life in frozen lakes",
+      "story": "Almost everything shrinks and grows denser as it cools. Water does too - until just before freezing, when it does the opposite and expands. So ice is lighter than the water below and floats. This small oddity is enormous: a lake freezes from the top down, leaving liquid water, and living things, safe beneath the ice. If ice sank, lakes would freeze solid from the bottom and little could survive the winter. A strange quirk in one common molecule (অণু - the smallest unit of a substance) helps make the planet livable.",
+      "also": [
+        "Water is densest at about 4°C, not at freezing.",
+        "The floating ice cap also reflects sunlight and helps cool the planet.",
+        "This same expansion is why a forgotten water bottle bursts in a freezer."
+      ],
+      "think": "How many other 'small quirks' of nature might quietly be holding life together?"
+    },
+    {
+      "id": "migration",
+      "cat": "biology",
+      "pic": "finch",
+      "title": "A small bird can cross an ocean without a map",
+      "story": "Some birds fly thousands of kilometres between summer and winter homes, a few without landing for days, crossing open ocean to an exact spot they have never seen. They navigate (পথ নির্ণয় - finding the way) by the Sun, the stars, landmarks, and even by sensing the Earth's magnetic field like a built-in compass. A young bird making its first journey alone still finds the way. No one teaches it the route; the knowledge is written into it, refined over countless generations by who arrived and who did not.",
+      "also": [
+        "The Arctic tern migrates pole to pole, seeing two summers a year.",
+        "Some birds can sleep one half of the brain at a time while flying.",
+        "Scientists think birds may actually 'see' the magnetic field as a pattern."
+      ],
+      "think": "If a bird is born already knowing the route, what is the difference between instinct and learning?"
+    },
+    {
+      "id": "entropy",
+      "cat": "physics",
+      "pic": "sand",
+      "title": "Why your room gets messy by itself but never tidy by itself",
+      "story": "There are countless ways for a room to be messy and only a few ways for it to be tidy, so random bumps almost always move things toward mess. This tendency toward disorder has a name - entropy (এনট্রপি - a measure of disorder) - and it is one of the deepest laws of physics. It is why heat flows from hot to cold, why a smell spreads across a room, and why time seems to run one way: the past is the tidier end. Order can be made, but only by spending energy - which is exactly what you do when you clean, or learn.",
+      "also": [
+        "This law is why no machine can ever be perfectly efficient.",
+        "A living body is a pocket of order, paid for by energy from food.",
+        "The 'arrow of time' - why we remember the past, not the future - may come from entropy."
+      ],
+      "think": "If disorder always tends to grow, how does life manage to build such exquisite order?"
+    },
+    {
+      "id": "redundancy-language",
+      "cat": "society",
+      "pic": "tablet",
+      "title": "You can rd ths sntnce bcs language wastes letters on purpose",
+      "story": "Written language is full of spare, predictable letters - and that is a feature, not a flaw. You can read a sentence with the vowels removed, or a word with a missing letter, because the extra is redundancy (বাড়তি তথ্য - information you could have guessed) that lets meaning survive a smudge, a typo, or a noisy phone line. Every communication system humans build - speech, writing, even the codes that carry your data - adds spare information on purpose, so that a message damaged on the way can still be understood.",
+      "also": [
+        "English text is roughly half predictable; you could guess much of it letter by letter.",
+        "Your phone uses error-correcting codes to fix data scrambled on the way.",
+        "This same redundancy is what lets autocomplete guess your next word."
+      ],
+      "think": "If a message can survive being damaged, how much of what you 'read' are you actually guessing?"
+    },
+    {
+      "id": "sec-cuckoos-egg",
+      "cat": "security",
+      "pic": "coin",
+      "title": "A missing 75 cents led an astronomer to a real spy",
+      "story": "In 1986, Cliff Stoll was an astronomer looking after computers at Lawrence Berkeley Laboratory in California. His first small job was strange: the computer bills were wrong by 75 cents. Most people would ignore it. Stoll did not. He found that the money came from an unknown user who was secretly using the lab's computers. For months he followed the intruder and wrote every step in a logbook. To keep the intruder connected long enough to trace the call, he created fake files about a made-up military project. The trick worked. The trail led to Markus Hess in Hanover, West Germany, who was selling stolen information to the KGB, the Soviet spy agency. In 1990 Hess was found guilty of espionage (গুপ্তচরবৃত্তি - spying). The lesson: small errors are clues, and careful records catch intruders.",
+      "also": [
+        "Stoll told the whole story in a book, The Cuckoo's Egg, published in 1989.",
+        "Hess is thought to have broken into around 400 US military computers.",
+        "Fake files that attract an intruder are now called a honeypot, and defenders still use them."
+      ],
+      "think": "Why do most people ignore a 75-cent mistake, and what kind of person keeps asking why?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Cuckoo%27s_Egg_(book)",
+        "https://en.wikipedia.org/wiki/Markus_Hess"
+      ],
+      "year": 1986
+    },
+    {
+      "id": "sec-morris-worm",
+      "cat": "security",
+      "pic": "share",
+      "title": "In 1988 one student's program slowed down the whole young internet",
+      "story": "On 2 November 1988, a program began copying itself from computer to computer across the early internet. It was a worm: software that spreads by itself, without anyone clicking anything. It used weak spots in common programs and tried easy passwords. Its creator was Robert Morris, a graduate student at Cornell University. He said he wanted to measure how big the internet was. But a mistake in his design made the worm copy itself again and again onto the same machines, until they became too slow to use. About 6,000 computers were hit, roughly one in ten on the internet then. Morris was convicted under the new US computer crime law and given probation (প্রবেশন - staying free but being watched by the court), community service and a fine. The defence that came from it was CERT, the first team whose job is to respond to internet emergencies.",
+      "also": [
+        "CERT was set up at Carnegie Mellon University in November 1988, at the request of the US research agency DARPA.",
+        "Morris's sentence was three years of probation, 400 hours of community service and a fine of about 10,000 US dollars.",
+        "Morris later became a professor at MIT and co-founded the start-up company Y Combinator."
+      ],
+      "think": "Can a person be responsible for harm they did not mean to cause? Where would you draw the line?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Morris_worm",
+        "https://en.wikipedia.org/wiki/CERT_Coordination_Center"
+      ],
+      "year": 1988
+    },
+    {
+      "id": "sec-2600-hertz",
+      "cat": "security",
+      "pic": "wave",
+      "title": "A toy whistle from a cereal box could talk to the phone network",
+      "story": "Long ago, long-distance phone lines in the United States used sounds to give orders. When a line was free, it carried a tone at 2600 hertz (হার্জ - how many times a sound vibrates each second), and the big switching machines listened for it. The weakness: the orders travelled on the same line as the callers' voices. So anyone who could make the right sounds could talk to the machines. In the 1960s, a toy whistle given away in boxes of Cap'n Crunch cereal made exactly 2600 hertz. People who explored the phone system like this were called phone phreaks. One of them, John Draper, took the nickname Captain Crunch. Making free calls this way was fraud. Draper was arrested in 1972 and later went to prison. The fix was clever: phone companies moved their control signals onto a separate channel that callers could never reach.",
+      "also": [
+        "Phreaks built 'blue boxes', small devices that played the network's control tones.",
+        "Draper was the first phone phreak to serve time in a US federal prison.",
+        "Keeping control messages apart from ordinary user data is still a basic rule of computer security."
+      ],
+      "think": "Where else could it be dangerous if instructions and ordinary messages travel along the same path?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Blue_box",
+        "https://en.wikipedia.org/wiki/John_Draper"
+      ],
+      "year": 1972
+    },
+    {
+      "id": "sec-first-bug",
+      "cat": "security",
+      "pic": "tape",
+      "title": "The first recorded computer bug was a real moth, taped into a notebook",
+      "story": "On 9 September 1947, a team at Harvard University was working on a huge computer called the Mark II. It was built from relays (রিলে - small switches that click open and shut). The machine kept making errors, so the team searched inside it. They found a moth stuck in one of the relays. They removed it, taped it into their logbook, and wrote beside it: First actual case of bug being found. Engineers already used the word bug for a fault, so the note was a little joke. Grace Hopper, a famous computer pioneer, was part of the team and loved telling this story in her talks. The page, with the moth still on it, is kept at the Smithsonian's National Museum of American History. The real hero here is the logbook: careful notes about what went wrong are how engineers find faults and fix them.",
+      "also": [
+        "Finding and fixing faults in a program is still called debugging.",
+        "The museum says the logbook entry was probably not written by Hopper herself.",
+        "Grace Hopper later helped make programming languages that used English-like words."
+      ],
+      "think": "Why is writing down your mistakes so useful, even when it feels boring?",
+      "sources": [
+        "https://www.computerhistory.org/tdih/september/9/",
+        "https://americanhistory.si.edu/collections/nmah_334663"
+      ],
+      "year": 1947
+    },
+    {
+      "id": "sec-enigma",
+      "cat": "security",
+      "pic": "logic",
+      "title": "Enigma had 103 sextillion settings, but its own users gave it away",
+      "story": "In the Second World War, the German military sent secret messages with Enigma, a typing machine with turning wheels. Its wheels and wires could be set in about 103 sextillion ways, so its users believed no one could break it. But Polish mathematicians, including Marian Rejewski, first broke it in 1932, and in 1939 they shared their work with Britain. At Bletchley Park, Alan Turing and others designed the bombe, a machine that tested possible settings quickly. The codebreakers also used weaknesses. Enigma never turned a letter into itself. And operators often sent predictable text, such as weather reports. A guessed piece of a message was called a crib (ক্রিব - a part of the message you can guess). The lesson for defenders: a strong machine is not enough. Human habits and small design shortcuts can break any code.",
+      "also": [
+        "The first British bombe arrived at Bletchley Park on 14 March 1940.",
+        "In the 1930s the Polish codebreakers built their own machine, the bomba, which inspired Turing's bombe.",
+        "Modern codes are designed to stay safe even if the enemy knows exactly how they work; only the key must stay secret."
+      ],
+      "think": "If people are often the weakest part of a security system, how would you design one that stays safe even when people are lazy?",
+      "sources": [
+        "https://www.britannica.com/topic/Bombe",
+        "https://bletchleypark.org.uk/our-story/enigma/"
+      ],
+      "year": 1940
+    },
+    {
+      "id": "sec-stuxnet",
+      "cat": "security",
+      "pic": "chip",
+      "title": "Stuxnet was a computer program built to break real machines",
+      "story": "In June 2010, Sergey Ulasen, a researcher at a small antivirus company in Belarus, found a strange program. It was later named Stuxnet. Most malware steals data or money. Stuxnet was different. It looked for one kind of Siemens controller, a small computer that runs factory machines. Its main target was Iran's Natanz site, where centrifuges (সেন্ট্রিফিউজ - machines that spin very fast) were used. Those computers were not connected to the internet, so Stuxnet was usually carried in on USB sticks. It used four unknown flaws at once, which nobody had seen in one program before. Many news organisations reported that the United States and Israel built it; neither government has officially admitted this. The lessons: cutting a computer off from the internet is not complete protection, and factory machines need security too.",
+      "also": [
+        "Reports estimate Stuxnet damaged up to about 1,000 centrifuges.",
+        "Work on Stuxnet is thought to have started by 2005 or earlier.",
+        "Stuxnet showed the world that code can cause physical damage, not only data loss."
+      ],
+      "think": "If a computer is not on the internet, in what other ways can information still reach it?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Stuxnet",
+        "https://www.penguinrandomhouse.com/books/219931/countdown-to-zero-day-by-kim-zetter/9780770436186"
+      ],
+      "year": 2010
+    },
+    {
+      "id": "sec-heartbleed",
+      "cat": "security",
+      "pic": "lock",
+      "title": "Heartbleed: one missing check made secure servers spill their secrets",
+      "story": "In April 2014, the world learned about Heartbleed, a bug in OpenSSL. OpenSSL is free software that protects a huge number of secure web connections. It has a feature called heartbeat. One computer sends a small message, says how long it is, and asks the other side to send it back, just to check the connection is alive. The bug: the server believed the length it was told and never checked it. So a request could claim to be much longer than it really was, and the server sent back extra bytes from its memory (মেমোরি - the computer's short-term working space): up to 64 kilobytes each time, sometimes with passwords or secret keys inside. Neel Mehta at Google and a team at the company Codenomicon found it separately. The defence: a fixed version, and new money to pay people to look after important free software.",
+      "also": [
+        "Heartbleed's official ID is CVE-2014-0160.",
+        "About 17% of the internet's trusted secure web servers were thought to be at risk when it was announced.",
+        "The faulty code was added at the end of 2011 and went unnoticed for more than two years."
+      ],
+      "think": "Why might a program trust what it is told, and how should a programmer decide what to check?",
+      "sources": [
+        "https://heartbleed.com/",
+        "https://en.wikipedia.org/wiki/Heartbleed"
+      ],
+      "year": 2014
+    },
+    {
+      "id": "sec-wannacry",
+      "cat": "security",
+      "pic": "globe",
+      "title": "A 22-year-old slowed a worldwide attack by buying a website name",
+      "story": "On 12 May 2017, ransomware (র‍্যানসমওয়্যার - malware that locks files and demands money) called WannaCry spread around the world. It hit more than 200,000 computers in about 150 countries, including many in Britain's National Health Service. It used a Windows flaw that Microsoft had already fixed in March, so it hit computers that had not updated. Marcus Hutchins, a 22-year-old British researcher, studied the code. He saw it checked a strange web address that nobody owned, and he registered it for about ten dollars. The malware stopped spreading to new computers: the address was a kill switch. Later, Hutchins admitted in court that years earlier he had written other malware. In 2019 the judge gave him no prison time, saying he had turned to good work long before. The lesson: install updates.",
+      "also": [
+        "In December 2017 the US government said North Korea was behind WannaCry; North Korea denied it.",
+        "Microsoft's fix for the flaw, released on 14 March 2017, was called MS17-010.",
+        "The attack cost the NHS an estimated 92 million pounds."
+      ],
+      "think": "Why do you think so many computers had not installed an update that was two months old?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/WannaCry_ransomware_attack",
+        "https://en.wikipedia.org/wiki/Marcus_Hutchins"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "sec-mirai",
+      "cat": "security",
+      "pic": "cable",
+      "title": "Hacked home cameras once made big websites disappear for hours",
+      "story": "In 2016, a program called Mirai searched the internet for cheap devices like home cameras and routers. Many still used the username and password set at the factory. Mirai carried a list of more than 60 of these default pairs and simply tried them. Every device it got into joined a botnet (বটনেট - a crowd of hacked devices controlled together). On 21 October 2016, the botnet flooded Dyn, a company that helps computers find websites. For hours, sites such as GitHub, Netflix and Airbnb were hard to reach. Mirai's creators were three young Americans. They pleaded guilty, and in 2018 each got five years of probation and 2,500 hours of community service; their work helping the FBI was counted in their favour. The defence: change default passwords, and new laws that ban them.",
+      "also": [
+        "A month before Dyn, Mirai was used to attack the website of security journalist Brian Krebs.",
+        "Since 29 April 2024, smart devices sold in the UK must not come with a common default password.",
+        "Changing a device's default password is one of the simplest ways to protect a home network."
+      ],
+      "think": "Who should be responsible for a weak password on a camera: the company that made it, or the person who bought it?",
+      "sources": [
+        "https://www.justice.gov/usao-ak/pr/hackers-cooperation-fbi-leads-substantial-assistance-other-complex-cybercrime",
+        "https://en.wikipedia.org/wiki/Mirai_(malware)",
+        "https://www.legislation.gov.uk/uksi/2023/1007/made"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "sec-123456",
+      "cat": "security",
+      "pic": "zero",
+      "title": "The world's favourite password is still 123456, and that is dangerous",
+      "story": "Every year, security companies study passwords leaked from websites. In NordPass's 2024 list, the most common password was again 123456. Others near the top included password and versions of qwerty. Attackers try the most popular passwords first, so these fall in under a second. But there is a bigger danger: reuse. Many people use one password everywhere. When one website is breached (ডেটা ফাঁস - when stolen data leaks out), criminals try the same email and password on many other sites. One leak can open your email, your games and more. So defenders give three simple rules. Use a different password for every account. Let a password manager remember them. And turn on two-step login where you can. Since 2013, Troy Hunt's free website, Have I Been Pwned, has let people check if their email appeared in a known leak.",
+      "also": [
+        "Trying leaked passwords on other websites is called credential stuffing.",
+        "Britain's cyber security centre suggests a password made of three random words, which is long but easy to remember.",
+        "Variants of qwerty appeared three times in NordPass's 2024 top 20."
+      ],
+      "think": "Why do you think people keep choosing easy passwords, even when they know the risk?",
+      "sources": [
+        "https://www.pcgamer.com/hardware/please-change-your-password-NordPass-2024-list",
+        "https://haveibeenpwned.com/About"
+      ],
+      "year": null
+    },
+    {
+      "id": "sec-public-key",
+      "cat": "security",
+      "pic": "share",
+      "title": "How two strangers can agree on a secret while everyone listens",
+      "story": "For thousands of years, secret codes had one big problem. Before you could send a secret message, you first had to share a secret key. But how do you share a key with someone you have never met? In 1976, Whitfield Diffie and Martin Hellman published a paper called New Directions in Cryptography (ক্রিপ্টোগ্রাফি - the science of secret codes). They showed how two people can build a shared secret key over an open line, even if others hear everything. The trick uses maths that is easy to do one way and very hard to undo. Soon after, the RSA system used similar ideas. Then, in 1997, Britain revealed a surprise. At GCHQ, its secret code agency, James Ellis, Clifford Cocks and Malcolm Williamson had found the same ideas in the early 1970s, but had to keep quiet. Today this maths protects the secure websites you visit.",
+      "also": [
+        "Diffie and Hellman won the 2015 Turing Award, the top prize in computing, worth one million dollars.",
+        "Clifford Cocks was 22 when he invented his version in late 1973, about two months after joining GCHQ.",
+        "In public-key systems you can give your public key to anyone, but you keep your private key secret."
+      ],
+      "think": "If two groups find the same idea years apart, who should get the credit, and does it matter?",
+      "sources": [
+        "https://www.acm.org/media-center/2016/march/turing-award-2015",
+        "https://www.nsa.gov/Press-Room/Digital-Media-Center/Biographies/Biography-View-Page/Article/3006218/clifford-cocks-james-ellis-and-malcolm-williamson/"
+      ],
+      "year": 1976
+    },
+    {
+      "id": "sec-captcha",
+      "cat": "security",
+      "pic": "tablet",
+      "title": "Every time you typed a wobbly word, you may have helped save a book",
+      "story": "Websites have a problem: programs called bots sign up for fake accounts and send spam. In 2003, Luis von Ahn and his colleagues at Carnegie Mellon University named a solution: CAPTCHA, a test that is easy for humans but hard for computers, like reading twisted letters. Then von Ahn had a second idea. Millions of people were solving these puzzles every day. Could that effort be useful? In 2007 he created reCAPTCHA. It showed two words. The computer already knew one. The other came from a scanned old book that computers could not read. If you typed the known word correctly, your answer for the unknown word was probably right too. Together, people helped digitise (ডিজিটাল করা - turn into computer files) old books and newspapers, including the New York Times archive. Google bought reCAPTCHA in 2009.",
+      "also": [
+        "CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart.",
+        "Luis von Ahn was born in Guatemala and later co-founded Duolingo, the language-learning app.",
+        "By 2009, reCAPTCHA was protecting more than 100,000 websites."
+      ],
+      "think": "Can you think of a boring task that millions of people do every day, which could secretly be useful?",
+      "sources": [
+        "https://www.theregister.com/2009/09/16/google_acquires_recaptcha/",
+        "https://en.wikipedia.org/wiki/Luis_von_Ahn"
+      ],
+      "year": 2003
+    },
+    {
+      "id": "sec-hack-the-pentagon",
+      "cat": "security",
+      "pic": "coin",
+      "title": "The Pentagon invited hackers in, and an 18-year-old was thanked",
+      "story": "A bug bounty is a reward that a company pays to people who find security flaws and report them, instead of using them. Netscape started one of the first in 1995, for its web browser. In 2016, the United States Department of Defense tried the idea for the first time, with a pilot called Hack the Pentagon. More than 1,400 people took part. They had to follow the rules: test only the chosen websites, and report what they found. They found 138 real problems, and about 75,000 dollars was paid out. One of the people the Defense Secretary thanked in public was David Dworken, an 18-year-old high school student. The key word is permission (অনুমতি - being allowed). Testing a system with permission and reporting what you find is defence. Doing the same thing without permission is a crime.",
+      "also": [
+        "The whole pilot cost about 150,000 dollars; the Defense Secretary said a normal outside security check would have cost over a million.",
+        "Google's reward program has offered up to 31,337 dollars, a number that spells 'eleet' in old hacker slang.",
+        "Most bug bounty programs publish a page that explains exactly what you are allowed to test."
+      ],
+      "think": "Why do you think a company would pay strangers to find its mistakes?",
+      "sources": [
+        "https://venturebeat.com/security/defense-secretary-carter-thanks-teen-for-hacking-the-pentagon",
+        "https://en.wikipedia.org/wiki/Bug_bounty_program"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "sec-picoctf",
+      "cat": "security",
+      "pic": "shield",
+      "title": "The world's biggest hacking game was made for school students",
+      "story": "In a Capture the Flag game, or CTF, players do not break into anything real. They solve puzzles on practice systems built for the game. Each solved puzzle reveals a secret piece of text called a flag, which you hand in for points. The puzzles cover codes, finding bugs, and defending systems. In 2013, a student hacking team at Carnegie Mellon University, the Plaid Parliament of Pwning, helped make picoCTF. It was for students in grades 6 to 12. The first one had a story: a robot from space crash-lands in your backyard, and you use hacking skills to repair it. Today picoCTF is free and open to everyone. Its 2025 competition (প্রতিযোগিতা - a contest) had more than 18,000 players, and its practice site has over 800,000 users. Many defenders started exactly like this.",
+      "also": [
+        "The Plaid Parliament of Pwning had won the DEF CON CTF, one of the hardest hacking contests in the world, eight times by 2024.",
+        "picoGym, the practice area, lets you try old picoCTF puzzles at your own pace, any time of year.",
+        "In a CTF, everything you attack was built to be attacked, so it is legal practice."
+      ],
+      "think": "Why do you think a puzzle with a story makes people want to keep going?",
+      "sources": [
+        "https://www.cmu.edu/news/stories/archives/2013/march/march13_computercontest.html",
+        "https://www.cylab.cmu.edu/news/2025/07/14-picoctf.html"
+      ],
+      "year": 2013
+    },
+    {
+      "id": "sec-mitnick",
+      "cat": "security",
+      "pic": "wave",
+      "title": "A famous hacker of the 1990s mostly tricked people, not machines",
+      "story": "In the 1990s, Kevin Mitnick was one of the most wanted computer criminals in the United States. His strongest skill was not code. It was social engineering (সোশ্যাল ইঞ্জিনিয়ারিং - tricking people into giving away secrets). He pretended to be an employee of a company, often on the phone, and asked for help. People wanted to be helpful, so they gave him passwords and information. He broke into the systems of several big companies. The FBI arrested him in February 1995, and he spent nearly five years behind bars. After his release in January 2000, he worked in security, wrote books, and taught companies how these tricks work, so their staff could resist them. The lesson for defenders: the strongest lock is useless if someone opens the door for a polite stranger. Always check who is really asking.",
+      "also": [
+        "Mitnick co-wrote a book, The Art of Deception (2002), about how people are tricked.",
+        "Real banks and companies do not ask you for your password on the phone.",
+        "Mitnick died in July 2023, at age 59."
+      ],
+      "think": "Why is it so hard to say no to someone who sounds friendly and in a hurry?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kevin_Mitnick",
+        "https://www.wjhg.com/2023/07/20/pioneering-hacker-kevin-mitnick-fbi-wanted-felon-turned-security-guru-dead-59/"
+      ],
+      "year": 1995
+    },
+    {
+      "id": "sec-y2k",
+      "cat": "security",
+      "pic": "clock",
+      "title": "The Y2K bug was fixed so well that people thought it was fake",
+      "story": "Old computers had very little memory, so programmers saved space by writing years with two digits: 1975 became 75. This worked for decades. But in the year 2000 the date would become 00, and many programs might think it was 1900. Calculations with dates, such as ages or bills, could go wrong. This was the Year 2000 problem, or Y2K. Around the world, programmers spent years checking and fixing old code, and one estimate says over 300 billion US dollars was spent. On 1 January 2000, only small things broke. A newborn baby in Denmark was recorded as 100 years old, and one website showed the year 19100. Because so little happened, some people said the danger had been exaggerated. Others call this the preparedness paradox (প্রস্তুতির ধাঁধা - when good preparation makes a danger look unreal).",
+      "also": [
+        "A similar problem is coming: some systems that count time in a 32-bit number will run out on 19 January 2038.",
+        "Experts still argue about how much of the Y2K spending was really needed.",
+        "Police breathalysers in Hong Kong stopped working at midnight on 1 January 2000."
+      ],
+      "think": "If a disaster is prevented, how can anyone prove it would have happened?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Year_2000_problem",
+        "https://www.downtoearth.org.in/science-technology/if-you-think-the-millennium-bug-was-a-hoax-here-comes-a-history-lesson-68639"
+      ],
+      "year": 2000
+    },
+    {
+      "id": "sec-ariane-5",
+      "cat": "security",
+      "pic": "lightning",
+      "title": "A rocket exploded because a big number did not fit in a small box",
+      "story": "On 4 June 1996, Europe's new Ariane 5 rocket made its first flight. About 37 seconds later, it turned off course and destroyed itself. There was no attack. It was a bug. Part of the guidance software was copied from the older, slower Ariane 4. It turned a speed value from a large number format (64-bit) into a small one (16-bit). On Ariane 4, the number always fitted. Ariane 5 was faster, so the number was too big: an overflow (ওভারফ্লো - when a number is too big for its space). The computer stopped with an error. The backup computer ran the same code, so it failed in the same way. The loss was more than 370 million US dollars. The inquiry's lessons: test with real data for the new machine, and never assume old code is safe in a new place.",
+      "also": [
+        "The rocket was carrying four science satellites called Cluster.",
+        "The faulty part of the code was not even needed after the rocket left the ground.",
+        "Replacement Cluster satellites were launched in 2000 on Russian Soyuz rockets."
+      ],
+      "think": "When you reuse something that worked before, what questions should you ask first?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ariane_flight_V88",
+        "https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report"
+      ],
+      "year": 1996
+    },
+    {
+      "id": "sec-log4shell",
+      "cat": "security",
+      "pic": "tablet",
+      "title": "Log4Shell: when writing down a message could hand over a server",
+      "story": "Most big programs keep a log, a diary of what happens: who logged in, which errors appeared. Many Java programs use a free tool called Log4j to write these logs. In November 2021, Chen Zhaojun of the Alibaba Cloud security team privately warned Log4j's volunteer developers about a serious flaw. Log4j had a helpful feature: if a log message contained a special pattern, Log4j would look something up, even from another server on the internet. So if an attacker could get special text into a log, the server might download and run the attacker's code. The flaw became public in December 2021 and got the highest danger score, 10 out of 10. The defence: fast updates, and knowing every dependency (নির্ভরশীল অংশ - a borrowed part your program is built from) inside your software.",
+      "also": [
+        "Its official ID is CVE-2021-44228.",
+        "Log4j is looked after by volunteers at the Apache Software Foundation.",
+        "One study found that 93% of large companies' cloud systems were affected."
+      ],
+      "think": "Should a tool do helpful extra things automatically, or only exactly what it is told?",
+      "sources": [
+        "https://logging.apache.org/log4j/2.x/security.html",
+        "https://en.wikipedia.org/wiki/Log4Shell"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "sec-xz-backdoor",
+      "cat": "security",
+      "pic": "clock",
+      "title": "Half a second of delay revealed a hidden backdoor in Linux",
+      "story": "In March 2024, Andres Freund, a software developer at Microsoft, noticed something small. On his Linux test computer, logging in with SSH used too much processor power and took about half a second longer than before. Most people would not care. He investigated. He found that xz, a free compression tool used by many Linux systems, had a hidden backdoor (ব্যাকডোর - a secret way in) in its newest versions, 5.6.0 and 5.6.1. Someone using the name Jia Tan had spent over two years helping the project and earning trust, until they could add code. Fake accounts had also pressured the original maintainer to accept help. Freund reported it publicly on 29 March 2024. Because he noticed early, the bad versions had not reached most stable Linux systems. The lesson: measure, notice, and look after the volunteers who maintain free software.",
+      "also": [
+        "The backdoor's ID is CVE-2024-3094, with the highest danger score of 10.",
+        "Freund described himself as not a security researcher; he was checking performance.",
+        "Stable Ubuntu, which Linux Mint is built on, did not get the bad versions."
+      ],
+      "think": "Freund noticed half a second. What small strange thing on your own computer would you investigate?",
+      "sources": [
+        "https://www.openwall.com/lists/oss-security/2024/03/29/4",
+        "https://www.cisa.gov/news-events/alerts/2024/03/29/reported-supply-chain-compromise-affecting-xz-utils-data-compression-library-cve-2024-3094"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "sec-big-sleep",
+      "cat": "security",
+      "pic": "chip",
+      "title": "An AI found a hidden bug in real software before anyone was hurt",
+      "story": "In October 2024, an AI system called Big Sleep found a memory bug in SQLite. SQLite is a small database that runs inside phones, browsers and countless apps. Big Sleep was built by Google Project Zero, a team that hunts for unknown flaws, together with Google DeepMind. The AI studied the code and tested its ideas, like a human researcher. The SQLite developers fixed the bug on the same day it was reported, before it reached an official release, so no users were affected. Google said it believed this was the first public example of an AI finding an unknown, exploitable (কাজে লাগানো যায় এমন - usable by an attacker) memory bug in widely used real software. In July 2025, Google said Big Sleep had found another SQLite flaw that attackers were preparing to use, and it was fixed first. Defenders now have AI helpers too.",
+      "also": [
+        "Big Sleep grew out of an earlier Project Zero experiment called Naptime.",
+        "Google described its 2024 results as highly experimental.",
+        "The 2025 flaw, CVE-2025-6965, was fixed in SQLite version 3.50.2."
+      ],
+      "think": "If AI can find bugs, both defenders and attackers can use it. Who do you think gains more, and why?",
+      "sources": [
+        "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
+        "https://www.securityweek.com/google-says-ai-agent-thwarted-exploitation-of-critical-vulnerability/"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "sec-pq-standards",
+      "cat": "security",
+      "pic": "lock",
+      "title": "In August 2024, the world got new locks for the quantum age",
+      "story": "Today's internet locks depend on maths problems that normal computers cannot solve in any useful time. But a large quantum computer, a new kind of machine that uses the strange rules of tiny particles, could solve some of them quickly. Machines that big do not exist yet. Still, someone could record secret messages today and unlock them later. So in 2016, NIST, the US standards agency, asked the world's code experts for new methods. NIST studied 82 proposals from 25 countries, and experts tried to break them for years. On 13 August 2024, NIST published the first three finished standards: FIPS 203 for agreeing on secret keys, and FIPS 204 and 205 for digital signatures (ডিজিটাল স্বাক্ষর - a maths proof of who sent something). NIST told organisations to start switching as soon as possible.",
+      "also": [
+        "FIPS 203 is based on a method called CRYSTALS-Kyber, now renamed ML-KEM.",
+        "FIPS 205 uses a different kind of maths, as a backup in case the main signature method is ever broken.",
+        "NIST also planned a fourth standard, FIPS 206, based on a method called FALCON."
+      ],
+      "think": "Why would anyone spend years protecting against a machine that does not exist yet?",
+      "sources": [
+        "https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards",
+        "https://csrc.nist.gov/pubs/fips/203/final"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "sec-pq-browsers",
+      "cat": "security",
+      "pic": "globe",
+      "title": "By December 2025, half of human web traffic used quantum-safe locks",
+      "story": "New standards only help if people use them. When your browser opens a secure website, the two computers first agree on a secret key. Google Chrome began mixing a post-quantum method into this step, together with the classic one, so the connection stays safe if either method holds. In November 2024, Chrome 131 switched to ML-KEM, the method NIST had just standardised. Cloudflare, a company that carries a large part of the web's traffic, measured the change. At the start of 2025, about 29% of the human web traffic it saw used post-quantum key agreement. By early December 2025, it was 52%. A big jump came after September 2025, when Apple's iOS 26 turned it on by default for iPhones. Most people never noticed anything. Good defence is often invisible (অদৃশ্য - not seen).",
+      "also": [
+        "Mixing an old and a new method together like this is called a hybrid approach.",
+        "Cloudflare reported that Kuwait's share rose from 13% to 37% during 2025, mostly thanks to iPhones.",
+        "Users did not need to install anything; the change came with normal browser and phone updates."
+      ],
+      "think": "Is it good that the biggest security changes happen without people noticing, or should people be told?",
+      "sources": [
+        "https://thehackernews.com/2024/09/google-chrome-switches-to-ml-kem-for.html",
+        "https://blog.cloudflare.com/radar-2025-year-in-review"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "sec-aixcc",
+      "cat": "security",
+      "pic": "shield",
+      "title": "Machines that find and fix bugs competed for a 4 million dollar prize",
+      "story": "In August 2025, at the DEF CON security conference in Las Vegas, the US agency DARPA announced the winners of its AI Cyber Challenge. The goal was defence, not attack. Teams built AI systems that could find security bugs in open-source software and also write the fixes, with no humans helping during the test. The organisers hid 63 artificial bugs in real projects. The systems found 54 of them and fixed 43. They also found 18 real bugs that nobody knew about, which were reported to the people who maintain those projects. On average, a fix took about 45 minutes. First place and 4 million dollars went to Team Atlanta, which included researchers from Georgia Tech, Samsung and KAIST in Korea. All finalists agreed to release their systems as open source (ওপেন সোর্স - free for anyone to use and study).",
+      "also": [
+        "Trail of Bits came second, winning 3 million dollars, and Theori came third with 1.5 million.",
+        "The average cost of the computing for each task was about 152 dollars.",
+        "Open-source software runs inside most phones and websites, so fixing it helps almost everyone."
+      ],
+      "think": "If machines can fix bugs in 45 minutes, what jobs do you think human defenders will do in the future?",
+      "sources": [
+        "https://www.darpa.mil/news/2025/aixcc-results",
+        "https://blog.trailofbits.com/2025/08/09/trail-of-bits-buttercup-wins-2nd-place-in-aixcc-challenge/"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "sec-crowdstrike",
+      "cat": "security",
+      "pic": "lightning",
+      "title": "In July 2024, a security update itself crashed 8.5 million computers",
+      "story": "On 19 July 2024, at 04:09 UTC, the security company CrowdStrike sent a small update to its Falcon software on Windows computers. Falcon runs deep inside the system to stop attackers. The update had a mistake. A new rule expected 21 pieces of information, but the program gave it only 20. When it tried to read the missing 21st item, it read outside its memory, and Windows crashed with a blue screen. The bad file was online for only 78 minutes, but Microsoft estimated that 8.5 million computers were hit, disrupting businesses around the world. It was not a cyberattack. CrowdStrike's fixes: send updates in stages (ধাপ - steps, one after another), starting with a small group of computers, test more kinds of input, and let customers choose when updates arrive.",
+      "also": [
+        "Microsoft said the affected computers were less than 1% of all Windows machines.",
+        "Sending an update to a small test group first is called a canary release, after the birds miners once used to warn of danger.",
+        "CrowdStrike published its full root-cause report on 6 August 2024."
+      ],
+      "think": "If safety tools can also cause accidents, how much power should we give them?",
+      "sources": [
+        "https://www.crowdstrike.com/en-us/blog/falcon-update-for-windows-hosts-technical-details/",
+        "https://blogs.microsoft.com/blog/2024/07/20/helping-our-customers-through-the-crowdstrike-outage/"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "sec-cve-numbers",
+      "cat": "security",
+      "pic": "tablet",
+      "title": "Every known security bug gets an ID number, like a library book",
+      "story": "Imagine a thousand people talking about the same bug, but each calls it by a different name. Nobody could tell if they meant the same problem. In September 1999, the CVE list began to fix this. CVE stands for Common Vulnerabilities and Exposures. Each known vulnerability (দুর্বলতা - a weak spot) gets one ID, like CVE-2014-0160 for Heartbleed: the letters, the year, then a number. The list is run by MITRE, a US non-profit, with government money, and many companies are allowed to give out IDs for their own products. Now a defender in Dhaka and one in Toronto can say one ID and mean exactly the same bug. In April 2025 the funding almost ran out. The US government extended it at the last moment, and a new CVE Foundation was formed. The scare showed how much the world depends on one shared list.",
+      "also": [
+        "Since 2015, the number after the year can have five or more digits, because so many bugs are found.",
+        "Companies such as Microsoft and Red Hat act as numbering authorities that give CVE IDs for their own products.",
+        "A separate score from 0 to 10 tells defenders how dangerous each CVE is."
+      ],
+      "think": "Why might a shared name be one of the most important tools for people working together?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures",
+        "https://www.theregister.com/2025/04/16/cve_program_funding_save/"
+      ],
+      "year": 1999
+    },
+    {
+      "id": "sec-https-padlock",
+      "cat": "security",
+      "pic": "lock",
+      "title": "The padlock meant 'private', not 'safe', so Chrome took it away",
+      "story": "When you visit a website, your messages travel through many computers on the way. Without protection, any of them could read or change what you send. HTTPS fixes this. Your browser and the website agree on a secret key and encrypt (এনক্রিপ্ট - scramble so only the right side can read) everything between you. A certificate proves the website really owns its name. For years, browsers showed a small padlock for HTTPS. In July 2018, Chrome 68 began marking plain HTTP sites as Not secure, and free certificates from Let's Encrypt made HTTPS easy for everyone. But a 2021 study found that only 11% of people knew what the padlock meant; many thought it meant a site was trustworthy. A scam site can use HTTPS too. So in 2023, Chrome 117 replaced the padlock with a plain settings icon.",
+      "also": [
+        "Over 95% of pages loaded in Chrome on Windows use HTTPS.",
+        "HTTPS protects the road, not the destination: it does not tell you whether a website is honest.",
+        "Let's Encrypt is run by the Internet Security Research Group, a non-profit."
+      ],
+      "think": "If a sign means something different from what people think, should we change the sign or teach the people?",
+      "sources": [
+        "https://www.techspot.com/news/98553-google-replacing-chrome-lock-icon-because-confusing.html",
+        "https://venturebeat.com/2018/02/08/chrome-will-start-marking-all-http-sites-as-not-secure-in-july",
+        "https://letsencrypt.org/about/"
+      ],
+      "year": null
+    },
+    {
+      "id": "sec-password-vault",
+      "cat": "security",
+      "pic": "shield",
+      "title": "A password manager keeps your secrets in a box it cannot open",
+      "story": "A password manager stores all your passwords, so you only need to remember one: the master password. But if the company keeps your passwords on its servers, can it read them? With a good design, no. Your device turns your master password into a key by repeating a slow calculation hundreds of thousands of times. That key locks your vault (ভল্ট - a strong locked box) on your own device, before anything is sent. The company's servers only store scrambled data, and your master password itself never leaves your device. Bitwarden, one password manager, says even its own team cannot read your data. This design is often called zero-knowledge. There is one price: if you forget your master password, the company cannot recover it for you. So choose a long one that you will never forget.",
+      "also": [
+        "Bitwarden repeats a method called PBKDF2 600,000 times by default, which makes guessing a master password very slow.",
+        "A password manager fills in a password only on the correct website, which helps protect you from fake look-alike sites.",
+        "Britain's National Cyber Security Centre recommends password managers, with two-step login turned on for the manager itself."
+      ],
+      "think": "Is it safer to remember many weak passwords, or to trust one strong lock with all of them?",
+      "sources": [
+        "https://bitwarden.com/help/bitwarden-security-white-paper/",
+        "https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/password-managers"
+      ],
+      "year": null
+    },
+    {
+      "id": "sec-zero-day",
+      "cat": "security",
+      "pic": "zero",
+      "title": "Why defenders fear a bug with zero days on the clock",
+      "story": "When a security flaw is found, a clock starts. The software maker must understand it, write a fix, and send an update to users. A zero-day is a flaw the maker does not know about yet, so it has had zero days to fix it. If attackers find it first, nobody has a defence ready. Good researchers report a flaw privately to the maker and give them time. This is called coordinated disclosure (প্রকাশ - making something known). Google's Project Zero team usually gives 90 days. But if a flaw is already being used in real attacks, it gives only 7 days, because people are in danger now. In 2024, Google's threat experts counted 75 zero-days used in real attacks, fewer than the 98 they counted in 2023. The defence: find bugs before attackers do, and update quickly.",
+      "also": [
+        "The term first meant software copied before its official release, on day zero.",
+        "Once a fix is released, attackers study it to find the flaw, so waiting to update is risky.",
+        "44% of the zero-days used in 2024 targeted products made for businesses."
+      ],
+      "think": "Should a researcher ever make a flaw public before it is fixed? When might that be right or wrong?",
+      "sources": [
+        "https://projectzero.google/vulnerability-disclosure-policy.html",
+        "https://cloud.google.com/blog/topics/threat-intelligence/2024-zero-day-trends/"
+      ],
+      "year": null
+    },
+    {
+      "id": "sec-patch-tuesday",
+      "cat": "security",
+      "pic": "clock",
+      "title": "Why Microsoft sends its biggest fixes on one Tuesday every month",
+      "story": "Software always has bugs, and some of them are security holes. An update, also called a patch, closes them. But updates can break things too, so companies and schools need time to test them. In October 2003, after a fast-spreading worm called Blaster, Microsoft made a plan: release most security fixes together on the second Tuesday of each month. This became known as Patch Tuesday. Now admins (অ্যাডমিন - people who look after an organisation's computers) know when to get ready. Tuesday was chosen so there is time to fix problems before the weekend. There is a danger, though. Once a fix is public, attackers can study it and attack computers that have not updated. Some people call the next day Exploit Wednesday. The lesson: install updates soon, because the race starts when the fix appears.",
+      "also": [
+        "Other companies, such as SAP, Adobe and Oracle, release some of their fixes on the same day.",
+        "WannaCry in 2017 hit computers that had missed a Patch Tuesday fix released two months earlier.",
+        "On Linux Mint, the Update Manager does a similar job for your system and your apps."
+      ],
+      "think": "Should updates install by themselves, or should people choose when? What are the risks of each?",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Patch_Tuesday",
+        "https://en.wikipedia.org/wiki/WannaCry_ransomware_attack"
+      ],
+      "year": 2003
+    },
+    {
+      "id": "sec-two-factor-codes",
+      "cat": "security",
+      "pic": "logic",
+      "title": "How your phone and a website make the same secret code every 30 seconds",
+      "story": "Many accounts can ask for a second step after your password: a short code from an app on your phone, usually six digits. But how does the website know the right code, when your phone is not even talking to it? When you set it up, the website shows you a QR code. It holds a shared secret (গোপন চাবি - secret key) that is now saved in two places: on the website's server and in your app. After that, both sides do the same calculation. They mix the secret with the current time, counted in 30-second steps, and turn the result into a short number. Same secret plus same time gives the same code. This method is called TOTP, and it was published as an internet standard in May 2011. Even if someone steals your password, they still need the code from your phone.",
+      "also": [
+        "The app works even with no internet, because it only needs the secret and the clock.",
+        "If your phone's clock is very wrong, the codes may not match.",
+        "TOTP is built on an older method, HOTP, which used a counter instead of the time."
+      ],
+      "think": "Why is something you know plus something you have stronger than two passwords?",
+      "sources": [
+        "https://datatracker.ietf.org/doc/html/rfc6238",
+        "https://datatracker.ietf.org/doc/html/rfc4226"
+      ],
+      "year": 2011
+    }
+  ]
+}

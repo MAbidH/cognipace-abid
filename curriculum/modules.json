@@ -1,0 +1,1082 @@
+[
+ {
+  "id": "SETUP1",
+  "phase": "Setup",
+  "title": "Setup: your machine, your tools, your public record",
+  "hook": "Six months from now the proof of what you can do is a public record: a repository of programs, write-ups and a lab you built. Week one builds the tools that record it - and the habit of closing every step on evidence.",
+  "read": {
+   "url": "https://docs.github.com/en/get-started/start-your-journey/about-github-and-git",
+   "title": "Read: GitHub docs - about GitHub and Git (the vocabulary you will use every day)"
+  },
+  "gift": {
+   "for": "your future self and every recruiter who looks",
+   "what": "A public GitHub repository under your own name with a README that states the six-month plan and its gates - the first thing in the record."
+  },
+  "taught": "how this programme works (evidence closes a step; the 1/7/30/90-day review; the logbook); PowerShell basics (pwd, ls/Get-ChildItem, cd, mkdir, cat/Get-Content, tab completion, Ctrl+C); winget installs; python --version / git --version / code --version; Git: init, status, add, commit, log, remote, push; GitHub repository, README, .gitignore; gh auth login; TryHackMe account and the in-browser AttackBox; how to read official documentation (python docs, man pages at man7.org, an RFC's sections)",
+  "steps": [
+   {
+    "id": "SETUP1-L1",
+    "kind": "lesson",
+    "title": "How this school works - and why every step closes on evidence",
+    "time_box": 30,
+    "max_turns": 24,
+    "objectives": [
+     "State the three rules: one idea per step, a step closes on evidence in your own words, passed skills return on the 1/7/30/90-day ladder",
+     "Say what the six-month gate is and which phase you are in"
+    ],
+    "tutor_brief": "FIRST STEP OF THE PROGRAMME. WHAT/WHY/WHAT FOR: today you learn how the school itself works; because the method is the product - 520 hours spent without a closing rule produce tabs, not skills; for every step after this. ONE IDEA: a step closes when the one thing its objectives name has been done or said - a program printed the right thing, a command's output was pasted, an idea was explained in his words - never because time passed. Explain the practice spine in two lines: every skill a checkpoint passes comes back in the warm-up after 1, 7, 30 and 90 days; a miss pulls it back sooner. Explain the logbook: each step ends with his 'I CAN NOW' sentence plus the evidence; that log is exported to his repo monthly. State the six-month gate plainly (Security+ passed; 60+ programs public; a hardened Linux lab; networking at Network+ level; applied cryptography demonstrated; 30+ rooms and 20+ write-ups; the finance strand incl. a tokenization brief; 5+ job applications) and that he is in Phase 0 (setup, week 1) of six phases. Ask ONE question that proves he has the closing rule: 'what closes a step - and what never does?' EVIDENCE TO CLOSE: his sentence names evidence (not time, not message count). Then the usual close."
+   },
+   {
+    "id": "SETUP1-L2",
+    "kind": "lesson",
+    "title": "PowerShell: the terminal you already have",
+    "time_box": 45,
+    "max_turns": 40,
+    "objectives": [
+     "Open Windows Terminal/PowerShell and navigate with pwd, ls, cd, mkdir; read a file with cat; use Tab completion and Ctrl+C",
+     "Create the folder tree C:\\Users\\<you>\\sec-lab with notes/ and code/ inside, from the terminal only"
+    ],
+    "links": [
+     {
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started",
+      "label": "PowerShell 101 - getting started (Microsoft Learn)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the terminal, because every tool in security is a command first and a window second; for every day from now on. ONE IDEA: a shell is a program that takes a command line, runs it and prints what came back - the prompt shows where you are. MANUAL (numbered): 1) Win+X -> Terminal (or search 'PowerShell'); 2) `pwd` (Get-Location) - read the path; 3) `ls` - read the listing; 4) `mkdir sec-lab`, `cd sec-lab`, `mkdir notes, code`; 5) `echo \"day 1\" > notes\\log.txt` then `cat notes\\log.txt`; 6) type `cd se` and press Tab - completion; 7) run `ping 127.0.0.1 -t` and stop it with Ctrl+C. Each step: what he should see. Teach that PowerShell aliases ls/cat/pwd onto Get-ChildItem/Get-Content/Get-Location - the Linux names will carry over to Bandit and the VM. He pastes the output of `ls` inside sec-lab showing notes and code. EVIDENCE TO CLOSE: the pasted listing + his one-line explanation of what a shell is. Boundary Question: what happens if he runs `cd` to a folder that does not exist - have him try and read the error."
+   },
+   {
+    "id": "SETUP1-L3",
+    "kind": "lesson",
+    "title": "Install the toolchain: Python, Git, VS Code (winget)",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Install Python 3.12+, Git for Windows and VS Code with winget; prove each with its --version",
+     "Open the sec-lab folder in VS Code from the terminal with `code .`"
+    ],
+    "links": [
+     {
+      "url": "https://learn.microsoft.com/en-us/windows/package-manager/winget/",
+      "label": "winget - Windows Package Manager (Microsoft Learn)"
+     },
+     {
+      "url": "https://docs.python.org/3/using/windows.html",
+      "label": "Using Python on Windows (docs.python.org)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the three tools of the whole programme; because installing from a package manager (not a browser download) is the professional habit and reproducible; for every code step. ONE IDEA: a package manager installs, upgrades and removes software from a trusted catalogue by name. ALREADY DONE? first: `python --version`, `git --version`, `code --version` - anything that answers is installed. MANUAL: 1) `winget install -e --id Python.Python.3.12`; 2) `winget install -e --id Git.Git`; 3) `winget install -e --id Microsoft.VisualStudioCode`; 4) close and reopen the terminal (PATH is read at start); 5) the three --version commands; 6) `cd ~\\sec-lab` then `code .`; 7) in VS Code: Extensions -> install 'Python' (Microsoft). If winget is missing (older Windows 10): App Installer from the Microsoft Store, then retry. If `python` opens the Store: Settings -> Apps -> App execution aliases -> turn off python.exe aliases. EVIDENCE TO CLOSE: the three version strings pasted. He states in one line why a package manager beats a browser download (one trusted source, upgrades, scriptable). SECRETS: no account is needed for any of this; if any installer asks to sign in, skip it."
+   },
+   {
+    "id": "SETUP1-L4",
+    "kind": "lesson",
+    "title": "Git: a history you can trust",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Explain what a commit is (a snapshot with a message and a parent) and why a history matters",
+     "Run git init, status, add, commit and log in sec-lab, with your name and email set"
+    ],
+    "links": [
+     {
+      "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F",
+      "label": "Pro Git, ch. 1.3 - What is Git?"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: Git, because every program and write-up for six months goes into a history you can show and roll back; for the portfolio and for every job. ONE IDEA: a commit is a snapshot of the folder plus a message plus a pointer to the previous snapshot - the chain is the history. Draw it (three boxes, arrows back). MANUAL: 1) `git config --global user.name \"<his real name>\"` and `user.email` (the address he will use on GitHub); 2) `git config --global init.defaultBranch main`; 3) in sec-lab: `git init`; 4) `git status` - read 'untracked'; 5) `git add notes/log.txt`; 6) `git commit -m \"Day 1: lab folder and first note\"`; 7) `git log --oneline`. Then: change log.txt, `git status` (modified), `git diff`, add, commit again, `git log --oneline` shows two lines. Vocabulary he must say back: working tree, staging area (index), commit. EVIDENCE TO CLOSE: `git log --oneline` with two commits pasted and his one-line definition of a commit. Boundary Question: what does `git add .` stage that he might not want (secrets, big files) - this is why .gitignore exists (next step)."
+   },
+   {
+    "id": "SETUP1-L5",
+    "kind": "lesson",
+    "title": "GitHub: the public record begins",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Create a public repository under your own name, push sec-lab to it with gh, and add a README that states the six-month plan",
+     "Explain the difference between Git (local) and GitHub (a remote host), and what a .gitignore is for"
+    ],
+    "links": [
+     {
+      "url": "https://cli.github.com/manual/gh_auth_login",
+      "label": "gh auth login (GitHub CLI manual)"
+     },
+     {
+      "url": "https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files",
+      "label": "Ignoring files - .gitignore (GitHub docs)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: GitHub, because the record only counts if others can see it; for every recruiter and for his own 'did I really do this'. ONE IDEA: Git is the history on his disk; GitHub is a copy of that history on a server (a remote) that others can read. SECRETS LAW: authentication happens in the browser via `gh auth login` - he never pastes a token or password into this chat, and no token goes into a file in the repo. MANUAL: 1) `winget install -e --id GitHub.cli`; reopen terminal; 2) `gh auth login` -> GitHub.com -> HTTPS -> Login with a web browser - follow the code in the browser (he does this himself); 3) in sec-lab create `.gitignore` with `__pycache__/`, `.venv/`, `*.log`, `.env` - say why each; 4) write README.md: his name, 'Six months: cybersecurity, Python, cryptography, digital finance - Dec 2026 to May 2027', the eight gates as a checklist; 5) `git add .`, commit 'README: the plan'; 6) `gh repo create sec-lab --public --source=. --remote=origin --push`; 7) open the repo URL and read it. EVIDENCE TO CLOSE: the repository URL (public) and his one line on Git vs GitHub. If he already has a GitHub account under a handle, the repo still goes under his real-name account - this record is professional."
+   },
+   {
+    "id": "SETUP1-L6",
+    "kind": "lesson",
+    "title": "TryHackMe: your sanctioned target range",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Create a free TryHackMe account, start the in-browser AttackBox and complete the 'Linux Fundamentals Part 1' room",
+     "State the sanctioned-targets rule and the two Criminal Code sections that make it law in Canada"
+    ],
+    "links": [
+     {
+      "url": "https://tryhackme.com/signup",
+      "label": "TryHackMe - sign up (free tier is enough for the first weeks)"
+     },
+     {
+      "url": "https://tryhackme.com/room/linuxfundamentalspart1",
+      "label": "Room: Linux Fundamentals Part 1"
+     },
+     {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/c-46/section-342.1.html",
+      "label": "Criminal Code s. 342.1 - unauthorized use of computer"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: TryHackMe, because hands-on practice needs a target that invites it, and the in-browser AttackBox gives him a Linux machine today with nothing installed on this PC; for every room and CTF until May. ONE IDEA: the sanctioned-targets rule - you touch only your own machines, your lab, and systems that explicitly invite testing; anything else is s. 342.1 (unauthorized use of a computer) and s. 430(1.1) (mischief to data) of the Criminal Code of Canada. Say it once, plainly, not as a lecture. MONEY: the free plan is enough now; if the site offers a paid plan, he picks free - no price, no card, is needed for this step (costs money only later, by his own decision outside the programme). MANUAL: 1) sign up (email + a password he creates in his own password manager - never typed here); 2) open the room, 'Start AttackBox' (browser machine); 3) work through tasks 1-8 - the commands (echo, whoami, ls, cd, cat, pwd, find, grep) are the ones he met in PowerShell; 4) answer the room's questions in the room, not here; 5) when complete, paste the room's completion line and his TryHackMe profile URL. EVIDENCE TO CLOSE: the profile URL showing the room completed + the rule in his words. Add the profile link to README (one commit)."
+   },
+   {
+    "id": "SETUP1-L7",
+    "kind": "lesson",
+    "title": "Reading the source: docs, man pages, RFCs",
+    "time_box": 45,
+    "max_turns": 30,
+    "objectives": [
+     "Find the answer to three questions in official documentation alone (python docs, man7.org, an RFC) and cite the section",
+     "Explain the structure of an RFC (status, abstract, sections, MUST/SHOULD language) and why primary sources beat blog posts"
+    ],
+    "links": [
+     {
+      "url": "https://docs.python.org/3/library/index.html",
+      "label": "The Python Standard Library (official)"
+     },
+     {
+      "url": "https://man7.org/linux/man-pages/",
+      "label": "Linux man pages online (man7.org)"
+     },
+     {
+      "url": "https://www.rfc-editor.org/rfc/rfc2119",
+      "label": "RFC 2119 - key words (MUST, SHOULD, MAY)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: reading primary sources; because an expert is someone who reads the manual before the forum, and in security the standard IS the answer; for every later step where you point him to the docs instead of explaining. ONE IDEA: official documentation is organised, versioned and exact - learn its shape once and you can answer your own questions. Three finds, one per message, he answers with the citation: (a) in the Python docs: what does `str.strip()` remove when called with no argument? (library/stdtypes); (b) at man7.org: in `man ls`, which option sorts by modification time? (-t); (c) in RFC 2119: the exact difference between MUST and SHOULD. Teach the RFC skeleton: header/status, abstract, table of contents, numbered sections, security considerations, references. He says why a primary source beats a blog (exact, current, authoritative, the thing itself). EVIDENCE TO CLOSE: three correct answers with their sources named. This step has no code."
+   },
+   {
+    "id": "SETUP1-C",
+    "kind": "check",
+    "title": "Setup checkpoint",
+    "skills": [
+     "shell-navigation",
+     "git-commit-model",
+     "git-vs-github",
+     "gitignore-purpose",
+     "package-manager",
+     "sanctioned-targets-rule",
+     "reading-primary-sources"
+    ],
+    "count": 10
+   },
+   {
+    "id": "SETUP1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Explain to a new colleague, in writing, how your working record is built: what a commit is, where the history lives, what GitHub adds, what .gitignore keeps out, and what the closing rule of this programme is. Use your own repo as the example. 6-10 sentences, exact vocabulary."
+   }
+  ]
+ },
+ {
+  "id": "PY1",
+  "phase": "Python",
+  "title": "Python I: the machine does exactly what you say",
+  "hook": "Every security tool you will ever use is a program; every analyst who gets promoted can write one. Two weeks from now you write programs that decide, repeat, store and check - and you can predict what they print before you run them.",
+  "read": {
+   "url": "https://docs.python.org/3/tutorial/introduction.html",
+   "title": "Read: The Python Tutorial, ch. 3 - An Informal Introduction to Python (official)"
+  },
+  "gift": {
+   "for": "your repository",
+   "what": "A folder py1/ with twelve small programs, each committed with a message that says what it proves, plus a password-strength checker v0 - the first real tool."
+  },
+  "taught": "values and types (int, float, str, bool; type()); variables and assignment; arithmetic (+ - * / // % **), int() and float() conversions; strings: quotes, +, *, len(), indexing and slicing, .upper()/.lower()/.strip()/.split()/.replace(), f-strings; comparisons and booleans, and/or/not; if/elif/else; for with range(a, b, step), accumulators; while, break, continue; lists: index from 0, append, len, in, for item in list, slicing; dicts: key -> value, get, in, for k, v in .items(); functions: def, parameters, return, None, scope; errors read as evidence: NameError, TypeError, IndexError, KeyError, ZeroDivisionError; the Boundary Question (which input breaks it)",
+  "steps": [
+   {
+    "id": "PY1-C1",
+    "kind": "code",
+    "title": "Values, types and print - what Python is made of",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Predict the output of print() with numbers and strings, and name the type of a value with type()",
+     "Explain the difference between 7, 7.0 and '7'"
+    ],
+    "starter": "# PY1-C1: predict every printed line BEFORE you run (Ctrl+Enter). Write your predictions in the chat.\nprint(7)\nprint(7.0)\nprint(\"7\")\nprint(type(7), type(7.0), type(\"7\"))\nprint(7 + 7)\nprint(\"7\" + \"7\")\nprint(True, type(True))\n\n# Your turn, one at a time (predict first):\n# 1. Add a line that prints the type of 3 > 2\n# 2. Add a line that prints \"7\" + 7  - predict what happens, then read the error exactly\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: values and their types; because every bug and half the security holes are a type confusion (a number treated as text, text treated as code); for every program after this. ONE IDEA: every value has a type, and the operator means different things per type (+ adds numbers, joins strings). He predicts all seven lines first in short form; one run; compare line by line. Task 2 is the point: `\"7\" + 7` raises TypeError - he reads the message aloud: 'can only concatenate str (not \"int\") to str' and says what it means. Teach: an error message is evidence, read it from the last line up. EVIDENCE TO CLOSE: predictions matched or corrected with the reason, and his explanation of 7 vs 7.0 vs '7' (int, float, str). Boundary Question: what input breaks `len(x)` - a number.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C2",
+    "kind": "code",
+    "title": "Variables and arithmetic - boxes that hold values",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Use variables, reassignment and the seven operators (+ - * / // % **); predict / vs // and % results",
+     "Convert between str and int with int() and str() and say when each is needed"
+    ],
+    "starter": "# PY1-C2: predict first, then run.\nbytes_total = 1536\nkb = bytes_total / 1024\nprint(kb)\nprint(bytes_total // 1024, bytes_total % 1024)\nprint(2 ** 10)\nport = \"443\"\nprint(port + 1)   # predict: what happens?\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: variables and arithmetic; because log sizes, ports, offsets and hashes are numbers you will compute; for the port scanner and the parser later. ONE IDEA: a variable is a name bound to a value; = binds, it does not test. Predict: 1.5; 1 512; 1024; then the TypeError on the last line - he FIXES it with int(port) + 1 and runs again (444). Teach // (floor) vs / (true division) vs % (remainder) with bytes->KB as the worked example; he does 10,000 seconds -> hours, minutes, seconds with // and % alone (2 46 40). EVIDENCE TO CLOSE: the fixed last line runs and his h/m/s program prints 2 46 40. Boundary Question: what does `int(\"443a\")` do - ValueError - read it.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C3",
+    "kind": "code",
+    "title": "Strings - the type that carries every log, every URL, every password",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Index, slice, measure and transform strings; use f-strings to build output",
+     "Explain why text from outside (a log, a form, a packet) is never trusted as-is"
+    ],
+    "starter": "# PY1-C3: predict first.\nline = \"  Failed password for root from 203.0.113.9 port 51022  \"\nclean = line.strip()\nprint(len(line), len(clean))\nprint(clean[0:6])\nprint(clean.split())\nwords = clean.split()\nip = words[5]\nprint(f\"attacker={ip} user={words[3]}\")\nprint(clean.lower().replace(\"root\", \"ROOT\"))\n\n# Your turn: build the line  host=203.0.113.9 port=51022  with an f-string from the words list.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: strings; because every log line, URL, header and password is text you must cut apart; for the log parser in PY2. ONE IDEA: a string is a sequence - index from 0, slice [a:b] stops before b, methods return a NEW string (strings do not change in place). He predicts each line (59 55; Failed; the list; the f-string; the replaced line) - note the lengths depend on the spaces, so he counts. The sample is an SSH auth.log line - say that it is what he will parse for real in PY2. Your-turn: `f\"host={words[5]} port={words[7]}\"`. Teach the trust rule in one line: text from outside is data, never code - the reason SQL injection and command injection exist (named, not taught yet). EVIDENCE TO CLOSE: his f-string prints host=203.0.113.9 port=51022. Boundary Question: what if a line has fewer than 8 words - IndexError - which input breaks it.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C4",
+    "kind": "code",
+    "title": "Decisions - if, elif, else, and the booleans behind them",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Predict and write if/elif/else chains with and/or/not; explain short-circuiting",
+     "Write a function-free port classifier that says well-known / registered / dynamic / invalid"
+    ],
+    "starter": "# PY1-C4: predict first.\nport = 8080\nif port < 0 or port > 65535:\n    print(\"invalid\")\nelif port < 1024:\n    print(\"well-known\")\nelif port < 49152:\n    print(\"registered\")\nelse:\n    print(\"dynamic\")\n\nattempts = 6\nlocked = attempts >= 5 and not False\nprint(locked)\n\n# Your turn: set port to 443, 70000, 60000 - predict each, run each. Then: why is the  < 0 or > 65535  test FIRST?\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: decisions; because every rule in a firewall, a SIEM alert and a trading limit is an if; for everything. ONE IDEA: a chain of if/elif/else runs exactly one branch - the first true test wins - so ORDER is logic. Predict: registered; True. Three reruns: well-known, invalid, dynamic. The question 'why is the invalid test first' is the lesson: if it came last, 70000 would print dynamic - validation before classification, always (this is input validation, the first defensive habit). Teach and/or/not and that `a and b` stops at a if a is False. EVIDENCE TO CLOSE: three correct predictions and his reason for the order in one sentence. Boundary Question: port = \"443\" (a string) - what breaks and where.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C5",
+    "kind": "code",
+    "title": "Repetition - for, range and the accumulator",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Predict for loops over range(a, b, step) and trace an accumulator pass by pass",
+     "Count failed logins per rerun of a loop and print a total"
+    ],
+    "starter": "# PY1-C5: predict first; trace the accumulator in a table (pass | n | total).\nfor n in range(1, 4):\n    print(\"pass\", n)\nfor p in range(20, 26, 2):\n    print(\"port\", p)\ntotal = 0\nfor n in range(1, 5):\n    total = total + n\nprint(\"total\", total)\n\n# Your turn: sum the even numbers from 2 to 100 inclusive with range and an accumulator. Predict the total first (it is 2550).\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: loops; because scanning 65,535 ports or 10,000 log lines is one loop; for the scanner and the parser. ONE IDEA: a for loop runs its block once per item; an accumulator is a variable updated on every pass. He traces the third loop in a table BEFORE running (1->1, 2->3, 3->6, 4->10). range stops before the end value: `range(20, 26, 2)` gives 20, 22, 24 - he predicts it. Your-turn: `for n in range(2, 101, 2)`; 2550. If he writes range(2, 100, 2) he gets 2450 - the off-by-one lesson; have him explain the fix. EVIDENCE TO CLOSE: his program prints 2550 and he states the stop-before rule. Boundary Question: range(5, 1) - how many passes? Zero - try it.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C6",
+    "kind": "code",
+    "title": "while, break, continue - loops that do not know when they end",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Predict while loops; say when one stops and what an infinite loop looks like",
+     "Write a retry loop that stops after 3 failures or on success"
+    ],
+    "starter": "# PY1-C6: predict first.\ncount = 3\nwhile count > 0:\n    print(\"count\", count)\n    count = count - 1\nprint(\"done\")\n\ntries = 0\nguess = \"wrong\"\nwhile tries < 3:\n    tries = tries + 1\n    if guess == \"secret\":\n        print(\"in after\", tries)\n        break\n    print(\"try\", tries, \"failed\")\nprint(\"locked out\" if tries == 3 and guess != \"secret\" else \"ok\")\n\n# Your turn: delete the line  count = count - 1  in the first loop, predict, run, read the 'ran too long' line, put it back.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: while; because a server waits for connections, a brute-force tool retries, a monitor loops until stopped - and account lockout is exactly this loop; for sockets in PY2/NET. ONE IDEA: while re-asks its question before every pass and stops the first time it is False; break leaves early. Predict both blocks (count 3,2,1, done; try 1/2/3 failed, locked out). The deleted-line experiment: the editor stops a program after 10 seconds and says it ran too long - he reads that line; that is an infinite loop, and the missing update is the bug. Then he sets guess = \"secret\" and predicts 'in after 1'. EVIDENCE TO CLOSE: both predictions right (or corrected with reason) and the infinite-loop line read and fixed. Boundary Question: a lockout counter that is never reset - what does that do to a legitimate user (denial of service by design).",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C7",
+    "kind": "code",
+    "title": "Lists - many values, one name",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Create, index, slice, append to and loop over lists; use in and len; explain IndexError",
+     "Keep a list of suspicious IPs from a loop and print them sorted and de-duplicated"
+    ],
+    "starter": "# PY1-C7: predict first.\nips = [\"203.0.113.9\", \"198.51.100.4\", \"203.0.113.9\"]\nprint(len(ips), ips[0], ips[-1])\nips.append(\"192.0.2.77\")\nprint(ips[1:3])\nprint(\"198.51.100.4\" in ips)\nfor ip in ips:\n    print(\"seen\", ip)\nprint(sorted(set(ips)))\nprint(ips[10])   # predict: what happens?\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: lists; because a scan result, a word list, a set of alerts is a list; for everything in PY2. ONE IDEA: a list is an ordered, changeable sequence; index from 0, negative from the end, slice stops before. Predict each line; the last raises IndexError - read it. set() removes duplicates (unordered), sorted() returns a new sorted list - say that sorted of IP strings is text order, not numeric order (a later fix with ipaddress). Your-turn: start from an empty list, loop over the sample list of six IPs you give him, append only those starting with '203.', print sorted(set(...)). EVIDENCE TO CLOSE: his loop prints the de-duplicated sorted list. Boundary Question: what input breaks `ips[0]` - an empty list.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C8",
+    "kind": "code",
+    "title": "Dictionaries - names instead of positions",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Create and read dicts, use .get() with a default, loop with .items(); explain KeyError",
+     "Count failed logins per IP in a dict and print the top offender"
+    ],
+    "starter": "# PY1-C8: predict first. A dict maps a key to a value.\nfails = {\"203.0.113.9\": 4, \"198.51.100.4\": 1}\nprint(fails[\"203.0.113.9\"])\nprint(fails.get(\"192.0.2.77\", 0))\nfails[\"203.0.113.9\"] = fails[\"203.0.113.9\"] + 1\nfor ip, n in fails.items():\n    print(ip, n)\nprint(\"192.0.2.77\" in fails)\nprint(fails[\"192.0.2.77\"])   # predict\n\n# Your turn: from this list, count per IP with  counts[ip] = counts.get(ip, 0) + 1  and print the IP with the most.\nevents = [\"203.0.113.9\", \"192.0.2.77\", \"203.0.113.9\", \"198.51.100.4\", \"203.0.113.9\", \"192.0.2.77\"]\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: dicts; because 'count per X' is half of all security analysis (per IP, per user, per port) and every JSON you will meet is a dict; for the log parser. ONE IDEA: a dict looks up a value by key in one step; a missing key is KeyError unless you use .get(key, default). Predict each line; the last raises KeyError. The counting idiom `counts[ip] = counts.get(ip, 0) + 1` is the thing to own: he traces it for the first three events by hand. Top offender: `max(counts, key=counts.get)` - explain key= in one line, or let him do it with a loop that tracks best - either is fine. EVIDENCE TO CLOSE: his program prints 203.0.113.9 3 (or the IP and count). Boundary Question: an empty events list - what does max() do (ValueError) - which input breaks it.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C9",
+    "kind": "code",
+    "title": "Functions - a recipe with a name, inputs and a result",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Define functions with parameters and return; explain the difference between print and return, argument and parameter",
+     "Write is_private_ip(ip) and classify_port(port) and test each with three inputs"
+    ],
+    "starter": "# PY1-C9: predict first.\ndef classify_port(port):\n    if port < 0 or port > 65535:\n        return \"invalid\"\n    if port < 1024:\n        return \"well-known\"\n    if port < 49152:\n        return \"registered\"\n    return \"dynamic\"\n\nprint(classify_port(22), classify_port(8080), classify_port(70000))\nresult = classify_port(443)\nprint(result)\n\ndef is_private_ip(ip):\n    return ip.startswith(\"10.\") or ip.startswith(\"192.168.\")\n\nprint(is_private_ip(\"192.168.1.5\"), is_private_ip(\"203.0.113.9\"))\n# Your turn: is_private_ip misses 172.16.0.0 - 172.31.255.255. Add it with split(\".\") and int(). Test 172.16.0.1 (True) and 172.32.0.1 (False).\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: functions; because a tool is functions composed, and a function with a clear input and output is testable; for every program from here. ONE IDEA: def writes the recipe once; a call runs it with arguments bound to parameters; return hands a value back (print only shows it). Note classify_port has no elif now: a return ends the function, so the next if is only reached when the earlier one did not return - he explains that. Your-turn: `parts = ip.split(\".\")`; `parts[0] == \"172\" and 16 <= int(parts[1]) <= 31`. Teach: this is RFC 1918 private space (name it; the NET module makes it real). EVIDENCE TO CLOSE: both tests print as predicted and his one-line print-vs-return. Boundary Question: is_private_ip(\"172.abc\") - int() breaks - which input breaks it, and would a check help.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C10",
+    "kind": "code",
+    "title": "Reading errors as evidence - the five you will meet most",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Name NameError, TypeError, ValueError, IndexError, KeyError and ZeroDivisionError from their messages and say what line causes each",
+     "Fix five broken snippets by reading the traceback from the bottom up"
+    ],
+    "starter": "# PY1-C10: each block has one bug. Predict the error NAME before running, run, read the last line, fix, run again.\n# 1\nprint(totl)\n# 2\nprint(\"port \" + 22)\n# 3\nprint(int(\"22a\"))\n# 4\nports = [22, 80]\nprint(ports[2])\n# 5\nconf = {\"host\": \"lab\"}\nprint(conf[\"port\"])\n# 6\nprint(10 / 0)\n# (run one block at a time: put a # in front of the others)\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: errors; because a traceback is the most honest document a computer ever gives you, and a security analyst reads other people's errors for a living (stack traces leak paths, versions, logic); for every debugging minute from now on. ONE IDEA: read a traceback from the LAST line up: the error type and message, then the line number. One block per message: he predicts the name, runs, pastes the last line, fixes. Expected: NameError, TypeError, ValueError, IndexError, KeyError, ZeroDivisionError. He states the rule for each fix in one line (define before use; convert types; validate input; check length; use .get; check the divisor). EVIDENCE TO CLOSE: all six named and fixed. Boundary Question: which of these six would an attacker try to cause on purpose in a web app, and why (ValueError/KeyError on unvalidated input -> a 500 page that leaks a traceback).",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-C11",
+    "kind": "code",
+    "title": "Build: password-strength checker v0",
+    "time_box": 50,
+    "max_turns": 40,
+    "objectives": [
+     "Compose functions, strings, loops and conditions into one program that scores a password and explains the score",
+     "Commit the program to your repository as py1/pwcheck.py with a message that says what it does"
+    ],
+    "starter": "# PY1-C11: a password-strength checker, v0. Rules (each worth 1 point): length >= 12; has a lowercase letter;\n# has an uppercase letter; has a digit; has a symbol; is not in the tiny common list. Print the score and the missing rules.\n# NEVER use a real password of yours here - this is a toy on test strings.\nCOMMON = [\"password\", \"123456\", \"qwerty\", \"letmein\", \"iloveyou\"]\n\ndef score(pw):\n    points = 0\n    missing = []\n    if len(pw) >= 12:\n        points += 1\n    else:\n        missing.append(\"12+ characters\")\n    # add: lowercase, uppercase, digit, symbol (use any(c.islower() for c in pw) etc.), not in COMMON\n    return points, missing\n\nfor test in [\"password\", \"Tr0ub4dor&3\", \"correct horse battery staple\"]:\n    p, m = score(test)\n    print(f\"{test!r}: {p}/6 missing={m}\")\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the first tool; because composing what he has is the skill, and password policy is where security meets people; for the record (first real program in the repo). ONE IDEA: a program is small functions composed; each rule is one if. Teach `any(c.isdigit() for c in pw)` as a pattern (a generator inside any - one line of explanation, no more). He completes the five rules; predicted outputs: 'password' 0 or 1/6 (it is common, short, no upper/digit/symbol - lowercase gives 1 point: 1/6); 'Tr0ub4dor&3' 5/6 (length 11 fails); the passphrase 3/6 (length, lowercase, not common - no upper/digit/symbol). Then the real lesson, two lines: length beats complexity (entropy), and NIST SP 800-63B says check against breached lists, do not force composition rules - his v0 is the old policy; say v1 comes in the Security+ phase. HIS MACHINE: save as sec-lab/py1/pwcheck.py, run with `python py1\\pwcheck.py` in PowerShell, commit 'py1: password strength checker v0', push. EVIDENCE TO CLOSE: the three outputs pasted and the commit in `git log --oneline`. SECRETS: he never tests a real password of his own.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY1-P",
+    "kind": "practice",
+    "title": "Python I practice: predict ten outputs",
+    "skills": [
+     "py-types",
+     "py-strings-slicing",
+     "py-if-order",
+     "py-for-range",
+     "py-while-stop",
+     "py-lists-index",
+     "py-dict-get",
+     "py-functions-return"
+    ],
+    "count": 10,
+    "tutor_brief": "Ten prediction questions, no new idea: each shows a 3-6 line snippet and asks what it prints (or which error). Two right in a row per skill. After two misses the answer and the reason are shown and a similar one follows."
+   },
+   {
+    "id": "PY1-C",
+    "kind": "check",
+    "title": "Python I checkpoint",
+    "skills": [
+     "py-types",
+     "py-arithmetic-floor-mod",
+     "py-strings-slicing",
+     "py-fstrings",
+     "py-if-order",
+     "py-booleans",
+     "py-for-range",
+     "py-accumulator",
+     "py-while-stop",
+     "py-lists-index",
+     "py-dict-get",
+     "py-functions-return",
+     "py-errors-named",
+     "boundary-question"
+    ],
+    "count": 14
+   },
+   {
+    "id": "PY1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write the README section for py1/ in your repository: in 8-12 sentences, explain to a non-programmer colleague what a variable, a loop, a dictionary and a function are, using your password checker as the single example. Then one sentence on what 'the Boundary Question' means and why you ask it of every program. Exact vocabulary; no filler."
+   }
+  ]
+ },
+ {
+  "id": "FIN1",
+  "phase": "Finance",
+  "title": "Money and banking systems: how value actually moves",
+  "hook": "Tokenization is a new ledger for an old job. You cannot judge the new ledger until you can draw the old one: who holds what, who settles with whom, where finality happens, and where it breaks. Your BBA gave you the balance sheet; this module gives you the plumbing.",
+  "read": {
+   "url": "https://www.bankofcanada.ca/core-functions/financial-system/",
+   "title": "Read: Bank of Canada - the financial system (payment systems, oversight, settlement)"
+  },
+  "gift": {
+   "for": "your repository",
+   "what": "fin1/ledger.py - a double-entry ledger in Python that refuses to go out of balance, with a README diagram of a Canadian e-Transfer from your account to a friend's, bank by bank."
+  },
+  "taught": "money as a ledger entry (M0 central-bank money vs commercial-bank deposits; settlement balances); how a bank creates a deposit by lending; a bank balance sheet (assets: reserves, loans, securities; liabilities: deposits, debt; equity); double-entry (every transaction touches two accounts, debits = credits); clearing vs settlement vs finality; gross vs net settlement, RTGS; the Canadian rails: Lynx (high-value, RTGS, Bank of Canada settlement), ACSS (retail batch), Interac e-Transfer (messaging + settlement later), the Real-Time Rail (status to check); correspondent banking and SWIFT as messaging, nostro/vostro; CDIC deposit insurance (per category limit) and why it exists (bank runs); counterparty, liquidity and operational risk in payments; a ledger as a data structure (dict of accounts, list of entries, invariants)",
+  "steps": [
+   {
+    "id": "FIN1-L1",
+    "kind": "lesson",
+    "title": "Money is a ledger entry: central-bank money vs bank deposits",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Explain the two kinds of money a Canadian touches (Bank of Canada liabilities vs commercial-bank deposits) and who owes whom",
+     "Draw a simplified bank balance sheet and show what a new loan does to it"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: what money is as a system; because a tokenized deposit and a CBDC differ exactly on WHO owes you the money; for every FIN module. ONE IDEA: money is a liability on someone's ledger - a banknote or a settlement balance is a Bank of Canada liability; the number in your chequing account is your bank's liability to you. He has a BBA: move fast on debit/credit, slow on the system view. Worked example (draw it): Bank A balance sheet - assets: settlement balances 10, loans 80, securities 10; liabilities: deposits 90, equity 10. Bank A lends 20 to a customer: loans +20, deposits +20 - the deposit was created by the loan (no one's savings moved). He explains that in his words. Then: the customer spends it at a Bank B customer -> Bank A must settle 20 to Bank B in central-bank money; that is why reserves and liquidity matter. EVIDENCE TO CLOSE: his two-line answer to 'where does a new deposit come from, and what does the bank need when it leaves'. Point to Bank of Canada 'Understanding how money is created' if he wants the primary source. No advice, no products.",
+    "links": [
+     {
+      "url": "https://www.bankofcanada.ca/2020/08/understanding-how-money-is-created/",
+      "label": "Bank of Canada - how money is created (explainer)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FIN1-L2",
+    "kind": "lesson",
+    "title": "Double-entry: the invariant that makes ledgers trustworthy",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "State the double-entry invariant and show it on four transactions (deposit, withdrawal, transfer, loan)",
+     "Explain why an invariant is a security property (what an attacker would have to break)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: double-entry; because every ledger he will build or audit - bank, blockchain, trading book - lives or dies on one invariant: debits equal credits, total balances sum to what was issued; for ledger.py next step and for blockchain state in FIN4. ONE IDEA: every transaction changes at least two accounts by equal and opposite amounts, so the totals never drift - an inconsistency is always detectable. Four worked rows on a T-account table, he fills the last two. Then the security framing: an invariant is a property that must hold after every operation; fraud or a bug shows up as a violation, so the ledger is audit-ready by construction - this is why we will write `assert balanced()` after each posting. EVIDENCE TO CLOSE: his four rows balance and his one sentence on why an invariant is a defence. Boundary Question: what if two postings happen at the same instant (a race) - name it, promise the answer in the concurrency lesson of PY2/Security+.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN1-C1",
+    "kind": "code",
+    "title": "Build: a double-entry ledger that cannot go out of balance",
+    "time_box": 60,
+    "max_turns": 36,
+    "media": [],
+    "brief": "",
+    "objectives": [
+     "Implement accounts as a dict and postings as a list; post a transfer and assert the invariant",
+     "Make the ledger reject a posting that would overdraw an account, and explain the difference between invalid and unbalanced"
+    ],
+    "starter": "# FIN1-C1: a tiny double-entry ledger. Every posting moves amount from one account to another.\naccounts = {\"abid\": 100, \"friend\": 0, \"bank_fees\": 0}\nentries = []\n\ndef balanced(issued):\n    return sum(accounts.values()) == issued\n\ndef post(src, dst, amount, memo):\n    if amount <= 0:\n        return \"rejected: amount must be positive\"\n    if accounts[src] < amount:\n        return \"rejected: insufficient funds\"\n    accounts[src] -= amount\n    accounts[dst] += amount\n    entries.append((src, dst, amount, memo))\n    return \"ok\"\n\nprint(post(\"abid\", \"friend\", 40, \"e-transfer\"))\nprint(post(\"abid\", \"bank_fees\", 1.5, \"fee\"))\nprint(post(\"friend\", \"abid\", 500, \"too much\"))\nprint(accounts, balanced(100))\n# Your turn: 1) add a posting to an account that does not exist - which error? Add a check that rejects it.\n# 2) Boundary Question: post(\"abid\", \"abid\", 10, \"self\") - is the ledger still balanced? Is it a valid transfer? Decide and enforce.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the ledger in code; because the invariant becomes real when the program checks it, and this is the data structure under every payment system and every blockchain state; for FIN4 (where the 'accounts' are addresses) and the record. ONE IDEA: invariants are checked in code after every mutation. Predict the four prints (ok; ok; rejected: insufficient funds; the dict with 58.5/40/1.5 and True). Task 1: KeyError -> add `if src not in accounts or dst not in accounts: return \"rejected: unknown account\"` - validate BEFORE mutating (order again). Task 2: a self-transfer keeps the invariant but is meaningless - he decides (reject) and says why 'balanced' is not the same as 'valid'. Floats: 58.5 is fine here; say once that real money uses integers of cents or Decimal, never float - and let him convert the ledger to cents as an optional extra. HIS MACHINE: save as sec-lab/fin1/ledger.py, commit 'fin1: double-entry ledger with invariant', push. EVIDENCE TO CLOSE: the output pasted, both tasks enforced, the commit."
+   },
+   {
+    "id": "FIN1-L3",
+    "kind": "lesson",
+    "title": "Clearing, settlement, finality - and why timing is risk",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Define clearing, settlement and finality and place them on a timeline for a card payment and an e-Transfer",
+     "Explain gross vs net settlement and the trade-off (liquidity vs credit risk); define RTGS"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the three words; because 'instant' payments are usually instant messaging with settlement later, and every fintech and token claim is a claim about finality; for the Canadian rails next and for FIN4/FIN5. ONE IDEA: clearing = exchanging and reconciling the instructions; settlement = the actual transfer of the asset (central-bank money between banks); finality = the point after which it cannot be reversed. Timeline on a card payment: authorization (seconds), clearing (that night), settlement (T+1/T+2), chargeback window (months) - so a merchant's 'approved' is not final. Gross settlement: each payment settled one by one in full (needs liquidity, no credit exposure); net: obligations netted over a period (saves liquidity, builds exposure until settlement - Herstatt risk, name it once). RTGS = real-time gross settlement = Lynx in Canada. EVIDENCE TO CLOSE: his timeline with the three words placed and his one-line trade-off. Boundary Question: what happens to a net system if one bank fails at 15:00 before the 17:00 settlement.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN1-L4",
+    "kind": "lesson",
+    "title": "The Canadian rails: Lynx, ACSS, Interac e-Transfer, the Real-Time Rail",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Name the system a given Canadian payment rides (a $5M corporate wire, a paycheque, an e-Transfer, a cheque) and who operates and oversees it",
+     "Trace an e-Transfer from your bank to a friend's bank: message, debit, credit, settlement"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the actual Canadian plumbing; because he lives here and the tokenized-deposit pilots he cares about are by these banks on top of these rails; for FIN3 (regulation) and FIN5. ONE IDEA: Canada has a few core systems with different jobs - Lynx (Payments Canada; high-value, RTGS, settles in Bank of Canada money, replaced LVTS in 2021); ACSS (Payments Canada; retail batch: cheques, direct deposits, pre-authorized debits; net settlement); Interac e-Transfer (Interac Corp; a messaging/notification layer; the money moves between the banks' accounts and settles through the rails - he reads Interac's own description); the Real-Time Rail (Payments Canada; real-time retail with ISO 20022 - launch status has slipped repeatedly: he checks the current status on payments.ca and reports the date he finds, you do not state one). Oversight: Bank of Canada designates and oversees systemic/prominent systems under the Payment Clearing and Settlement Act; Payments Canada operates under the Canadian Payments Act. Worked trace of an e-Transfer with four boxes (payer, Bank A, Bank B, payee) and where settlement happens. EVIDENCE TO CLOSE: the four examples routed correctly and the trace in his words. He adds the trace as a README diagram (text or draw.io) in fin1/ and commits.",
+    "links": [
+     {
+      "url": "https://www.payments.ca/systems-services/payment-systems",
+      "label": "Payments Canada - our payment systems (Lynx, ACSS, RTR)"
+     },
+     {
+      "url": "https://www.interac.ca/en/consumers/products/interac-e-transfer/",
+      "label": "Interac e-Transfer - how it works (Interac Corp)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FIN1-L5",
+    "kind": "lesson",
+    "title": "Across borders: correspondent banking and SWIFT",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Explain nostro/vostro accounts and why a cross-border payment can take days and cost 3-7%",
+     "State what SWIFT is (and is not): a messaging network, not a settlement system; name ISO 20022"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: cross-border; because the loudest tokenization pitch is 'cheaper remittances', and he sends money to Bangladesh himself - he knows the pain, now the mechanism; for FIN5 (stablecoins as a remittance rail claim). ONE IDEA: banks without a direct relationship pay through a chain of correspondent banks, each holding an account for the other (nostro = ours at yours; vostro = yours at ours); SWIFT carries the instructions (messages, now ISO 20022 MX), the money moves by debits and credits along the chain. Worked example: CAD from St. John's to BDT in Dhaka - Canadian bank -> USD correspondent in New York -> correspondent of the Bangladeshi bank -> local bank -> payee; where FX happens, where fees stack, where compliance screening (sanctions, AML) adds a day. He traces it and names three cost sources. EVIDENCE TO CLOSE: his chain with the fee/time reasons. Say once: this is the baseline every 'faster, cheaper' claim must be measured against, including stablecoins (FIN4/5). No recommendation of any remittance service.",
+    "links": [
+     {
+      "url": "https://www.swift.com/about-us/discover-swift/messaging-standards",
+      "label": "SWIFT - messaging and standards (ISO 20022)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FIN1-L6",
+    "kind": "lesson",
+    "title": "Trust and failure: deposit insurance, bank runs, and where payments break",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Explain CDIC coverage (what is covered, the per-category limit) and the problem it solves",
+     "List the three risks in a payment system (credit, liquidity, operational) with one real example each"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: failure modes; because a security person studies systems by how they fail, and the whole point of settlement design and deposit insurance is a failure mode; for FIN3 (why regulators exist) and for FIN6 (DeFi failures rhyme with these). ONE IDEA: a bank deposit is a promise; deposit insurance (CDIC, a federal Crown corporation) makes the promise credible up to a limit per insured category per member institution, so depositors do not run. He finds the current limit and categories on cdic.ca himself and cites them (you do not state the number). Bank run mechanics: fractional reserve + first-come first-served = a coordination game; he names the 2023 US examples (SVB) from memory or reading. Three risks with examples: credit (a counterparty fails before settlement - Herstatt 1974), liquidity (a bank has assets but no settlement balance at 17:00), operational (an outage - the 2022 Rogers outage took Interac down across Canada: name it as the operational-risk case he lived through). EVIDENCE TO CLOSE: the CDIC facts cited from the source + the three risks with examples. Boundary Question: which of the three risks does a stablecoin have, and who is its CDIC - leave it open for FIN4.",
+    "links": [
+     {
+      "url": "https://www.cdic.ca/your-coverage/",
+      "label": "CDIC - your coverage (official)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FIN1-C",
+    "kind": "check",
+    "title": "Money and banking checkpoint",
+    "skills": [
+     "money-as-liability",
+     "deposit-creation",
+     "double-entry-invariant",
+     "clearing-settlement-finality",
+     "gross-vs-net",
+     "canadian-rails",
+     "correspondent-banking",
+     "cdic-and-runs",
+     "payment-risks"
+    ],
+    "count": 12
+   },
+   {
+    "id": "FIN1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write fin1/README.md as a one-page explainer for a junior colleague at a bank: what money is on a ledger, how a loan creates a deposit, the difference between clearing, settlement and finality, which Canadian system carries what, and why deposit insurance exists. End with three sentences on what you would check first if someone told you a new payment product is 'instant and final'. 12-18 sentences, exact vocabulary, no advice about any product."
+   }
+  ]
+ },
+ {
+  "id": "PY2",
+  "phase": "Python",
+  "title": "Python II: files, errors, modules - and your first three real tools",
+  "hook": "A program that only prints is a demo. A program that reads a log, hashes a file, handles the bad input and saves a report is a tool. This week you write three and they go in the record.",
+  "read": {
+   "url": "https://docs.python.org/3/tutorial/inputoutput.html",
+   "title": "Read: The Python Tutorial, ch. 7 - Input and Output (reading and writing files)"
+  },
+  "gift": {
+   "for": "your repository",
+   "what": "py2/ with a log parser (top attackers from an SSH auth log), a file-integrity monitor v1 (SHA-256 baseline + diff) and a JSON report writer - three tools with argparse, run from the terminal."
+  },
+  "taught": "running Python from the terminal (python file.py args); open() with with, modes r/w/a, encoding, reading line by line; writing files; pathlib.Path; exceptions: try/except/else/finally, specific exception classes, raising ValueError with a message, why bare except is wrong; modules and import, the standard library map (os, sys, pathlib, json, csv, hashlib, datetime, re basics, collections.Counter); argparse (positional, optional, help); hashlib.sha256 of bytes and of a file in chunks; json.dump/load; csv.reader/DictReader; datetime parsing; venv and pip (pip install only inside a venv, never system-wide); a tool = functions + a main() guarded by if __name__ == '__main__'",
+  "steps": [
+   {
+    "id": "PY2-C1",
+    "kind": "code",
+    "title": "Files: read a log line by line",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Open a file with with/open, iterate lines, strip and skip blanks; explain why with closes the file",
+     "Count the lines that contain 'Failed password' in a sample auth.log"
+    ],
+    "starter": "# PY2-C1 runs ON YOUR MACHINE (the in-app editor has no files). Save as sec-lab/py2/count_failed.py.\n# First create sec-lab/py2/sample_auth.log with the six lines the tutor gives you.\nfrom pathlib import Path\n\npath = Path(\"sample_auth.log\")\nfailed = 0\nwith open(path, encoding=\"utf-8\") as f:\n    for line in f:\n        line = line.strip()\n        if not line:\n            continue\n        if \"Failed password\" in line:\n            failed += 1\nprint(\"failed logins:\", failed)\n# Your turn: run it from PowerShell inside sec-lab/py2:  python count_failed.py\n# Then rename the log file and run again - read the error.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: files; because every log, config, word list and report is a file; for the parser, the monitor and every Linux lab. ONE IDEA: `with open(...) as f:` gives a file object that is closed automatically; iterating it yields lines with their newline. Give him a six-line sample auth.log in a code block (four 'Failed password for root/admin from <IP> port N ssh2', one 'Accepted publickey', one blank) with TEST-NET IPs (203.0.113.x, 198.51.100.x, 192.0.2.x). Expected: failed logins: 4. The rename experiment: FileNotFoundError - read it; that is the next step's subject. HIS MACHINE: from PowerShell `cd ~\\sec-lab\\py2`, `python count_failed.py`, paste the output; commit 'py2: count failed logins'. EVIDENCE TO CLOSE: the output pasted and his one-line answer to 'why with'. Boundary Question: a 2 GB log - does `for line in f` load it all? No - it streams; say why that matters.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C2",
+    "kind": "code",
+    "title": "Exceptions: fail on purpose, recover on purpose",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Use try/except with specific exception classes, else and finally; explain why `except:` bare is a bug",
+     "Raise ValueError with a clear message from a validation function and catch it at the call site"
+    ],
+    "starter": "# PY2-C2: predict first (this one runs in the editor).\ndef parse_port(text):\n    try:\n        port = int(text)\n    except ValueError:\n        raise ValueError(f\"not a number: {text!r}\")\n    if not 0 <= port <= 65535:\n        raise ValueError(f\"out of range: {port}\")\n    return port\n\nfor t in [\"22\", \"70000\", \"abc\", \"443\"]:\n    try:\n        print(\"ok\", parse_port(t))\n    except ValueError as e:\n        print(\"rejected:\", e)\n    finally:\n        print(\"checked\", t)\n\n# Your turn: what does  except:  (bare) catch that you never want to catch? (hint: KeyboardInterrupt, SystemExit). Replace it mentally - never write it.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: exceptions; because a tool meets bad input every day and must say exactly what was wrong instead of dying or, worse, continuing; for all three tools this week and every server later. ONE IDEA: raise when a function cannot do its job; catch only what you can handle, as close to the cause as makes sense, by its specific class. Predict the twelve lines (ok 22 / checked; rejected: out of range: 70000; rejected: not a number: 'abc'; ok 443). Teach else/finally in one line each. Bare except: it swallows Ctrl+C and SystemExit and hides bugs - a security anti-pattern (fail open). Fail closed vs fail open: name it. EVIDENCE TO CLOSE: predictions right and his one sentence on fail-closed. Boundary Question: parse_port(None) - which exception now, is it caught, should it be.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C3",
+    "kind": "code",
+    "title": "Modules and the standard library map",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Import from the standard library and read its documentation page to find a function you need",
+     "Use collections.Counter, datetime and pathlib for three small jobs"
+    ],
+    "starter": "# PY2-C3: predict, then run in the editor.\nfrom collections import Counter\nfrom datetime import datetime, timedelta\n\nips = [\"203.0.113.9\", \"192.0.2.77\", \"203.0.113.9\", \"198.51.100.4\", \"203.0.113.9\"]\nc = Counter(ips)\nprint(c.most_common(2))\n\nstamp = datetime.strptime(\"2026-11-19 03:14:07\", \"%Y-%m-%d %H:%M:%S\")\nprint(stamp.hour, (stamp + timedelta(hours=5)).isoformat())\n\nimport math, os\nprint(math.log2(2 ** 32), os.name)\n# Your turn: open docs.python.org/3/library/collections.html and find what Counter.update does; use it to add [\"192.0.2.77\"] and print most_common(1).\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the standard library; because 'batteries included' means he should never write a counter, a date parser or a hash by hand; for every tool. ONE IDEA: a module is a file of functions you import; the standard library is a map he reads, not memorises - know the module names, look up the functions. Predict: [('203.0.113.9', 3), ('192.0.2.77', 1)]; 3 and 2026-11-19T08:14:07; 32.0 and 'nt' (posix in the browser sandbox - whichever runs, he explains). The your-turn is a documentation-reading task: he cites the Counter.update line. Give the map once, as a list he keeps in notes: os, sys, pathlib, json, csv, hashlib, hmac, secrets, datetime, re, collections, itertools, socket, subprocess, argparse, logging, urllib, http. EVIDENCE TO CLOSE: the outputs and the cited doc line. Boundary Question: strptime on '2026-13-01' - which exception.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C4",
+    "kind": "code",
+    "title": "Build: the log parser - top attackers from an SSH auth log",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Parse each failed-login line into (user, ip), count per ip with Counter, print the top N",
+     "Add argparse: positional log path, --top N (default 5); handle a missing file with a clear message and exit code 1"
+    ],
+    "starter": "# PY2-C4 ON YOUR MACHINE: sec-lab/py2/authparse.py. Run: python authparse.py sample_auth.log --top 3\nimport argparse, sys\nfrom collections import Counter\nfrom pathlib import Path\n\ndef parse_line(line):\n    # 'Nov 19 03:14:07 lab sshd[812]: Failed password for root from 203.0.113.9 port 51022 ssh2'\n    if \"Failed password for\" not in line:\n        return None\n    words = line.split()\n    try:\n        ip = words[words.index(\"from\") + 1]\n        user = words[words.index(\"for\") + 1]\n        if user == \"invalid\":\n            user = words[words.index(\"user\") + 1]\n    except (ValueError, IndexError):\n        return None\n    return user, ip\n\ndef main():\n    ap = argparse.ArgumentParser(description=\"Top attacking IPs from an SSH auth log\")\n    ap.add_argument(\"log\")\n    ap.add_argument(\"--top\", type=int, default=5)\n    args = ap.parse_args()\n    path = Path(args.log)\n    if not path.exists():\n        print(f\"error: no such file: {path}\", file=sys.stderr)\n        sys.exit(1)\n    ips = Counter()\n    users = Counter()\n    with open(path, encoding=\"utf-8\", errors=\"replace\") as f:\n        for line in f:\n            parsed = parse_line(line)\n            if parsed:\n                users[parsed[0]] += 1\n                ips[parsed[1]] += 1\n    for ip, n in ips.most_common(args.top):\n        print(f\"{ip:16} {n}\")\n    print(\"users tried:\", dict(users.most_common(3)))\n\nif __name__ == \"__main__\":\n    main()\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the first analyst tool; because 'who is hammering my SSH' is a real daily question and this exact script is a SOC interview question; for the record and for LNX1 where he runs it on real logs. ONE IDEA: a tool is parse (one function, one line in, a tuple out), aggregate (Counter), present (main) - with argparse at the door and exit codes for the shell. Give him a 20-line sample log (mixed: Failed password for root/admin/'invalid user test', Accepted publickey, a malformed line, a blank line; TEST-NET IPs; make 203.0.113.9 the top with 7). He runs `python authparse.py sample_auth.log --top 3`, pastes the output; then `python authparse.py missing.log` and `echo $LASTEXITCODE` (1); then `python authparse.py --help`. Teach `if __name__ == \"__main__\"` in two lines. Teach `errors=\"replace\"`: logs can contain bytes that are not UTF-8 - fail closed on logic, tolerant on encoding. HIS MACHINE: commit 'py2: authparse - top attackers from auth.log', push. EVIDENCE TO CLOSE: the three outputs pasted and the commit. Boundary Question: a line crafted by an attacker: 'Failed password for from from 1.2.3.4' - what does parse_line return - is that safe (yes: None or a wrong count, never a crash); what if the log contained terminal escape codes (log injection - name it).",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C5",
+    "kind": "code",
+    "title": "hashlib: a fingerprint for any bytes",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Compute SHA-256 of a string and of a file in chunks; explain why a hash is one-way and collision-resistant in plain words",
+     "Verify a downloaded file against a published checksum by hand"
+    ],
+    "starter": "# PY2-C5: predict the SHAPE of the outputs (length, not the digits), then run in the editor.\nimport hashlib\n\nprint(hashlib.sha256(b\"hello\").hexdigest())\nprint(hashlib.sha256(b\"hellp\").hexdigest())\nprint(len(hashlib.sha256(b\"\").hexdigest()))\n\ndef file_sha256(path, chunk=1 << 20):\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        while True:\n            block = f.read(chunk)\n            if not block:\n                break\n            h.update(block)\n    return h.hexdigest()\n# ON YOUR MACHINE: save as py2/fhash.py with a main() that takes a path; run it on sample_auth.log;\n# then run  Get-FileHash .\\sample_auth.log -Algorithm SHA256  in PowerShell and compare.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: hashing; because integrity is the first cryptographic primitive he will use daily (checksums, password storage, Git itself, every blockchain block) - and this is his first touch of the cryptography strand; for the file-integrity monitor next step and CRY in Phase 4. ONE IDEA: a cryptographic hash maps any bytes to a fixed 256-bit fingerprint; one-way (no going back), one bit of change flips about half the output (he SEES it: hello vs hellp), and finding two inputs with the same hash is infeasible. Predict: two 64-hex-char strings that look unrelated; 64. The chunked read: why not read() the whole file (a 20 GB disk image). PowerShell's Get-FileHash must match his script exactly - that match is the evidence. Say what a hash is NOT: not encryption (nothing to decrypt), not a password store by itself (salting and slow hashes come in Phase 3/4 - name bcrypt/argon2 once). Git: a commit id is a SHA-1 of the content - he checks `git log` and sees it. HIS MACHINE: commit 'py2: fhash - SHA-256 of a file in chunks'. EVIDENCE TO CLOSE: matching digests from his script and Get-FileHash. Boundary Question: what if two different files had the same SHA-256 - what would break (everything built on it) - and why we moved off MD5/SHA-1 for that.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C6",
+    "kind": "code",
+    "title": "Build: file-integrity monitor v1 - baseline, then detect changes",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Walk a folder with pathlib, hash every file, save a JSON baseline; on a second run, report added, removed and modified files",
+     "Explain what an FIM is for (tamper detection; PCI DSS requires one) and what it cannot detect"
+    ],
+    "starter": "# PY2-C6 ON YOUR MACHINE: sec-lab/py2/fim.py\n# Usage:  python fim.py baseline <folder> <baseline.json>      python fim.py check <folder> <baseline.json>\nimport argparse, json, hashlib, sys\nfrom pathlib import Path\n\ndef file_sha256(path):\n    h = hashlib.sha256()\n    with open(path, \"rb\") as f:\n        for block in iter(lambda: f.read(1 << 20), b\"\"):\n            h.update(block)\n    return h.hexdigest()\n\ndef snapshot(folder):\n    root = Path(folder)\n    return {str(p.relative_to(root)): file_sha256(p) for p in root.rglob(\"*\") if p.is_file()}\n\ndef main():\n    ap = argparse.ArgumentParser(description=\"File-integrity monitor v1\")\n    ap.add_argument(\"mode\", choices=[\"baseline\", \"check\"])\n    ap.add_argument(\"folder\")\n    ap.add_argument(\"baseline\")\n    a = ap.parse_args()\n    now = snapshot(a.folder)\n    if a.mode == \"baseline\":\n        Path(a.baseline).write_text(json.dumps(now, indent=2))\n        print(f\"baseline: {len(now)} files\")\n        return\n    old = json.loads(Path(a.baseline).read_text())\n    added = sorted(set(now) - set(old))\n    removed = sorted(set(old) - set(now))\n    modified = sorted(k for k in now.keys() & old.keys() if now[k] != old[k])\n    for label, items in ((\"ADDED\", added), (\"REMOVED\", removed), (\"MODIFIED\", modified)):\n        for k in items:\n            print(label, k)\n    sys.exit(1 if (added or removed or modified) else 0)\n\nif __name__ == \"__main__\":\n    main()\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: a real defensive tool; because tamper detection on system files is a control in every framework (PCI DSS req. 11.5 names FIM), and this is the whole idea of Tripwire/AIDE/Wazuh's syscheck in 40 lines; for the Security+ phase (he installs Wazuh and recognises it) and the record. ONE IDEA: integrity = a trusted baseline of hashes compared to the present; the diff is the alert. He reads the code first and explains the set operations (added = now - old) and the dict comprehension before running. Run: baseline on sec-lab/py2, then edit sample_auth.log (append a line), add a new file, delete nothing, run check - predict the output, run, paste; `$LASTEXITCODE` is 1. Teach `rglob`, `relative_to`, `iter(callable, sentinel)` in one line each. What an FIM cannot do: it detects after the fact; if the attacker edits the baseline too, it is blind - so the baseline must live where the attacker cannot write (off-host, signed) - his Boundary Question answer. HIS MACHINE: commit 'py2: fim v1 - baseline and check', push, and add both tools to README with usage. EVIDENCE TO CLOSE: baseline + check outputs with the exit code, and the commit.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-C7",
+    "kind": "code",
+    "title": "JSON and CSV: the two formats everything speaks",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Read a CSV with csv.DictReader and write a JSON report with json.dump; explain why JSON is the API format and CSV the export format",
+     "Produce py2/report.json from authparse results with a timestamp and the top IPs"
+    ],
+    "starter": "# PY2-C7: in the editor first (predict), then on your machine as py2/report.py.\nimport json, csv, io\nfrom datetime import datetime, timezone\n\ntop = [(\"203.0.113.9\", 7), (\"198.51.100.4\", 3)]\nreport = {\"generated\": datetime.now(timezone.utc).isoformat(timespec=\"seconds\"), \"top_ips\": [{\"ip\": ip, \"count\": n} for ip, n in top]}\ntext = json.dumps(report, indent=2)\nprint(text)\nback = json.loads(text)\nprint(back[\"top_ips\"][0][\"ip\"], type(back[\"top_ips\"][0][\"count\"]))\n\ncsv_text = \"ip,count\\n203.0.113.9,7\\n198.51.100.4,3\\n\"\nfor row in csv.DictReader(io.StringIO(csv_text)):\n    print(row[\"ip\"], int(row[\"count\"]) * 2)\n# Your turn: on your machine, make authparse.py write report.json (--json PATH option) next to printing. Commit.\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: JSON and CSV; because every API he will call (TryHackMe, GitHub, a blockchain node, a market data feed) answers JSON and every export a manager wants is CSV; for every later tool and FIN2's trade journal. ONE IDEA: JSON is nested dicts and lists as text with types; CSV is flat rows of text with no types (he sees int(row['count']) is needed). Predict the printed JSON shape and the two lines (203.0.113.9 <class 'int'>; 14 and 6). timezone-aware timestamps: say why naive datetimes are a bug in logs (incident timelines across zones). Your-turn: an `--json` optional argument in authparse; commit 'py2: authparse writes a JSON report'. EVIDENCE TO CLOSE: the predictions and the new report.json pasted. Boundary Question: a CSV cell that begins with = or @ opened in Excel - CSV injection - name it; the fix (prefix a quote) is one line.",
+    "media": [],
+    "brief": ""
+   },
+   {
+    "id": "PY2-L8",
+    "kind": "lesson",
+    "title": "venv and pip: third-party code, contained",
+    "time_box": 45,
+    "max_turns": 30,
+    "media": [],
+    "objectives": [
+     "Create and activate a virtual environment, pip install requests inside it, freeze requirements.txt; explain why never system-wide",
+     "State the supply-chain risk of pip install (typosquatting, malicious packages) and two habits that reduce it"
+    ],
+    "links": [
+     {
+      "url": "https://docs.python.org/3/library/venv.html",
+      "label": "venv - creation of virtual environments (official)"
+     },
+     {
+      "url": "https://pip.pypa.io/en/stable/user_guide/",
+      "label": "pip user guide"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: environments; because the first real library (requests, next phase; web3.py in FIN4) comes from PyPI, and installing it into the system Python is how machines rot and how supply-chain malware lands with admin rights; for every project. ONE IDEA: a venv is a private copy of the interpreter's package space per project - activate it, install into it, record it in requirements.txt. MANUAL (PowerShell, in sec-lab): 1) `python -m venv .venv`; 2) `.\\.venv\\Scripts\\Activate.ps1` (if blocked: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` - explain what it changes and that it is per-user); 3) prompt shows (.venv); 4) `pip install requests`; 5) `python -c \"import requests; print(requests.__version__)\"`; 6) `pip freeze > requirements.txt`; 7) check `.venv/` is in .gitignore (it is, from SETUP1), commit requirements.txt. Supply chain: PyPI is open - typosquats (reqeusts), hijacked maintainers; habits: spell the package from the official docs, pin versions, look at the project page and download numbers, never pip install as administrator. EVIDENCE TO CLOSE: the version line, requirements.txt committed, his two habits. Boundary Question: what can a malicious package do at install time (arbitrary code in setup.py) - why 'just installing' is already execution."
+   },
+   {
+    "id": "PY2-P",
+    "kind": "practice",
+    "title": "Python II practice",
+    "skills": [
+     "py-with-open",
+     "py-exceptions-specific",
+     "py-raise-value-error",
+     "py-counter",
+     "py-argparse",
+     "py-hash-properties",
+     "py-json-vs-csv",
+     "py-main-guard"
+    ],
+    "count": 10,
+    "tutor_brief": "Ten short questions: predict an output, name the exception, or say which standard-library module does a job. Two right in a row per skill."
+   },
+   {
+    "id": "PY2-C",
+    "kind": "check",
+    "title": "Python II checkpoint",
+    "skills": [
+     "py-with-open",
+     "py-exceptions-specific",
+     "py-raise-value-error",
+     "py-fail-closed",
+     "py-counter",
+     "py-argparse",
+     "py-exit-codes",
+     "py-hash-properties",
+     "py-chunked-read",
+     "py-fim-idea",
+     "py-json-vs-csv",
+     "py-venv-why",
+     "supply-chain-pip",
+     "boundary-question"
+    ],
+    "count": 14
+   },
+   {
+    "id": "PY2-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write the README for py2/: for each of the three tools (authparse, fhash/fim, report) one paragraph a hiring manager can read - what it does, how to run it, what it detects and what it cannot. Then four sentences explaining to a junior developer why specific exceptions beat bare except and why a hash is not encryption. Exact vocabulary."
+   }
+  ]
+ },
+ {
+  "id": "LNX1",
+  "phase": "Linux",
+  "title": "Linux I, in the browser and over ssh: the shell as a language",
+  "hook": "Every server you will defend, every box you will attack in a lab, every blockchain node, runs Linux. Until your second laptop arrives you learn it where it is already running: TryHackMe's browser machines and the Bandit wargame over ssh - and by the end you read a shell pipeline like a sentence.",
+  "read": {
+   "url": "https://overthewire.org/wargames/bandit/",
+   "title": "Read: OverTheWire Bandit - the wargame page (how to connect, the rules)"
+  },
+  "gift": {
+   "for": "your repository and your TryHackMe profile",
+   "what": "linux1/ with your Bandit write-ups (levels 0-20, command + what it taught, never the passwords) and three TryHackMe rooms completed on your public profile."
+  },
+  "taught": "the filesystem tree (/, /home, /etc, /var/log, /tmp, /bin, /usr); pwd, ls -la, cd, cat, less, head, tail -f, file, find, grep -r/-i/-n, wc, sort, uniq -c, cut, tr, xargs; pipes and redirection (|, >, >>, 2>, 2>&1); users, groups, permissions (rwx, chmod, chown, sudo), SUID idea; processes (ps aux, top, kill, &, jobs, nohup); environment variables (echo $PATH, export); ssh from PowerShell (ssh user@host -p PORT, known_hosts, the fingerprint prompt), scp; package managers (apt update/install) as a concept; man pages and --help; reading /var/log/auth.log with the tools above; base64, hexdump/xxd, strings; write-ups that never contain a flag or a password",
+  "steps": [
+   {
+    "id": "LNX1-L1",
+    "kind": "lesson",
+    "title": "The tree and the tools: Linux Fundamentals 1-2 in the browser",
+    "time_box": 60,
+    "max_turns": 36,
+    "objectives": [
+     "Navigate the Linux filesystem and explain what lives in /etc, /var/log, /home, /tmp and /bin",
+     "Complete TryHackMe 'Linux Fundamentals Part 1' (done in SETUP1) and 'Part 2' and paste your profile"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the Linux filesystem and basic tools; because every lab, every CTF and his own future server speak this language; for Bandit this week and LNX2 on the laptop. ONE IDEA: everything is a file in one tree rooted at /; the tools (ls, cat, find, grep) are small programs that read and write files and text. He works Linux Fundamentals Part 2 in the AttackBox (flags/switches, man, filesystem interaction: touch, mkdir, cp, mv, rm, file, permissions intro, common directories). The room's questions are answered IN the room. Here he explains in his words what /etc, /var/log, /home, /tmp, /bin are for, and runs `ls -la /etc | head` and `tail -5 /var/log/auth.log` (or whichever log exists) in the AttackBox and pastes the shapes. EVIDENCE TO CLOSE: the profile URL showing Part 2 complete and his five-directory answer. Boundary Question: what happens if a web app writes uploads into /tmp with predictable names (symlink/tmp races - name it).",
+    "links": [
+     {
+      "url": "https://tryhackme.com/room/linuxfundamentalspart2",
+      "label": "Room: Linux Fundamentals Part 2"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "LNX1-L2",
+    "kind": "lesson",
+    "title": "ssh from your own terminal: Bandit levels 0-5",
+    "time_box": 60,
+    "max_turns": 36,
+    "objectives": [
+     "Connect with ssh from PowerShell, read and accept a host fingerprint knowingly, and explain what known_hosts protects against",
+     "Solve Bandit 0-5 (cat with odd filenames, hidden files, file types, find by size/permissions) and keep a write-up without passwords"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: ssh and the first Bandit levels; because ssh is how every server is administered and how he will reach his lab, and Bandit teaches the shell by making you need it; for every later level and every lab. ONE IDEA: ssh gives a shell on a remote machine over an encrypted channel; the first connection shows the server's key fingerprint - accepting it pins that server in ~/.ssh/known_hosts, and a later mismatch means a different machine or a man-in-the-middle. SECRETS LAW: each Bandit level's password is found in the game and used only in his terminal - he NEVER pastes a password into this chat; write-ups contain the command and the idea, never the password. MANUAL: 1) PowerShell: `ssh bandit0@bandit.labs.overthewire.org -p 2220` (password bandit0, from the game page - public by design); 2) read the fingerprint prompt, type yes, say what it did; 3) level 0: `ls`, `cat readme`; 4) level 1: a file named `-` -> `cat ./-` (why: - means stdin); 5) level 2: spaces in a filename -> quotes or backslashes; 6) level 3: hidden files `ls -la`; 7) level 4: `file ./*` to find the human-readable one; 8) level 5: `find . -type f -size 1033c ! -executable`. Each level: he states the idea in one line in linux1/bandit.md (no passwords). EVIDENCE TO CLOSE: he is logged into bandit6 (he says so; you take his word plus the write-up) and the write-up for 0-5 is committed. If ssh is missing: Settings -> Optional features -> OpenSSH Client.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "LNX1-L3",
+    "kind": "lesson",
+    "title": "Pipes, grep, sort, uniq - text as a stream: Bandit 6-12",
+    "time_box": 60,
+    "max_turns": 36,
+    "objectives": [
+     "Build pipelines with |, >, 2>/dev/null, grep, sort, uniq -c, cut, tr, strings, base64 and explain each stage's input and output",
+     "Solve Bandit 6-12 and explain the decode chain of level 12 (hexdump, gzip, bzip2, tar) in order"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: pipelines; because log analysis is 'cat | grep | sort | uniq -c | sort -rn' before any SIEM, and reading a pipeline is reading an analyst's thought; for the auth.log step next and for every investigation. ONE IDEA: each program reads stdin and writes stdout; | connects them; stderr is a separate stream (2>/dev/null hides permission errors in a find). Levels: 6 (find across / by user/group/size, errors to /dev/null); 7 (grep a word in a big file); 8 (sort | uniq -u: the unique line); 9 (strings | grep '='); 10 (base64 -d); 11 (tr for ROT13 - he explains why ROT13 is not encryption); 12 (xxd -r, then file/gzip/bzip2/tar repeatedly in a temp dir under /tmp). Level 12 is the teaching moment: `file` tells the truth about bytes, extensions lie - he writes the chain in order in his write-up. One-line explanations of cut/tr/wc as they come up. EVIDENCE TO CLOSE: logged into bandit13 and the write-up for 6-12 committed (commands + idea, no passwords). Boundary Question: a filename that contains a newline or starts with - in a `find | xargs rm` pipeline - what goes wrong (and -print0/-0).",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "LNX1-L4",
+    "kind": "lesson",
+    "title": "Users, permissions, SUID and keys: Bandit 13-20",
+    "time_box": 60,
+    "max_turns": 36,
+    "objectives": [
+     "Read rwx permission strings and octal; explain owner/group/other, chmod, and what SUID means and why it matters",
+     "Use an ssh private key file correctly (permissions, -i) and solve Bandit 13-20 (keys, netcat, openssl s_client, nmap on the box, setuid binary, cron)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: permissions and the first network tools; because privilege is what security is about - who may read, write, execute - and SUID is the classic privilege-escalation surface; for LNX2 hardening and Security+ identity. ONE IDEA: every file has an owner, a group and nine permission bits; a process runs as a user; SUID makes a program run as its owner (root) whatever user starts it - powerful and dangerous. Levels: 13 (a private key: chmod 600, `ssh -i`; why ssh refuses a world-readable key); 14 (nc to a local port - introduce netcat as 'a socket in your hand'); 15 (`openssl s_client -connect` - TLS from the terminal; name it, FIN/CRY later); 16 (`nmap -p 31000-32000 localhost` - his first scan, on the game box which invites it: say the sanctioned rule once); 17 (diff); 18 (.bashrc logout trick: `ssh ... cat readme` - commands over ssh); 19 (a setuid binary: `ls -l` shows the s bit, he explains it); 20 (a listener and a client in two terminals or with &). Write-up per level, no passwords, keys never pasted anywhere. EVIDENCE TO CLOSE: logged into bandit21 and the write-up for 13-20 committed; his explanation of SUID in two sentences. Boundary Question: why is a SUID copy of bash the first thing an attacker plants, and how would his FIM from PY2 catch it.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "LNX1-C5",
+    "kind": "code",
+    "title": "Build: run your own authparse on a real Linux log, and reproduce it in one shell line",
+    "time_box": 60,
+    "max_turns": 36,
+    "media": [],
+    "brief": "",
+    "objectives": [
+     "Copy authparse.py to a Linux box with scp (or paste via a heredoc), run it on /var/log/auth.log, and get the same top IPs from a grep/awk/sort/uniq pipeline",
+     "Explain when a Python tool beats a pipeline and when the pipeline wins"
+    ],
+    "starter": "# LNX1-C5 ON A LINUX BOX (TryHackMe AttackBox, or any room machine you own in the lab).\n# 1) Get your script there:  scp -P 2220 ... is not available on Bandit; on the AttackBox use the browser's clipboard: \n#    cat > authparse.py << 'EOF'   (paste)   EOF\n# 2) python3 authparse.py /var/log/auth.log --top 5\n# 3) The same answer with the shell - fill in the blanks and explain each stage:\n#    grep 'Failed password' /var/log/auth.log | awk '{for(i=1;i<=NF;i++) if($i==\"from\") print $(i+1)}' | sort | uniq -c | sort -rn | head -5\n# 4) Time both with  time  - which is faster on this file? Why might that flip at 10 GB?\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: his own tool on a real log plus the shell equivalent; because an analyst needs both - the pipeline for the first five minutes on an unknown box, the script when the logic grows; for every incident. ONE IDEA: the same computation expressed twice shows what each language is for. If the AttackBox's auth.log is quiet, he generates failures himself: from a second terminal `ssh wronguser@localhost` three times with wrong passwords (his own box - sanctioned). He explains each pipeline stage's input and output; the awk loop finds the word after 'from' (compare to his words.index('from') + 1). `time` both; the answer today is probably awk; the lesson is streaming, startup cost, and that Python wins when you need state across lines, JSON output or tests. Commit: linux1/authparse-pipeline.md with both commands and the outputs (IPs from a lab box only). EVIDENCE TO CLOSE: both outputs agree (or he explains the difference - e.g. 'invalid user' lines) and his when-which rule. Boundary Question: `grep` on a log an attacker wrote into (log injection) - can a crafted line make the pipeline miscount? Yes - which stage; what would fix it (anchor on the sshd[pid] prefix)."
+   },
+   {
+    "id": "LNX1-L6",
+    "kind": "lesson",
+    "title": "Processes, services and where the logs are",
+    "time_box": 60,
+    "max_turns": 36,
+    "objectives": [
+     "List and read processes (ps aux, top), signals (kill -15 vs -9), background jobs; name the init system (systemd) and read a unit's status and journal",
+     "Locate the five logs an incident responder reads first and say what each holds"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: processes and logs; because an intrusion is a process that should not be running and a log line that should not be there; for LNX2 (hardening his own machine) and the Security+ operations domain. ONE IDEA: the kernel runs processes with a PID, a user and a parent; systemd starts services from unit files and journald keeps their logs; classic logs are text under /var/log. On the AttackBox: `ps aux | head`, `ps aux --sort=-%mem | head -5`, `top` (q), `sleep 300 &`, `jobs`, `kill %1` (SIGTERM) vs `kill -9` (SIGKILL - why last resort); `systemctl status ssh` (or sshd), `journalctl -u ssh -n 20`, `ls /var/log`. The five logs: auth.log/secure (logins, sudo), syslog/messages (system), journalctl (units), /var/log/apache2|nginx/access.log (web), dpkg/apt history (what was installed). He writes them into linux1/notes.md with one line each. EVIDENCE TO CLOSE: the pasted ps/systemctl shapes and the five-log list in his words. Boundary Question: a process named 'kworker' running from /tmp as www-data - what is wrong with that picture (names lie; path and user tell the truth).",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "LNX1-P",
+    "kind": "practice",
+    "title": "Linux I practice: read the command, predict the result",
+    "skills": [
+     "lnx-filesystem-dirs",
+     "lnx-pipes-redirection",
+     "lnx-grep-sort-uniq",
+     "lnx-permissions-octal",
+     "lnx-suid",
+     "lnx-ssh-fingerprint",
+     "lnx-processes-signals",
+     "lnx-logs-location"
+    ],
+    "count": 10,
+    "tutor_brief": "Ten questions: given a command line, what does it print or do; given a permission string, who can do what; which log holds X. Two right in a row per skill."
+   },
+   {
+    "id": "LNX1-C",
+    "kind": "check",
+    "title": "Linux I checkpoint",
+    "skills": [
+     "lnx-filesystem-dirs",
+     "lnx-pipes-redirection",
+     "lnx-grep-sort-uniq",
+     "lnx-find",
+     "lnx-file-vs-extension",
+     "lnx-permissions-octal",
+     "lnx-suid",
+     "lnx-ssh-fingerprint",
+     "lnx-key-permissions",
+     "lnx-processes-signals",
+     "lnx-systemd-journal",
+     "lnx-logs-location",
+     "sanctioned-targets-rule",
+     "boundary-question"
+    ],
+    "count": 14
+   },
+   {
+    "id": "LNX1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write linux1/README.md: explain to a Windows administrator, in 10-15 sentences, how to think in Linux - the single tree, text streams and pipes, users and the nine permission bits, what SUID is and why it is watched, where the logs live, and how ssh host keys protect a connection. Use two of your Bandit levels as examples (ideas and commands only - never a password or a flag)."
+   }
+  ]
+ },
+ {
+  "id": "FIN2",
+  "phase": "Finance",
+  "title": "Markets and trading mechanics: how a price is made (paper only)",
+  "hook": "A tokenized bond, a crypto exchange and the TSX all do one thing: match buyers and sellers and settle the result. Before you can read a DeFi protocol or a market-structure rule you must know the order book cold - and you will build one.",
+  "read": {
+   "url": "https://www.ciro.ca/investors",
+   "title": "Read: CIRO - for investors (who regulates Canadian dealers and marketplaces, and what they publish)"
+  },
+  "gift": {
+   "for": "your repository",
+   "what": "fin2/orderbook.py - a price-time-priority matching engine with tests, and fin2/journal/ - a paper-trading journal (CSV + a Python summary of P&L, drawdown and hit rate) you keep for the rest of the programme."
+  },
+  "taught": "what a market is (venue, instrument, participants); exchange vs OTC vs dealer markets; the limit order book: bids, asks, best bid/offer, spread, depth; price-time priority matching; order types (market, limit, stop, stop-limit, IOC/FOK, day/GTC) and what each risks; price discovery and liquidity; market makers, HFT, and why spreads exist; the trade lifecycle (order, execution, clearing by a CCP - CDS/CDCC in Canada, settlement T+1 in Canada and the US since May 2024); who regulates: CSA (provincial regulators), CIRO (dealers and marketplaces since 2023, formerly IIROC+MFDA), OSFI (banks), exchanges (TSX, TSXV, CSE); risk arithmetic: position size, expectancy, max drawdown, the gambler's ruin; derivatives as mechanisms (forward, future, option payoff diagrams, margin); a paper-trading journal as a data discipline; the house rule: mechanisms, never advice; all trading paper",
+  "steps": [
+   {
+    "id": "FIN2-L1",
+    "kind": "lesson",
+    "title": "What a market is, and the three kinds",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Define a market by venue, instrument and participants; distinguish exchange, OTC and dealer markets with a Canadian example of each",
+     "State the house rule of the finance strand and why a mechanism course gives no advice"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: markets as systems; because tokenization is 'put this instrument on this ledger and let it trade' - the instrument and the trading are the old part; for every FIN step after this. ONE IDEA: a market is a mechanism that turns intentions to buy and sell into a price and a transfer; the mechanism differs by venue type. Exchange (central order book, anonymous, standardised: TSX equities), OTC (bilateral, negotiated: most bonds, FX, swaps), dealer/quote-driven (a dealer quotes two-way prices: Canadian bond dealers, a crypto 'instant buy' is a dealer trade with a hidden spread - name it). Say the house rule plainly once: this strand teaches how it works, never what to buy; every trade in the programme is paper; his real money is outside the programme. EVIDENCE TO CLOSE: the three kinds with correct Canadian examples and the rule in his words. Boundary Question: in which of the three does the customer not see the other side's price (dealer) - and what does that mean for the spread he pays.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN2-L2",
+    "kind": "lesson",
+    "title": "The limit order book: bids, asks, spread, depth",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Read a level-2 order book, name best bid/offer, spread and depth, and predict what a market order of a given size executes at",
+     "Explain why the spread exists and who earns it"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the order book; because it is the data structure of every exchange including crypto venues, and matching is what he builds next step; for FIN4/FIN6 (AMMs are the alternative to a book - he must know what they replace). ONE IDEA: resting limit orders sit in two sorted queues; a market order walks the opposite queue, best price first, until filled - so size moves price (slippage). Draw a 5-level book (bids 100.10x300, 100.05x500, ...; asks 100.20x200, 100.25x400, ...). He reads: best bid 100.10, best ask 100.20, spread 0.10, then computes the average fill of a 500-share market buy (200 @100.20 + 300 @100.25 = 100.23). The spread: compensation to liquidity providers for adverse selection and inventory risk - two sentences, no more. EVIDENCE TO CLOSE: the fill arithmetic right and his one line on the spread. Boundary Question: a market order in a thin book at 03:00 - what is the worst fill; why limit orders are the default for anyone who is not a market maker.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN2-L3",
+    "kind": "lesson",
+    "title": "Order types and what each one risks",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "For market, limit, stop, stop-limit, IOC, FOK, day and GTC orders: say what triggers, what executes, and the failure mode",
+     "Explain a stop order's gap risk and a stop-limit's non-execution risk with one numeric example each"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: order types; because every trading interface and every exchange API (including crypto) exposes them, and most retail losses are an order type misunderstood; for the engine (which will support market and limit) and the journal. ONE IDEA: an order is a conditional instruction - the condition (trigger) and the execution rule (price limit, time in force) are separate. Table he completes: market (now, any price - slippage); limit (at my price or better - may never fill); stop (becomes a market order when price touches X - gaps: stop at 95 fills at 80 on a gap-down); stop-limit (becomes a limit at Y when X touches - may not fill in a crash, you keep the position); IOC/FOK (partial or all-or-nothing immediacy); day/GTC (time in force). Two numeric examples he works. EVIDENCE TO CLOSE: the completed table and the two examples. Boundary Question: an exchange API with a bug that treats a limit price as a quantity (it has happened) - what protects you (client-side validation, max order size) - defence in trading systems is input validation again.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN2-C4",
+    "kind": "code",
+    "title": "Build: a price-time-priority matching engine",
+    "time_box": 75,
+    "max_turns": 40,
+    "media": [],
+    "brief": "",
+    "objectives": [
+     "Implement an order book with two sorted queues, limit and market orders, partial fills and a trade log; keep the invariant that no bid rests at or above a resting ask",
+     "Write five tests (assert statements) that document the rules, and commit"
+    ],
+    "starter": "# FIN2-C4: a tiny matching engine. Prices in integer cents - never floats for money.\n# Orders: dict(id, side 'buy'|'sell', price (None for market), qty). Book: bids sorted high->low then time; asks low->high then time.\nbids, asks, trades = [], [], []\n_seq = 0\n\ndef place(side, qty, price=None):\n    global _seq\n    _seq += 1\n    order = {\"id\": _seq, \"side\": side, \"price\": price, \"qty\": qty}\n    book = asks if side == \"buy\" else bids\n    while order[\"qty\"] > 0 and book:\n        best = book[0]\n        crosses = price is None or (side == \"buy\" and best[\"price\"] <= price) or (side == \"sell\" and best[\"price\"] >= price)\n        if not crosses:\n            break\n        fill = min(order[\"qty\"], best[\"qty\"])\n        trades.append({\"price\": best[\"price\"], \"qty\": fill, \"taker\": order[\"id\"], \"maker\": best[\"id\"]})\n        order[\"qty\"] -= fill\n        best[\"qty\"] -= fill\n        if best[\"qty\"] == 0:\n            book.pop(0)\n    if order[\"qty\"] > 0 and price is not None:\n        rest = bids if side == \"buy\" else asks\n        rest.append(order)\n        rest.sort(key=lambda o: (-o[\"price\"] if side == \"buy\" else o[\"price\"], o[\"id\"]))\n    return order\n\ndef best_bid(): return bids[0][\"price\"] if bids else None\ndef best_ask(): return asks[0][\"price\"] if asks else None\ndef invariant(): return best_bid() is None or best_ask() is None or best_bid() < best_ask()\n\nplace(\"sell\", 200, 10020); place(\"sell\", 400, 10025); place(\"buy\", 300, 10010); place(\"buy\", 500, 10005)\nprint(best_bid(), best_ask(), invariant())\nplace(\"buy\", 500)                      # market buy 500: predict the two trades\nprint(trades)\nprint(best_ask(), invariant())\n# Your turn: 1) a limit buy at 10030 for 100 - which resting ask fills it and at what price (maker's price, not yours)?\n# 2) write five asserts that pin the rules (price priority, time priority, partial fill, market order leaves nothing resting, invariant).\n# 3) Boundary Question: a market order into an EMPTY book - what happens in your code, and what should happen?\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the engine; because building the matcher is the only way to own price-time priority, and an AMM in FIN4 makes sense only against this; for the record (a hiring manager at a bank or exchange recognises this) and for FIN6. ONE IDEA: matching is a loop - while the incoming order can cross the best resting order, trade at the RESTING order's price, then rest what remains if it has a price. He reads the code first and explains `crosses`, the sort key, and why the maker's price is used (price improvement to the taker). Predict: 10010 10020 True; the market buy fills 200 @10020 and 300 @10025, leaving 100 @10025 on the ask; best_ask 10025 True. Task 1: fills 100 @10025 (the resting price), nothing rests. Task 2: he writes the asserts as a `def test_...()` block; run them. Task 3: today the market order silently leaves qty unfilled and returns - he decides (reject or report unfilled) and implements. Integer cents: say why once (0.1 + 0.2). HIS MACHINE: save fin2/orderbook.py with the tests, commit 'fin2: matching engine with price-time priority + tests', push. EVIDENCE TO CLOSE: outputs, the five asserts passing, the commit."
+   },
+   {
+    "id": "FIN2-L5",
+    "kind": "lesson",
+    "title": "From trade to settlement: CCPs, T+1 and who regulates whom in Canada",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Trace a TSX equity trade: order, execution, clearing by a central counterparty (CDS), settlement T+1; say what a CCP is for",
+     "Map the Canadian regulators: CSA/provincial regulators, CIRO, OSFI, the exchanges' own rules - and what each would care about in a tokenized security"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: post-trade and regulators; because 'tokenization will remove T+1 and the CCP' is the central claim he will evaluate in FIN5, and he cannot evaluate it without knowing what they do; for FIN3 and FIN5. ONE IDEA: after a match, a central counterparty steps between buyer and seller (novation), nets obligations and guarantees settlement with margin and a default fund; settlement moves the security and the cash on T+1 (Canada and the US moved from T+2 to T+1 on 27-28 May 2024). CDS Clearing (equities, fixed income) and CDCC (derivatives) - both TMX Group. Regulators: securities are provincial - the CSA coordinates the 13 regulators (OSC, AMF, BCSC...); CIRO (2023, merged IIROC and MFDA) oversees investment dealers, mutual fund dealers and marketplace trading; OSFI supervises federally regulated banks and insurers (prudential); exchanges have listing and trading rules. He draws the trade timeline and the regulator map, and for a hypothetical tokenized TSX share says which body cares about what (CSA: is it a security, prospectus/exemptions; CIRO: the dealer/marketplace; CDS: settlement; OSFI if a bank issues/custodies). EVIDENCE TO CLOSE: both drawings in his words. Boundary Question: if settlement were instant and gross (T+0 on a ledger), what does a dealer lose - the netting liquidity benefit - the trade-off from FIN1 again.",
+    "links": [
+     {
+      "url": "https://www.securities-administrators.ca/about/",
+      "label": "CSA - about the Canadian Securities Administrators"
+     },
+     {
+      "url": "https://www.ciro.ca/about-ciro",
+      "label": "CIRO - about"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FIN2-L6",
+    "kind": "lesson",
+    "title": "Risk arithmetic: position size, expectancy, drawdown, ruin",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Compute expectancy from win rate and average win/loss; compute position size from a fixed fractional risk rule; explain max drawdown",
+     "Show with numbers why a 50% loss needs a 100% gain, and why risk of ruin depends on bet size, not on being right"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the arithmetic of risk; because every blow-up - a trader, a crypto fund, a DeFi protocol - is this arithmetic ignored, and a security analyst at a bank sits next to the risk function; for the journal and FIN6. ONE IDEA: outcomes are a distribution; what you control is size. Worked numbers he does: expectancy = p*avgWin - (1-p)*avgLoss (e.g. 0.4*300 - 0.6*150 = +30 per trade: a 40% hit rate can be positive); fixed-fractional sizing: risk 1% of 10,000 with a 5% stop -> position 2,000; drawdown arithmetic: -50% needs +100%, -20% needs +25%; gambler's ruin: a fair coin bet with 10% of capital each time vs 1% - he reasons about variance (optionally simulates it in Python in 10 lines - the editor is there). Say plainly: none of this says what to trade; it says how any trading plan is measured. EVIDENCE TO CLOSE: his three computations correct and the -50/+100 explanation. Boundary Question: a backtest with 70% win rate over 20 trades - why that number means almost nothing (sample size; selection) - the same scepticism he applies to a vendor's security claim.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN2-L7",
+    "kind": "lesson",
+    "title": "Derivatives as mechanisms: forwards, futures, options, margin",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Draw the payoff of a long forward, a long call and a short put at expiry; explain margin and a margin call",
+     "Explain why derivatives exist (hedging, price discovery) and where leverage turns them into the thing that fails first"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: derivatives; because perpetual futures are most of crypto trading volume and liquidation cascades are FIN6's subject, and options language (strike, expiry, delta) is everywhere in structured products a bank sells; mechanisms only. ONE IDEA: a derivative's value is a function of something else; its payoff diagram IS the contract. He draws three payoffs (x = price at expiry, y = profit): long forward (a line through the forward price), long call (flat at -premium, then up from the strike), short put (flat at +premium, then down below the strike - the one that 'earns income until it does not'). Futures: standardised, exchange-traded, daily mark-to-market with margin; margin call = post more or be closed. Leverage: a 10x position loses everything on a 10% move - the mechanism of a liquidation; name 'perpetual swap' and 'funding rate' once as FIN4/6 vocabulary. EVIDENCE TO CLOSE: the three diagrams described correctly and the margin mechanism in his words. Boundary Question: who is the counterparty to a futures position - the CCP - and what happens when the CCP's default fund is not enough (LME nickel 2022 - name it).",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "FIN2-C8",
+    "kind": "code",
+    "title": "Build: the paper-trading journal (CSV in, risk report out)",
+    "time_box": 60,
+    "max_turns": 36,
+    "media": [],
+    "brief": "",
+    "objectives": [
+     "Define the journal schema (date, instrument, side, qty, entry, exit, stop, thesis, outcome) in CSV and write report.py that computes hit rate, expectancy, max drawdown and the equity curve",
+     "Record five paper trades (hypothetical, with a written thesis each) and commit the journal and report"
+    ],
+    "starter": "# FIN2-C8 ON YOUR MACHINE: sec-lab/fin2/journal/trades.csv and sec-lab/fin2/journal/report.py\n# trades.csv header:  date,instrument,side,qty,entry,exit,stop,thesis\n# PAPER ONLY. Prices in decimal strings; convert with Decimal, never float.\nimport csv, sys\nfrom decimal import Decimal\nfrom pathlib import Path\n\ndef load(path):\n    with open(path, newline=\"\", encoding=\"utf-8\") as f:\n        return list(csv.DictReader(f))\n\ndef pnl(t):\n    sign = 1 if t[\"side\"] == \"buy\" else -1\n    return sign * (Decimal(t[\"exit\"]) - Decimal(t[\"entry\"])) * Decimal(t[\"qty\"])\n\ndef main():\n    trades = load(sys.argv[1] if len(sys.argv) > 1 else \"trades.csv\")\n    results = [pnl(t) for t in trades]\n    wins = [r for r in results if r > 0]\n    equity, peak, maxdd = Decimal(0), Decimal(0), Decimal(0)\n    for r in results:\n        equity += r\n        peak = max(peak, equity)\n        maxdd = max(maxdd, peak - equity)\n    n = len(results)\n    print(f\"trades={n} hit_rate={len(wins)/n:.0%} total={sum(results)} expectancy={sum(results)/n:.2f} max_drawdown={maxdd}\")\n    # Your turn: 1) add risk per trade = |entry - stop| * qty and the R-multiple (pnl / risk) column; 2) print the equity curve as a list;\n    # 3) refuse a row whose stop is on the wrong side of the entry (a buy with stop above entry) with a clear message.\n\nif __name__ == \"__main__\":\n    main()\n",
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the journal; because a journal with a thesis and an R-multiple is the one tool every serious trader and every risk desk agrees on, and keeping it as data is a Python habit; for the rest of the programme (he keeps it; nothing in it is real money) and FIN6. ONE IDEA: a trade is a hypothesis with a defined risk; the journal measures the hypotheses, not the P&L. He writes five hypothetical trades (any instrument, with a written thesis - 'if X then Y, invalidated at stop') into trades.csv; you never suggest an instrument or direction. Decimal: say why (exact decimal arithmetic for money). Tasks 1-3; task 3 is validation at the door again. HIS MACHINE: run `python report.py trades.csv`, paste; commit 'fin2: paper journal + risk report', push. EVIDENCE TO CLOSE: the report line, the R-multiples and the rejected bad row demonstrated, the commit. If he asks whether a trade is a good idea: the house rule, one line, then back to the mechanism."
+   },
+   {
+    "id": "FIN2-C",
+    "kind": "check",
+    "title": "Markets checkpoint",
+    "skills": [
+     "market-kinds",
+     "order-book-reading",
+     "market-order-slippage",
+     "order-types-risks",
+     "price-time-priority",
+     "ccp-and-t1",
+     "canadian-regulators",
+     "expectancy-and-sizing",
+     "drawdown-arithmetic",
+     "derivative-payoffs",
+     "margin-and-leverage",
+     "finance-house-rule"
+    ],
+    "count": 14
+   },
+   {
+    "id": "FIN2-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write fin2/README.md for a colleague who is a good programmer and knows nothing about markets: how an order book makes a price, what the spread is, what happens after a trade (CCP, T+1) and who regulates it in Canada, how you size a position and why drawdown arithmetic is asymmetric, and what your matching engine and journal prove. 15-20 sentences. State the house rule in the first paragraph."
+   }
+  ]
+ }
+]

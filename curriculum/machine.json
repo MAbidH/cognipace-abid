@@ -1,0 +1,29 @@
+{
+  "_note": "What is REALLY on Abid's machines (19 Nov 2026). The tutor may only say something exists if it is listed here or Abid made it in the conversation. Update when a step installs or creates something. 'windows' is the current PC (other projects live on it - NO Linux install, no dual boot, no WSL on it; Linux is TryHackMe in the browser and ssh until the second laptop). 'linux' is the second laptop once it exists (LNX2 installs Ubuntu 24.04 on it).",
+  "updated": "2026-11-19",
+  "windows": {
+    "has": [
+      "Windows 11 PC - Abid's main machine; other project folders live on it (C:\\Users\\ASUS\\Projects) and must not be touched by any step",
+      "Windows Terminal / PowerShell 5.1 (and PowerShell 7 if installed - check with $PSVersionTable)",
+      "Google Chrome (Abid's accounts are signed in there - the tutor never asks to see them)",
+      "Git for Windows, Node.js and the CogniPace repos (the developer side of this very app) - installed before the programme",
+      "Windows built-in OpenSSH client (ssh, scp) - used for Bandit",
+      "Python 3 may already be installed from other projects - SETUP1-L3 checks with python --version before installing"
+    ],
+    "not_there": [
+      "No Linux, no WSL, no VirtualBox on this PC by decision (other project data) - Linux work happens in the TryHackMe AttackBox or over ssh until the second laptop",
+      "VS Code, the GitHub CLI (gh), a venv - until SETUP1/PY2 create them",
+      "sec-lab folder - until SETUP1-L2 creates it"
+    ],
+    "broken_do_not_try": []
+  },
+  "linux": {
+    "has": [
+      "The second laptop (used ThinkPad class, 16 GB) - NOT bought yet; LNX2 begins with installing Ubuntu 24.04 on it"
+    ],
+    "not_there": [
+      "Everything, until LNX2"
+    ],
+    "broken_do_not_try": []
+  }
+}

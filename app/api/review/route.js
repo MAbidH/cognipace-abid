@@ -1,5 +1,5 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
+import { makeClient } from "../../../lib/llm";
 import { isStudent } from "../../../lib/auth";
 import { q } from "../../../lib/db";
 import { sameOrigin, safeError, logError, reserveCall, finishCall, budgetPaused, noteBudgetPaused } from "../../../lib/guard";
@@ -14,7 +14,7 @@ export const runtime = "nodejs";
    module's `taught` fence, and they go into review_bank for every later review. At most GEN_PER_DAY skills a day, every
    call reserved against the daily ceiling like any tutor call. Answers never leave the server. */
 const GEN_PER_DAY = 4;
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, timeout: 45000, maxRetries: 1 });
+const client = makeClient({ timeout: 45000, maxRetries: 1 });
 
 const SYSTEM = `You write review questions for a 13-year-old with B1 English who is revising ONE skill she already learned.
 Return ONLY a JSON array of exactly 2 items, no prose, no code fences. Each item: {"q": string, "a": [string, ...alternates], "explain": string}.

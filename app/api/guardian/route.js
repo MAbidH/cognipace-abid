@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
+import { makeClient } from "../../../lib/llm";
 import { cookies } from "next/headers";
 import { isGuardian, cookieOpts } from "../../../lib/auth";
-import Anthropic from "@anthropic-ai/sdk";
 import { safeEqual, sameOrigin, sessionValue, verifyTotp, clientIp, safeError, reserveCall, finishCall, logError, budgetPaused } from "../../../lib/guard";
 import { q, audit } from "../../../lib/db";
 import { allModules } from "../../../lib/curriculum";
@@ -19,7 +19,7 @@ export const maxDuration = 300;
 /** What the knowledge base needs to call the model (lib/knowledge.js takes it as an argument). The server's own key. */
 function kbDeps() {
   return { q, model: tutorModel(), reserveCall, finishCall, logError, budgetPaused, modules: allModules(), handbook: TEACHING_HANDBOOK, machine: MACHINE,
-    client: new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, timeout: 120000, maxRetries: 0 }) };
+    client: makeClient({ timeout: 120000, maxRetries: 0 }) };
 }
 
 /* Login throttle (29 Oct 2026, fix day). The old lock counted failures from ANY address: 8 bad tries an hour from a

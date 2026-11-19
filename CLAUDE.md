@@ -2,7 +2,7 @@
 
 Abid's own CogniPace (19 Nov 2026): the same codebase as Faiza's school (C:\Users\ASUS\Projects\the-school, GitHub
 the-school), run as a second instance with its own profile (curriculum/student.json, mode "adult"), its own curriculum,
-its own Vercel project, Neon database and Anthropic API key. Live at: <fill in after the first deploy>.
+its own Vercel project, Neon database and model API key (NVIDIA NIM, free). Live at: <fill in after the first deploy>.
 The plan is the project doc ABID-PLAN-2026-11-19 (six phases, Dec 2026 - May 2027; a FIN module in every phase).
 
 ## How the two instances relate
@@ -14,8 +14,7 @@ The plan is the project doc ABID-PLAN-2026-11-19 (six phases, Dec 2026 - May 202
 - Nothing here can change Faiza's instance: different repo, different database, different key.
 
 ## Who decides
-- Abid is the student AND the operator. He deploys (`.\push.ps1 "message"`), sets the API spend limit (USD 50/month
-  on this key; Vercel env SPEND_LIMIT_USD shows it on /guardian), and owns the plan. /guardian is his own dashboard.
+- Abid is the student AND the operator. He deploys (`.\push.ps1 "message"`), owns the model key and the plan. /guardian is his own dashboard.
 - The sequence is fixed in advance (docs/SEQUENCE.md): every step is a prerequisite for the next. Order changes only
   at a phase review; a module is written at most 4-6 weeks ahead; far modules stay outlines.
 
@@ -35,7 +34,11 @@ The plan is the project doc ABID-PLAN-2026-11-19 (six phases, Dec 2026 - May 202
    AttackBox and ssh until the second laptop; Ubuntu 24.04 goes on that laptop (LNX2).
 
 ## Standing settings (19 Nov 2026)
-- Tutor model: claude-sonnet-5-5 (calendar.json tutorModel). Cost estimate ~$30-35/month at 85 h; limit $50.
+- Tutor model: NVIDIA's free NIM API through the OpenAI-compatible adapter (lib/llm.js; Vercel env LLM_PROVIDER=openai,
+  LLM_BASE_URL, LLM_API_KEY); the model id is calendar.json tutorModel (nvidia/llama-3.3-nemotron-super-49b-v1.5 to
+  start). Abid, 19 Nov: "instead of anthropic let's use a free one from Nvidia ... all i need is guided instructions".
+  The model still runs behind every step - it grades checks, writes the review questions and closes steps on evidence -
+  but it is a free, rate-limited model, so a refused call means "try again in a minute", never a bill.
 - No night rule, no exams, no vacations (calendar.json). Daily tutor-time cap 480 min (a safety cap, not a goal).
 - Rhythm: 6 days x 3 h, one day off; Saturday is review day (10 review questions, one old module re-checked, one
   room, one write-up). Streak: one missed day a week is free (lib/streak.js, as hers).

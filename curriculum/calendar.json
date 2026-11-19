@@ -2,10 +2,17 @@
   "_note": "cognipace-abid calendar (19 Nov 2026). Adult instance: no exams, no vacations, no birthday card, no night rule. normalCapMinutes is a safety cap on tutor time per day, not a goal - the goal is 20+ hours a week (6 x 3 h, one day off).",
   "normalCapMinutes": 480,
   "tutorModel": [
-    { "from": "2026-11-19", "id": "claude-sonnet-5-5", "_note": "Sonnet on Abid's own API key (Vercel env ANTHROPIC_API_KEY of this project). Change here, not in the env." }
+    {
+      "from": "2026-11-19",
+      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "_note": "NVIDIA NIM free API (LLM_PROVIDER=openai, lib/llm.js). Change the id here to switch models - any id from build.nvidia.com works. Earlier plan: claude-sonnet-5-5 on an Anthropic key (Abid, 19 Nov: 'instead of anthropic let's use a free one from Nvidia')."
+    }
   ],
   "vacations": [],
   "exams": [],
   "freeDays": [],
-  "nightHours": { "enabled": false, "_note": "No night stop for an adult. Set enabled true with softStop/hardStop/morning to turn it on." }
+  "nightHours": {
+    "enabled": false,
+    "_note": "No night stop for an adult. Set enabled true with softStop/hardStop/morning to turn it on."
+  }
 }

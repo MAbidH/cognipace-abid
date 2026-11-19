@@ -12,3 +12,8 @@
   adult instance against a fresh database (first module SETUP1, no night rule, adult warm-up flags, Start school with no
   desk check, Sonnet, the adult tutor prompt with no child rules, the instance machine facts, a step closed on
   evidence and advanced, the instance rewards).
+- Later the same day: Abid - "instead of anthropic let's use a free one from Nvidia, all i need is guided instructions,
+  i am adult ... i don't need a live tutor either". lib/llm.js (shared code) adds an OpenAI-compatible provider behind
+  the same client surface; this instance runs LLM_PROVIDER=openai against NVIDIA NIM with
+  nvidia/llama-3.3-nemotron-super-49b-v1.5. Tested end to end against a fake OpenAI server (create, stream, usage,
+  bad key). The model still grades and closes steps; the tutor conversation can stay minimal.

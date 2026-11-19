@@ -1,5 +1,5 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { NextResponse } from "next/server";
+import { makeClient } from "../../../lib/llm";
 import { isStudent } from "../../../lib/auth";
 import { currentModule, minutesToday, getModule } from "../../../lib/curriculum";
 import { q } from "../../../lib/db";
@@ -30,7 +30,7 @@ export const runtime = "nodejs";
 // page, she saw "The questions did not arrive", and nothing was logged. Hobby + Fluid compute allows 300 s.
 export const maxDuration = 300;
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY, timeout: 45000, maxRetries: 1 });
+const client = makeClient({ timeout: 45000, maxRetries: 1 }); // 19 Nov 2026: Anthropic, or any OpenAI-compatible endpoint (lib/llm.js)
 // 28 Oct 2026: the model follows the dated schedule in curriculum/calendar.json (lib/calendar.js tutorModel), then the env.
 const MODEL = () => tutorModel();
 

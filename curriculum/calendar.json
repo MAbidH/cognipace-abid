@@ -4,8 +4,8 @@
   "tutorModel": [
     {
       "from": "2026-11-22",
-      "id": "openai/gpt-oss-120b",
-      "_note": "NVIDIA NIM free endpoint (LLM_PROVIDER=openai, lib/llm.js); 131K context, text-only reasoning model. 22 Nov 2026: switched from nvidia/nemotron-3.5-super-vl-120b-a12b, which looped in SETUP1, misread Abid's PowerShell prompt path, and would not close a step he had plainly passed. Trade-off: text-only, so the image 'Show my screen' path no longer works - fine for terminal/paste work. Any Free Endpoint id from build.nvidia.com works; change here and push. Watch the first reply for stray reasoning text; if lib/llm.js needs a tweak for gpt-oss, do it there."
+      "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "_note": "NVIDIA NIM free endpoint (LLM_PROVIDER=openai, lib/llm.js); vision-capable. 22 Nov 2026 (16:30): reverted from openai/gpt-oss-120b, which returned no response on the live tutor - gpt-oss is a reasoning model and lib/llm.js does not yet handle its reasoning output / reasoning_effort (and the call cannot be tested without the API key). The machine.json prompt-path fix (same day) stays and addresses the SETUP1 cd loop regardless of model. TO TRY gpt-oss again: first add gpt-oss handling to lib/llm.js (reasoning_effort low; ensure message.content is read), then deploy and watch the Vercel log on the first call."
     }
   ],
   "vacations": [],

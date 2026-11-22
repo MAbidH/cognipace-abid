@@ -17,4 +17,13 @@ foreach ($f in @("package.json", "package-lock.json", "next.config.js", "eslint.
 foreach ($f in @("curriculum\wonders.json", "curriculum\news.json", "docs\ENGINEERING.md")) {
   if (Test-Path (Join-Path $src $f)) { Copy-Item (Join-Path $src $f) (Join-Path $PSScriptRoot $f) -Force }
 }
-Write-Host "Code synced from the-school. Instance files untouched. Now: .\push.ps1 'sync from the-school <what>'" -ForegroundColor Green
+# 22 Nov 2026: the instance files are versioned in the-school\instances\abid too (Claude writes them there); re-apply
+# that overlay here so this folder never drifts behind it. robocopy, not Copy-Item: Copy-Item -Recurse of a folder onto
+# an existing folder nests it (curriculum\curriculum) - that is how the retired model id survived one "sync".
+$overlay = Join-Path $src "instances\abid"
+if (Test-Path $overlay) {
+  robocopy $overlay $PSScriptRoot /E /NFL /NDL /NJH /NJS /NP | Out-Null
+  if ($LASTEXITCODE -ge 8) { throw "robocopy (overlay) failed" }
+}
+foreach ($stray in @("curriculum\curriculum", "docs\docs")) { if (Test-Path $stray) { Remove-Item $stray -Recurse -Force } }
+Write-Host "Code synced from the-school and the instance overlay re-applied. Now: .\push.ps1 'sync from the-school <what>'" -ForegroundColor Green

@@ -4,8 +4,8 @@
   "tutorModel": [
     {
       "from": "2026-11-19",
-      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-      "_note": "NVIDIA NIM free API (LLM_PROVIDER=openai, lib/llm.js). Change the id here to switch models - any id from build.nvidia.com works. Earlier plan: claude-sonnet-5-5 on an Anthropic key (Abid, 19 Nov: 'instead of anthropic let's use a free one from Nvidia')."
+      "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "_note": "NVIDIA NIM free endpoint (LLM_PROVIDER=openai, lib/llm.js). 22 Nov 2026: replaced nvidia/llama-3.3-nemotron-super-49b-v1.5, which NVIDIA retired on 26 Aug 2026 (HTTP 410). Vision-capable, so Show my screen works. Any id from build.nvidia.com with a Free Endpoint works - change it here and push."
     }
   ],
   "vacations": [],

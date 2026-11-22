@@ -2,7 +2,7 @@
 
 Abid's own CogniPace (19 Nov 2026): the same codebase as Faiza's school (C:\Users\ASUS\Projects\the-school, GitHub
 the-school), run as a second instance with its own profile (curriculum/student.json, mode "adult"), its own curriculum,
-its own Vercel project, Neon database and model API key (NVIDIA NIM, free). Live at: <fill in after the first deploy>.
+its own Vercel project, Neon database and model API key (NVIDIA NIM, free). Live at: https://cognipace-abid.vercel.app (login link = that URL + ?t=STUDENT_TOKEN).
 The plan is the project doc ABID-PLAN-2026-11-19 (six phases, Dec 2026 - May 2027; a FIN module in every phase).
 
 ## How the two instances relate

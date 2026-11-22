@@ -17,3 +17,7 @@
   the same client surface; this instance runs LLM_PROVIDER=openai against NVIDIA NIM with
   nvidia/llama-3.3-nemotron-super-49b-v1.5. Tested end to end against a fake OpenAI server (create, stream, usage,
   bad key). The model still grades and closes steps; the tutor conversation can stay minimal.
+- 22 Nov 2026: first deploy at https://cognipace-abid.vercel.app (Vercel project cognipace-abid, Neon, NVIDIA key). The
+  first tutor call failed twice: the deployed commit predated lib/llm.js (an unpushed local commit), then the model id
+  had been retired by NVIDIA (410). Model now nvidia/nemotron-3.5-super-vl-120b-a12b; guardian page left locked (no
+  GUARDIAN_PASSWORD/TOTP set - Abid: "i won't need a guardian side").

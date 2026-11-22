@@ -6,7 +6,7 @@
 param([Parameter(Mandatory=$true)][string]$Message)
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
-$site = ""   # fill in after the first Vercel deploy, e.g. https://cognipace-abid.vercel.app
+$site = "https://cognipace-abid.vercel.app"
 
 $nmLock = "node_modules\.package-lock.json"
 if (-not (Test-Path $nmLock) -or ((Get-Item $nmLock).LastWriteTime -lt (Get-Item "package-lock.json").LastWriteTime)) {

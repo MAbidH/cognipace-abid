@@ -3,9 +3,9 @@
   "normalCapMinutes": 480,
   "tutorModel": [
     {
-      "from": "2026-11-19",
-      "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-      "_note": "NVIDIA NIM free endpoint (LLM_PROVIDER=openai, lib/llm.js). 22 Nov 2026: replaced nvidia/llama-3.3-nemotron-super-49b-v1.5, which NVIDIA retired on 26 Aug 2026 (HTTP 410). Vision-capable, so Show my screen works. Any id from build.nvidia.com with a Free Endpoint works - change it here and push."
+      "from": "2026-11-22",
+      "id": "openai/gpt-oss-120b",
+      "_note": "NVIDIA NIM free endpoint (LLM_PROVIDER=openai, lib/llm.js); 131K context, text-only reasoning model. 22 Nov 2026: switched from nvidia/nemotron-3.5-super-vl-120b-a12b, which looped in SETUP1, misread Abid's PowerShell prompt path, and would not close a step he had plainly passed. Trade-off: text-only, so the image 'Show my screen' path no longer works - fine for terminal/paste work. Any Free Endpoint id from build.nvidia.com works; change here and push. Watch the first reply for stray reasoning text; if lib/llm.js needs a tweak for gpt-oss, do it there."
     }
   ],
   "vacations": [],

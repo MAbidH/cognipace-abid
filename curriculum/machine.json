@@ -1,9 +1,9 @@
 {
-  "_note": "What is REALLY on Abid's machines (19 Nov 2026). The tutor may only say something exists if it is listed here or Abid made it in the conversation. Update when a step installs or creates something. 'windows' is the current PC (other projects live on it - NO Linux install, no dual boot, no WSL on it; Linux is TryHackMe in the browser and ssh until the second laptop). 'linux' is the second laptop once it exists (LNX2 installs Ubuntu 24.04 on it).",
-  "updated": "2026-11-19",
+  "_note": "What is REALLY on Abid's machines (19 Nov 2026). The tutor may only say something exists if it is listed here or Abid made it in the conversation. Update when a step installs or creates something. 'windows' is the current PC (other projects live on it - NO Linux install, no dual boot, no WSL on it; Linux is TryHackMe in the browser and ssh until the second laptop). 'linux' is the second laptop once it exists (LNX2 installs Ubuntu 24.04 on it). 22 Nov 2026: Abid is doing the Windows steps on the Dell Latitude 5500 (user folder C:\\Users\\<name>), not the ASUS. RULE FOR THE TUTOR: always take the current directory from the path shown in Abid's PowerShell prompt (e.g. 'PS C:\\Users\\name\\sec-lab>'); never assume a username, drive, or that he is in a particular folder. If a git command returns 'not a git repository', the first thing to check is whether his prompt shows he is inside sec-lab - tell him to cd into it, do not restart the whole step.",
+  "updated": "2026-11-22",
   "windows": {
     "has": [
-      "Windows 11 PC - Abid's main machine; other project folders live on it (C:\\Users\\ASUS\\Projects) and must not be touched by any step",
+      "A Windows PC - may be the ASUS main machine (C:\\Users\\ASUS\\...) or the Dell Latitude 5500 (C:\\Users\\<name>\\...). The tutor MUST read the current folder from Abid's prompt and must never assume the username or path. Other project folders under his Projects directory must not be touched by any step.",
       "Windows Terminal / PowerShell 5.1 (and PowerShell 7 if installed - check with $PSVersionTable)",
       "Google Chrome (Abid's accounts are signed in there - the tutor never asks to see them)",
       "Git for Windows, Node.js and the CogniPace repos (the developer side of this very app) - installed before the programme",
@@ -13,7 +13,7 @@
     "not_there": [
       "No Linux, no WSL, no VirtualBox on this PC by decision (other project data) - Linux work happens in the TryHackMe AttackBox or over ssh until the second laptop",
       "VS Code, the GitHub CLI (gh), a venv - until SETUP1/PY2 create them",
-      "sec-lab folder - until SETUP1-L2 creates it"
+      "sec-lab folder is created in SETUP1-L2 under his user's home (exact path as his prompt shows); once created it exists - do not tell him it is missing if his prompt is inside it"
     ],
     "broken_do_not_try": []
   },

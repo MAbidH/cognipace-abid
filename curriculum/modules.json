@@ -182,6 +182,241 @@
   ]
  },
  {
+  "id": "IFC1",
+  "phase": "Finance",
+  "title": "Investment Funds in Canada (IFC): the whole exam, chapter by chapter",
+  "hook": "You have the textbook and a date to beat. This module is not a lecture - it is the exam turned into recall: eighteen chapters pulled into twelve passes, each one closed only when you can say the idea back and work its numbers. The exam is 100 questions, 60% to pass, and it rewards KYC, fund structure, fund evaluation and regulation above all - so that is where the weight of this module sits.",
+  "read": {
+   "url": "https://www.csi.ca/en/learning/courses/ifc/curriculum",
+   "title": "Read: CSI - the official IFC curriculum (the 18 chapters, in CSI's own words; your textbook is the primary source)"
+  },
+  "gift": {
+   "for": "your exam and the job after it",
+   "what": "ifc/ - a KYC and suitability one-pager, a registered-plans comparison table (RRSP/RRIF/TFSA/RESP/RPP), a formulas sheet (total return, NAVPS, MER drag, bond price-yield direction, quartiles) and a mock-exam log - the sheet you revise from the morning of the exam and keep for the client-facing job."
+  },
+  "taught": "the IFC exam shape (1 proctored exam, 100 MCQ, 3 hours, 60% pass, 85% Honours, 3 attempts) and the official topic weightings; Ch1-2 the representative's role and the Canadian financial marketplace (capital, instruments, markets, intermediaries, securities regulation); Ch3 economics (business cycle, interest rates, money and inflation, fiscal/monetary/international policy); Ch4-5 the KYC communication process, the financial-planning process, the life-cycle hypothesis, and behavioural biases applied to asset allocation (the highest-weight topic); Ch6 the Canadian tax system and registered plans; Ch7 investment products and how they trade (fixed income, equities, bond pricing, new issues, derivatives); Ch8-9 constructing portfolios (risk/return, calculations, management) and reading financial statements; Ch10 the modern mutual fund (what it is, how organized, how regulated - NAVPS); Ch11-13 fund product types (conservative, riskier, alternative managed - ETFs, seg funds, hedge funds, PPNs); Ch14-15 fund performance and selection (quartiles, comparison universes, volatility's effect); Ch16 fees and services (MER, sales charges, SWPs, taxation of distributions); Ch17 dealer regulation (CIRO, registration, KYC rules, account opening, prohibited practices); Ch18 ethics and standards of conduct; the house rule: suitability is a professional skill for a client, never personal advice to you",
+  "steps": [
+   {
+    "id": "IFC1-L1",
+    "kind": "lesson",
+    "title": "Ch 1-2: the representative's role and the Canadian marketplace",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Explain the mutual fund representative's role and the licensing/registration that permits it, and define KYC and suitability at the level Ch1 introduces them",
+     "Name the parts of the Canadian financial marketplace: investment capital, the main instruments, primary vs secondary markets, the intermediaries, and who regulates securities"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the opening block (weighting 'Introduction to the Mutual Funds Marketplace' ~13%); because the exam opens here and because the rest of the course hangs off two ideas introduced now - the representative acts in the client's interest (suitability), and a fund trades inside a regulated marketplace; for every later chapter. ONE IDEA PER PASS: (a) the representative is a registered, licensed salesperson whose core duty is suitability - matching a recommendation to a known client; (b) the marketplace moves capital from savers to users through instruments (debt, equity, managed products) in primary (new issue) and secondary (resale) markets, via intermediaries (dealers, banks, exchanges), under securities regulation that is provincial. He has the textbook open; this is recall, not first contact. He states each in his own words and answers three self-quiz questions he picks from the chapter. HOUSE RULE, once: suitability is how he will advise a CLIENT; it is not advice to him about his own money. EVIDENCE TO CLOSE: role + KYC/suitability defined, the marketplace parts named, three chapter questions right. Boundary Question: primary vs secondary market - in which does the issuer receive the money (primary) - a favourite exam distinction.",
+    "links": [
+     {
+      "url": "https://www.csi.ca/en/learning/courses/ifc/curriculum",
+      "label": "CSI IFC curriculum - Ch 1-2"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "IFC1-L2",
+    "kind": "lesson",
+    "title": "Ch 3: economics - the cycle, rates, money, policy",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Describe the business cycle's phases and the main indicators (GDP, employment, inflation/CPI) and state how interest rates relate to bond prices and to economic activity",
+     "Distinguish fiscal from monetary policy and name the Bank of Canada's role"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: economics as context; because suitability and fund selection both depend on where the cycle and rates are, and the exam tests the mechanisms, not predictions; for Ch7 (bond pricing) and Ch8 (portfolios). ONE IDEA: the economy moves in a cycle (expansion, peak, contraction, trough); rates are the price of money - the Bank of Canada sets the policy rate (monetary policy), governments tax and spend (fiscal policy), and bond prices move opposite to rates. Recall drill: he places two indicators in the cycle and states the rate-bond inverse in one line with a reason (a fixed coupon is worth less when new bonds pay more). He picks three self-quiz questions. EVIDENCE TO CLOSE: cycle phases + indicators named, the rate/bond-price inverse explained with its reason, three questions right. Boundary Question: inflation rises and the Bank raises the policy rate - what happens to the price of a bond fund he already holds, and why (down; existing coupons less attractive) - tested often.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L3",
+    "kind": "lesson",
+    "title": "Ch 4-5: Know Your Client and behavioural finance (the heaviest topic)",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Walk the KYC communication process end to end (gather, clarify, confirm) and the financial-planning process, and link the life-cycle hypothesis to changing objectives and risk capacity",
+     "Name four behavioural biases (e.g. overconfidence, loss aversion, anchoring, hindsight) and say how each would distort an asset allocation"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: KYC and behaviour; this is the single HIGHEST-WEIGHT exam topic (the KYC communication process ~19%) so it gets the most of his attention here; for the account-opening and suitability rules in Ch17. ONE IDEA: suitability is built from KNOWING the client - objectives (what for), time horizon, risk tolerance AND risk capacity, and personal/financial circumstances - gathered through a structured communication process and kept current; behavioural biases are the predictable ways clients (and he) misjudge risk, which the process exists to counter. Recall: he runs the KYC process in his own words against a made-up client HE invents (never real advice), and maps two biases to a wrong allocation they would cause. He picks four self-quiz questions (this topic earns four, not three - it is 19% of the exam). EVIDENCE TO CLOSE: the KYC process and planning process in order, life-cycle link made, four biases with their allocation effect, four questions right. Boundary Question: risk TOLERANCE vs risk CAPACITY - a client comfortable with risk but near retirement - which one limits the recommendation (capacity) - the exam's favourite trap.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L4",
+    "kind": "lesson",
+    "title": "Ch 6: tax and retirement planning - the registered plans",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Explain the structure of the Canadian income-tax system at the level Ch6 needs (marginal rates, types of income: interest, dividends with the gross-up/credit idea, capital gains inclusion) and why tax treatment differs by income type",
+     "Compare RRSP, RRIF, TFSA, RESP and RPP on contribution, growth and withdrawal, and compute a simple RRSP tax-deferral benefit"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: tax and registered plans; because tax treatment drives real suitability and is heavily examinable, and the registered-plan table is pure memorisation he must own; for Ch16 (fund taxation). ONE IDEA: income is taxed by TYPE (interest fully taxed; eligible dividends grossed-up then a credit; only part of a capital gain is included) and registered plans change WHEN and WHETHER growth is taxed. He builds the comparison table into ifc/ (RRSP: deductible in, taxed out; TFSA: not deductible in, tax-free out; RRIF: the RRSP's payout phase with a minimum; RESP: grants, taxed in the student's hands; RPP: employer pension). Numeric: a $5,000 RRSP contribution at a 30% marginal rate defers $1,500 of tax now - he works it and states what is taxed later. EVIDENCE TO CLOSE: the income-type treatment in his words, the completed plan table committed to ifc/, the deferral number right. Boundary Question: interest vs eligible-dividend income of the same dollar amount - which is taxed more heavily, and why that steers fund-type suitability (interest; it is fully included).",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L5",
+    "kind": "lesson",
+    "title": "Ch 7: investment products and how they trade",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Describe fixed-income securities (coupon, maturity, par, the price-yield inverse) and equities (common vs preferred, dividends, voting), and state what a new issue (primary) is versus secondary trading",
+     "Explain in one line each what a derivative is and the two basic kinds (options, forwards/futures) as the funds will use them"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the underlying products; because a mutual fund is a basket of exactly these, and Ch11-13 name the funds by what they hold; for fund types and for FIN1/FIN2 overlap. ONE IDEA: a fund owns securities - debt (lends at a coupon, price moves opposite to yield), equity (owns a share, variable dividend, last in line), and sometimes derivatives (a contract whose value derives from something else, used to hedge or gain exposure). Recall: he classifies five instruments and restates the bond price-yield inverse with a reason (met in Ch3 - now with the instrument in hand). He picks three questions. EVIDENCE TO CLOSE: fixed income and equity features named, primary vs secondary stated, derivative defined, three questions right. Boundary Question: a preferred share vs a bond of the same issuer - which ranks ahead in a wind-up and which has a fixed maturity (bond both) - a classic compare.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L6",
+    "kind": "lesson",
+    "title": "Ch 8-9: building portfolios and reading financial statements",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Define risk and return, compute a total return (including distributions) and read standard deviation as a risk measure, and state what diversification does and does not remove",
+     "Name the three main financial statements and what each tells you about a company a fund might hold"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: portfolio and statement basics; because fund evaluation (Ch14-15) and suitability both rest on risk/return arithmetic, and the exam asks you to compute a return; for Ch14. ONE IDEA: return is what you earned (price change PLUS distributions, over what you put in); risk is the variability of that return (standard deviation), and diversification cuts the risk unique to one holding but not market-wide risk. Numeric he works: bought at $10, now $11, paid $0.40 in distributions -> total return = (11 - 10 + 0.40)/10 = 14%. Statements: balance sheet (what it owns/owes), income statement (what it earned), cash flow (where cash moved). He picks three questions. EVIDENCE TO CLOSE: the 14% worked correctly, risk/diversification stated, the three statements named with their purpose, three questions right. Boundary Question: two funds, same average return, different standard deviation - which is 'better' and for whom (lower SD for lower risk capacity) - links straight back to Ch5.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L7",
+    "kind": "lesson",
+    "title": "Ch 10: the modern mutual fund - structure, organization, regulation",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Explain what a mutual fund is (an open-end pool, units issued and redeemed at NAVPS), how it is organized (manager, custodian, trustee, distributor) and compute NAVPS",
+     "State how funds are regulated and what the Fund Facts document is for"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the product itself; because everything before this was the ingredients and everything after is varieties and evaluation of THIS; for Ch11-16. ONE IDEA: a mutual fund is an open-end pool - you buy and sell UNITS directly with the fund at the net asset value per unit, priced once a day; separate parties manage, hold (custodian) and oversee it, and it is regulated (National Instrument rules; Fund Facts delivered to the buyer). Numeric: assets $10,500,000, liabilities $500,000, units 1,000,000 -> NAVPS = (10,500,000 - 500,000)/1,000,000 = $10.00. He explains why an open-end fund's unit count changes daily (new money/redemptions) unlike a stock. He picks three questions. EVIDENCE TO CLOSE: fund defined, the four roles named, NAVPS computed, Fund Facts purpose stated, three questions right. Boundary Question: a closed-end fund and an ETF trade on an exchange at a price that can differ from NAVPS - why an open-end mutual fund cannot (it transacts AT NAVPS) - sets up Ch13.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L8",
+    "kind": "lesson",
+    "title": "Ch 11-13: the fund product types, conservative to alternative",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Sort the main fund types by risk: money market and mortgage and bond funds (conservative); equity, balanced, global and specialty (riskier); and name what each holds",
+     "Explain the alternative managed products - PPNs, hedge funds, closed-end funds, ETFs, segregated funds - and the one feature that defines each"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the product map; because matching a fund TYPE to a client is the exam's applied core, and seg funds and ETFs carry distinct exam points; for selection (Ch14-15) and suitability. ONE IDEA: fund types are a risk ladder defined by what they hold - cash-like (money market) up to concentrated equity (specialty); the 'alternative' products each add one twist (PPN: principal guarantee at maturity; hedge fund: wide mandate, limited access; closed-end: fixed units, exchange-traded; ETF: index-like, exchange-traded, low cost; segregated fund: an insurance contract with maturity/death guarantees and potential creditor protection). Recall: he places six funds on the risk ladder and states each alternative product's defining feature. He picks four questions (three chapters). EVIDENCE TO CLOSE: the ladder ordered, holdings named, five alternatives each pinned to their feature, four questions right. Boundary Question: a segregated fund vs a mutual fund holding the same stocks - what does the insurance wrapper add and cost (guarantees + possible creditor protection; higher fees) - a reliable exam item.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L9",
+    "kind": "lesson",
+    "title": "Ch 14-15: measuring and selecting a fund",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Explain performance measurement: time periods, comparison universes, benchmarks and quartile ranking, and why past performance is not a promise",
+     "Walk the selection steps and state how volatility affects realised returns (why a smoother path can beat a higher-average, choppier one)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: evaluation; because 'fund evaluation' is a named high-focus exam area and it is where Ch8's risk/return becomes a decision; for the job. ONE IDEA: you judge a fund against the RIGHT peers and benchmark over sensible periods - a first-quartile fund is in the top 25% of its universe - and you weigh consistency, not just the headline number, because volatility drags compound returns. Recall: he ranks a fund given its quartile, lists the selection steps in order, and explains in one line why -50% then +50% does not get you back to even (the volatility drag met in FIN2, if he has done it; here from Ch15). He picks three questions. EVIDENCE TO CLOSE: quartiles and universes explained, selection steps ordered, the volatility-drag point made, three questions right. Boundary Question: a fund top-quartile over 1 year but third-quartile over 10 - which matters more for a long-horizon client and why (the longer, consistent record) - judgement, the exam's favourite.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L10",
+    "kind": "lesson",
+    "title": "Ch 16: fees, services and the taxation of fund returns",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Name the fee types (management fee and MER, sales charges: front-end, deferred/DSC legacy, no-load, trailing commissions) and compute the drag an MER puts on a gross return",
+     "Explain accumulation plans and systematic withdrawal plans, and how fund distributions (interest, dividends, capital gains) are taxed in a non-registered account"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: fees and tax; because fees are the most consequential controllable in a fund and the exam tests MER arithmetic and distribution taxation, and client-focused reforms pushed fee transparency; for suitability and the job. ONE IDEA: the MER is the annual cost expressed as a percent of assets and it comes straight off the return every year; a fund's distributions keep their tax character (interest, dividend, capital gain) and are taxed in the client's hands unless sheltered. Numeric: 6% gross return, 2% MER -> ~4% net; over years that gap compounds (he states the direction and why). He explains a SWP in one line (regular redemptions for income) and the tax of a capital-gains distribution (partial inclusion, from Ch6). He commits the MER-drag line to ifc/. He picks three questions. EVIDENCE TO CLOSE: fee types named, the 6% -> 4% worked, distribution taxation stated, three questions right. Boundary Question: the same fund in a TFSA vs a non-registered account - where do the distributions escape tax, and how that changes suitability (TFSA) - ties Ch6 and Ch16.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-L11",
+    "kind": "lesson",
+    "title": "Ch 17: dealer regulation - CIRO, registration, KYC rules, account opening",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "Name the current regulators and self-regulatory structure (CIRO since 2023, the provincial regulators under the CSA, and the investor protection fund), and the registration a representative needs",
+     "List the account-opening and KYC regulatory requirements, prohibited selling practices, and the representative's legal responsibilities"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: regulation; part of the 'Ethics, Compliance and Mutual Fund Regulation' ~16% bucket and the most date-sensitive chapter - make sure the textbook's regulator names are current (CIRO replaced the MFDA/IIROC in 2023); for the job and for staying on the right side of the rules he learned in SETUP1. ONE IDEA: a representative works for a registered dealer, is registered in the province, must complete KYC and keep it updated, must open and document accounts to rule, and is barred from specific practices (unsuitable recommendations, unauthorised trading, misrepresentation, borrowing from clients). Recall: he names the regulator map (CSA = the provincial regulators; CIRO = the SRO for dealers and marketplaces; the MFDA Investor Protection Corporation now under CIRO) and lists four prohibited practices. FLAG: if his textbook (he enrolled Sept 2026) still says MFDA, he notes the CIRO update - a live-fact check, two sources, exactly the SETUP1 habit. He picks four questions (16% bucket, shared with Ch18). EVIDENCE TO CLOSE: the regulator map current and in his words, account-opening/KYC rules listed, four prohibited practices named, four questions right. Boundary Question: an unauthorised trade vs an unsuitable trade - the difference and why both are prohibited (consent vs fit) - a compliance staple.",
+    "links": [
+     {
+      "url": "https://www.ciro.ca/office-investor",
+      "label": "CIRO - the current self-regulatory organisation (confirm the regulator names against your textbook)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "IFC1-L12",
+    "kind": "lesson",
+    "title": "Ch 18: ethics and standards of conduct",
+    "time_box": 45,
+    "max_turns": 34,
+    "objectives": [
+     "State the standards of conduct (priority of client interest, integrity, competence, confidentiality, compliance) and apply them to two case scenarios from the chapter",
+     "Explain why ethics is tested separately from regulation - the difference between what is legal and what is right"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: ethics; the capstone of the 'Ethics, Compliance and Regulation' ~16% bucket and, not by accident, the same builder-defender spine as the rest of his programme - the rules bind the person, not the paperwork; for the exam's scenario questions and for the job. ONE IDEA: the standards put the client's interest first and hold the representative to integrity, competence, confidentiality and compliance; a scenario question asks you to pick the response that honours those even when a shortcut is legal. Recall: he reasons through two case scenarios aloud (he invents or uses the chapter's), naming which standard each tests. He picks three questions. EVIDENCE TO CLOSE: the standards named, two scenarios reasoned to the right action with the standard named, three questions right. Boundary Question: an action that is legal but breaches a standard of conduct (e.g. a suitable-but-self-serving recommendation) - why the standard still governs - the exam's ethical core, and his programme's.",
+    "links": [],
+    "media": []
+   },
+   {
+    "id": "IFC1-C",
+    "kind": "check",
+    "title": "IFC mock checkpoint (weighted like the real exam)",
+    "skills": [
+     "rep-role-and-suitability",
+     "marketplace-primary-secondary",
+     "securities-regulation-provincial",
+     "business-cycle-and-rates",
+     "rate-bond-price-inverse",
+     "kyc-communication-process",
+     "risk-tolerance-vs-capacity",
+     "behavioural-biases",
+     "income-type-taxation",
+     "registered-plans",
+     "rrsp-deferral-calc",
+     "fixed-income-vs-equity",
+     "derivatives-basics",
+     "total-return-calc",
+     "financial-statements",
+     "navps-calc",
+     "open-vs-closed-end",
+     "fund-types-risk-ladder",
+     "seg-funds-and-etfs",
+     "quartiles-and-universes",
+     "volatility-drag",
+     "mer-drag-calc",
+     "distribution-taxation",
+     "ciro-regulator-map",
+     "prohibited-practices",
+     "standards-of-conduct"
+    ],
+    "count": 25
+   },
+   {
+    "id": "IFC1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write ifc/README.md as if briefing a new bank hire who must pass IFC next month: the exam shape (questions, time, pass mark, attempts) and the three highest-weight topics; how the KYC process builds suitability and why risk capacity can override risk tolerance; the registered plans in one line each; what a mutual fund is and how NAVPS is priced; the fund risk ladder and what seg funds and ETFs add; how MER and distribution taxation eat returns; and who regulates the dealer today (CIRO). 18-22 sentences, exact vocabulary. Link your ifc/ formulas and plan-comparison sheets. State in the first line that suitability is a skill for advising clients, not personal investment advice."
+   }
+  ]
+ },
+ {
   "id": "PY1",
   "phase": "Python",
   "title": "Python I: the machine does exactly what you say",
@@ -910,6 +1145,162 @@
     "kind": "teach",
     "title": "Teach it back",
     "prompt": "Write linux1/README.md: explain to a Windows administrator, in 10-15 sentences, how to think in Linux - the single tree, text streams and pipes, users and the nine permission bits, what SUID is and why it is watched, where the logs live, and how ssh host keys protect a connection. Use two of your Bandit levels as examples (ideas and commands only - never a password or a flag)."
+   }
+  ]
+ },
+ {
+  "id": "FLIP1",
+  "phase": "Hardware",
+  "title": "Flipper Zero I: the device, the law, and the subsystems you own",
+  "hook": "A Flipper Zero is not magic - it is a small microcontroller wired to a handful of radios and ports, each one a real protocol you can learn. Owning it 'in every aspect' means owning those protocols: what each subsystem actually does, why some of the systems it touches are weak, and the one rule that separates a security learner from a crime. This part builds the foundation and the parts you can master today on your own hardware.",
+  "read": {
+   "url": "https://docs.flipper.net/",
+   "title": "Read: Flipper Zero official documentation (the primary source for every subsystem - you will return to it all the way through)"
+  },
+  "gift": {
+   "for": "your repository and your judgement",
+   "what": "flipper/ - a lab notebook (README) that names every subsystem and the protocol under it, the firmware you run and why, and the sanctioned-targets rule in your own words; plus an infrared universal remote and a UART read of your own Arduino, both documented. The first evidence that you treat the device as an engineer, not a button."
+  },
+  "taught": "what a Flipper Zero is (an STM32 microcontroller + sub-GHz CC1101 radio, 125 kHz RFID, 13.56 MHz NFC, infrared, iButton/1-Wire, GPIO, USB) and which real protocol each subsystem speaks; the menu map and the SD card layout; charging, updating and the qFlipper / mobile app; official vs custom firmware (Unleashed, Momentum, RogueMaster) and the legal line a custom firmware can cross (region/TX-power unlocks); the sanctioned-targets rule and Canada's Criminal Code s. 342.1 (unauthorised use of a computer) and s. 430(1.1) (mischief to data), plus the Radiocommunication Act point that transmitting on and jamming licensed bands is a separate offence; infrared as a protocol (carrier frequency + encoded bursts, NEC/RC-5), learning and replaying your OWN appliances, building a universal remote; GPIO and serial: the pinout, UART (TX/RX/GND, baud, async framing), reading your OWN Arduino's serial output with the Flipper as a USB-UART bridge; how to read a signal/protocol entry in the docs before you touch a button",
+  "steps": [
+   {
+    "id": "FLIP1-L1",
+    "kind": "lesson",
+    "title": "What a Flipper Zero actually is - one microcontroller, several radios",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Name each subsystem (sub-GHz, 125 kHz RFID, 13.56 MHz NFC, infrared, iButton/1-Wire, GPIO, USB) and the real protocol or band it works with",
+     "Charge it, update to the latest official firmware with qFlipper or the mobile app, and navigate the menu to each subsystem"
+    ],
+    "tutor_brief": "FIRST FLIPPER STEP. WHAT/WHY/WHAT FOR: what the device is, because 'mastering a tool' starts with knowing it is not one tool but seven small ones bolted to a microcontroller, and every later step is one subsystem; for all of FLIP1 and FLIP2. ONE IDEA: the Flipper is an STM32 microcontroller (the brain, like the Arduino's chip he will meet in HW1) connected to separate radios and ports - sub-GHz (a CC1101 transceiver, ~300-928 MHz regional bands, the stuff of simple remotes), 125 kHz RFID (low-frequency access fobs), 13.56 MHz NFC (contactless cards), infrared (TV/AC remotes), iButton/1-Wire (contact keys), GPIO (18 pins to wire to other hardware), and USB. Each is a real protocol he will learn one at a time - today is the map, not the attack. MANUAL: 1) charge it; 2) install qFlipper on the PC (winget: `winget install -e --id Flipper.qFlipper`) OR the mobile app, connect, and run the official firmware update - read what the updater says it is doing; 3) walk the top menu and find each subsystem; 4) note the SD card holds the apps and saved files. SECRETS/ACCOUNTS: no account is needed to use the device; if the mobile app offers one, it is optional - skip it; never type a password here. EVIDENCE TO CLOSE: he lists the seven subsystems with the band/protocol of each, in his own words, and states the firmware version now on the device. Boundary Question: which subsystems only RECEIVE/read by default and which can TRANSMIT - and why that distinction is the whole legal question (next step).",
+    "links": [
+     {
+      "url": "https://docs.flipper.net/",
+      "label": "Flipper Zero docs - home"
+     },
+     {
+      "url": "https://docs.flipper.net/basics/firmware-update",
+      "label": "Firmware update (official)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FLIP1-L2",
+    "kind": "lesson",
+    "title": "The one rule: sanctioned targets, and the law that makes it law",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "State the sanctioned-targets rule and apply it to five situations (your own car fob, a friend's car with their written OK, a hotel key, a stranger's card on a train, your own Arduino)",
+     "Name Canada's Criminal Code s. 342.1 and s. 430(1.1) and the Radiocommunication Act transmit/jamming point, and say which subsystem actions are reception (passive) vs transmission (regulated)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the rule, because a Flipper makes a line that is normally abstract (unauthorised access) one button-press wide, and crossing it is a crime in Canada regardless of intent or curiosity; for every hands-on step for the rest of his life. He already met this in SETUP1-L6 - here it is specific to a radio device. ONE IDEA: you may read, capture, analyse and transmit ONLY against your own devices, your own lab, and systems whose owner has explicitly invited testing. Everything else is off-limits. Say the law once, plainly, not as a sermon: s. 342.1 (unauthorised use of a computer) and s. 430(1.1) (mischief in relation to data) of the Criminal Code of Canada cover using the device against systems that are not yours; separately, the Radiocommunication Act makes transmitting on licensed bands and jamming a distinct federal offence - jamming is never a learning exercise. Reception/analysis of your own signals is how you learn; transmission is where law and physics both bite. Five situations he classifies out loud (his own fob: yes; friend's car: only with their clear OK and ideally in writing; hotel/work key: no - not his system; stranger on a train: no, and it is the textbook offence; his own Arduino over GPIO: yes). CONNECT TO DEFENCE: the reason to learn each attack is to specify the defence - that is the builder-defender frame of the whole programme. EVIDENCE TO CLOSE: the rule in his words, the two Criminal Code sections named, and the five situations correctly sorted into owned/sanctioned vs off-limits with a one-line reason each. Boundary Question: a YouTube video shows cloning a car key in 20 seconds - name two reasons it is both a crime and, on any modern car, a demo that does not work (rolling codes - FLIP2) - scepticism plus the law.",
+    "links": [
+     {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/c-46/section-342.1.html",
+      "label": "Criminal Code s. 342.1 - unauthorised use of a computer"
+     },
+     {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/c-46/section-430.html",
+      "label": "Criminal Code s. 430 - mischief (incl. 430(1.1) data)"
+     },
+     {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/r-2/",
+      "label": "Radiocommunication Act (transmitting/jamming on regulated bands)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FLIP1-L3",
+    "kind": "lesson",
+    "title": "Firmware literacy: official vs custom, and the line a firmware can cross",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Explain what firmware is, the difference between official firmware and custom firmware (Unleashed, Momentum, RogueMaster), and exactly what a custom firmware changes",
+     "State why a region/TX-power unlock can turn a legal device into an illegal transmitter, and decide which firmware you will run and why"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: firmware literacy, because the single most consequential choice he makes with the device is which software runs on it, and the forums push custom firmware without saying what it unlocks; for every transmit-capable step in FLIP2 and for staying legal. ONE IDEA: firmware is the program that runs on the microcontroller; the hardware is identical, the firmware decides what it is allowed to do. Official firmware ships with region limits and a conservative feature set - it respects, for example, the sub-GHz frequencies and power your region permits. Custom firmwares (Unleashed, Momentum, RogueMaster) add convenience, extra apps and - the part that matters - can remove region and transmit-power restrictions and enable transmitting on bands his region does not allow. Removing that limit does not change the law; it just makes the device capable of breaking it. He reads one custom-firmware changelog/readme as a primary source and identifies which changes are cosmetic, which are genuinely useful (UI, app loading), and which touch transmission limits. DECISION he must make and justify: for a learner on owned/sanctioned targets, official firmware is the honest default; if he ever runs a custom firmware he keeps region limits on and knows exactly what he changed. SECRETS/MONEY: firmware is free; never buy a 'pre-loaded' device or a paid firmware - it is the free one repackaged. EVIDENCE TO CLOSE: firmware defined in his words, the three custom firmwares named with what they change, the legal line stated, and his own firmware decision with a reason. Boundary Question: 'the firmware made it legal because the menu let me' - why the menu is not the law (the Radiocommunication Act binds the person, not the UI).",
+    "links": [
+     {
+      "url": "https://docs.flipper.net/basics/firmware-update",
+      "label": "Official firmware & update (Flipper docs)"
+     },
+     {
+      "url": "https://github.com/flipperdevices/flipperzero-firmware",
+      "label": "Official firmware source (read the README)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FLIP1-L4",
+    "kind": "lesson",
+    "title": "Infrared: your first subsystem, mastered on your own appliances",
+    "time_box": 50,
+    "max_turns": 36,
+    "objectives": [
+     "Explain infrared as a protocol (a modulated carrier ~38 kHz plus an encoded burst pattern; NEC and RC-5 as examples) and why it is line-of-sight and short-range",
+     "Learn the signals from your OWN TV/AC/soundbar remotes into the Flipper and build a single universal remote that controls them"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: infrared, because it is the one subsystem with essentially no legal hazard (your own appliances, no regulated band, no access control) so it is where he learns the whole workflow - read a protocol entry, capture a signal, save it, replay it, organise a library - with the stakes at zero; for the method that every later subsystem reuses. ONE IDEA: an IR remote blinks an LED at a carrier frequency (often 38 kHz) and encodes a button as a pattern of on/off bursts in a named protocol (NEC, RC-5, Sony SIRC); the Flipper has a wide-band IR receiver and a strong emitter, so it can learn a button and reproduce it. MANUAL (his own gear only): 1) read the Flipper docs IR page; 2) Infrared -> Learn New Remote, point his TV remote at the Flipper, press one button, name and save it; 3) repeat for a few buttons; 4) test that the Flipper now controls his TV; 5) try the 'Universal Remote' and note how it brute-forces common codes (fine on his own TV); 6) build one saved remote that holds his TV + AC + soundbar. He explains why pointing it at a neighbour's window does nothing useful and why IR does not pass through walls (line-of-sight) - the physics bounds the risk. HIS MACHINE/RECORD: export the saved .ir file, add it and a short note to flipper/ in sec-lab, commit 'flip1: IR universal remote for my own appliances'. EVIDENCE TO CLOSE: the Flipper controls at least two of his own appliances, he names the protocol one of them used, and the commit exists. Boundary Question: an IR signal he cannot learn in one try - what to check (angle, distance, battery, a protocol the receiver did not decode) - debugging a capture, the skill that carries to every radio.",
+    "links": [
+     {
+      "url": "https://docs.flipper.net/infrared",
+      "label": "Infrared (Flipper docs)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "FLIP1-L5",
+    "kind": "lesson",
+    "title": "GPIO and UART: wire the Flipper to your own Arduino and read it talk",
+    "time_box": 60,
+    "max_turns": 36,
+    "media": [],
+    "objectives": [
+     "Explain the GPIO header and UART (TX/RX/GND, baud rate, asynchronous framing of start/data/stop bits) and why TX connects to RX",
+     "Use the Flipper's USB-UART bridge (or GPIO UART) to read the serial output of your OWN Arduino sketch, and capture a few lines"
+    ],
+    "links": [
+     {
+      "url": "https://docs.flipper.net/gpio-and-modules",
+      "label": "GPIO & modules (Flipper docs)"
+     },
+     {
+      "url": "https://docs.flipper.net/gpio-and-modules/usb-uart-bridge",
+      "label": "USB-UART bridge (Flipper docs)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: GPIO/UART, because the deepest 'hacking tool' use of a Flipper is the most benign - it is a hardware lab instrument that talks to other chips, and reading a device's serial lines is the first move in real hardware security; for HW1 (his Arduino kit) and for FLIP2's hardware ideas. ONE IDEA: UART is two wires carrying asynchronous serial - one side's TX (transmit) goes to the other side's RX (receive), a shared GND reference, and both must agree a baud rate (e.g. 9600 or 115200); a byte is framed by a start bit, 8 data bits and a stop bit. Prerequisite: this is best done when his Arduino kit is unboxed (HW1, ~20 Dec) - if it is still boxed, he does the reading/explanation now and the wiring when it is open. MANUAL (his own boards): 1) read the GPIO pinout page, find GND and the UART pins (13/TX, 14/RX); 2) flash a trivial Arduino sketch that does Serial.begin(9600) and Serial.println a counter; 3) wire Arduino TX -> Flipper RX, Arduino RX -> Flipper TX, GND -> GND (cross TX/RX - say why: one talks, the other listens); 4) on the Flipper use GPIO -> USB-UART bridge (or a UART terminal app) at 9600; 5) read the counter lines; 6) capture a few lines to the SD/notebook. SAFETY (hardware, not legal): match voltage (both 3.3 V logic here), never wire power rails together blindly, GND first. RECORD: a note + the captured lines in flipper/, commit 'flip1: read my Arduino over UART with the Flipper'. EVIDENCE TO CLOSE: the captured serial lines pasted, and his explanation of why TX goes to RX and what baud means. Boundary Question: wrong baud rate - what the output looks like (garbage/garbled bytes) and why (the receiver samples at the wrong rate) - the single most common serial bug."
+   },
+   {
+    "id": "FLIP1-C",
+    "kind": "check",
+    "title": "Flipper foundations checkpoint",
+    "skills": [
+     "flipper-subsystems",
+     "receive-vs-transmit",
+     "sanctioned-targets-rule",
+     "criminal-code-342-430",
+     "radiocommunication-act-transmit",
+     "firmware-official-vs-custom",
+     "firmware-legal-line",
+     "infrared-protocol",
+     "uart-framing",
+     "tx-to-rx"
+    ],
+    "count": 12
+   },
+   {
+    "id": "FLIP1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write flipper/README.md for a friend who just got the same device and thinks it is a magic hacking box. In your own words: what the device actually is (the microcontroller and its subsystems), which actions are passive reception and which are regulated transmission, the one rule about whose systems you may touch and the two Criminal Code sections plus the Radiocommunication Act point, the difference between official and custom firmware and the legal line a custom firmware can cross, and the two subsystems you have already mastered on your own gear (infrared, UART) with what each taught you. 12-16 sentences, exact vocabulary, no hype. End with the one sentence you would want a new owner to read first."
    }
   ]
  },

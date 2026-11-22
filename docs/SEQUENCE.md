@@ -65,3 +65,23 @@ below the line, outlines only. Each FIN module comes after the technical module 
 Wireshark reads explained, scanner on own lab, engine + journal. 3: Security+ practice 85% and the exam sat; SIEM
 running. 4: TLS end to end; Cryptopals 1-2; Sepolia tool. 5: Flask app + threat model; tokenization brief; 20
 write-ups; 5 applications.
+
+## Companion: Flipper Zero (hardware track, runs alongside the phases)
+- **FLIP1 (shipped 22 Nov 2026)** - Flipper Zero I: the device and its subsystems; the law (sanctioned targets,
+  s.342.1/430(1.1), Radiocommunication Act transmit/jamming); official vs custom firmware and the region/TX-power legal
+  line; infrared (learn/replay his own appliances, a universal remote); GPIO/UART (read his own Arduino's serial).
+  7 steps, phase "Hardware", all hands-on on his own gear. Placed after SETUP1; radio/RFID/NFC held for FLIP2.
+- **FLIP2 (outline; write after Phase 4 / crypto, wk ~20-21)** - the transmit and credential subsystems, mechanism-
+  first now that crypto is in hand. One idea per step, own devices and sanctioned ranges only, every attack paired with
+  its defence:
+  - sub-GHz (CC1101): OOK/ASK vs FSK; fixed code vs rolling code (KeeLoq-style) on HIS OWN remotes; why fixed codes fall
+    and rolling codes defend; transmit is regulated and jamming is never a lab exercise. Defence: rolling-code, treat RF
+    as untrusted input.
+  - 125 kHz RFID (EM4100 / HID Prox): read HIS OWN fob; why unencrypted low-frequency prox is clonable; defence = move
+    to 13.56 MHz with real crypto.
+  - 13.56 MHz NFC (Mifare Classic Crypto1 -> DESFire): the broken Crypto1 cipher (ties straight to the crypto phase) on
+    HIS OWN card; why DESFire and modern cards are the fix.
+  - BadUSB (USB HID injection): the mechanism, then the DEFENCE on his own PC (screen lock, USB device control, endpoint
+    policy, disabling untrusted HID).
+  - Capstone brief: audit the access controls he personally owns (home, car, accounts) and specify the upgrade - the
+    builder-defender close.

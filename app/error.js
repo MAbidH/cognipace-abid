@@ -17,6 +17,10 @@ export default function Error({ error }) {
   useEffect(() => {
     const page = typeof location !== "undefined" ? location.pathname : "?";
     const what = `page crashed while loading${error?.digest ? ` (digest ${error.digest})` : ""}: ${String(error?.message || "").slice(0, 200)}`;
+    // 22 Nov 2026: a tab left open across a deploy asks for a chunk that no longer exists ("Loading chunk 281 failed",
+    // /portfolio, 20 Nov). One automatic fresh load fixes it; the guard stops a reload loop if it fails again.
+    const stale = /Loading chunk|ChunkLoadError|Failed to fetch dynamically imported module/i.test(`${error?.name || ""} ${error?.message || ""}`);
+    try { if (stale && Date.now() - Number(sessionStorage.getItem("chunkReload") || 0) > 60000) { sessionStorage.setItem("chunkReload", String(Date.now())); tryAgain(); return; } } catch {}
     try { fetch("/api/stuck", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ crash: true, page, what }) }).catch(() => {}); } catch {}
     const onKey = (e) => { if (e.key === "Enter" && !e.repeat) { e.preventDefault(); retry(); } };
     window.addEventListener("keydown", onKey);

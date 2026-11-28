@@ -11,3 +11,8 @@
   elsewhere). test-curriculum passed in the container against the adult overlay (8 modules, 83 steps, well-formed);
   modules.json md5 b4edbc74 committed to instances/abid/curriculum/. Still needs the normal the-school push + sync into
   cognipace-abid. LIVE CHECK (IFC1-L11): his Sept-2026 IFC textbook may still name MFDA/IIROC; CIRO replaced them in 2023.
+
+## 28 Nov 2026 - CRA1: CRA-ready before day one
+- What happened: after his CRA interview (SP-03 Assessment Processing Clerk, req. 62649327) Abid asked to be fluent in everything the job uses before he starts, without going back to school (full-time work, expenses).
+- What changed: new module CRA1 (17 steps, ~30 min each), placed right after SETUP1, before IFC1. Covers the tax-centre flow and how a clerk is judged; confidentiality (ITA s.241, need-to-know, CRA values); the T1 from 15000 to 48400/48500; number pad KPH + the Tax Centre Clerical Test number checking; T4 and other slips; deductions vs credits and NL428; Excel I and II; his own return line by line (SIN masked); NOA, Change my return/ReFILE/T1-ADJ, adjustment vs objection; shortcuts and the four-part case note; benefits and CRA scams; the WST (106 MCQ, 90 min) and SJT-R (102 Q, 2h20); the first 90 days. Reward a-cra1: register for CVITP. Generator: curriculum/src/cra1.mjs. All links checked against canada.ca search results 28 Nov.
+- Rule learned: never put real taxpayer data (SIN, account numbers, someone else's figures) into the tutor - practise with made-up numbers or his own return on paper. Free only; no school.

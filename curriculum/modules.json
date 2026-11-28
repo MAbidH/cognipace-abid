@@ -182,6 +182,365 @@
   ]
  },
  {
+  "id": "CRA1",
+  "phase": "Finance",
+  "title": "CRA-ready: the tax centre, the T1 and the tools, fluent before day one",
+  "hook": "You got the interview; now walk into training already knowing what most new hires learn in their first months. A processing clerk is judged on accuracy, volume, procedure and confidentiality. CRA will teach you its own systems - this module gives you everything those systems sit on: the T1 return line by line, every common slip box, the notice of assessment and how a return gets changed, number-pad speed, Excel and Outlook fluency, short case notes, and the two tests that decide every promotion.",
+  "read": {
+   "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package.html",
+   "title": "Read: CRA - the General Income Tax and Benefit Package (the T1 return and its guide, the forms you will handle all day)"
+  },
+  "gift": {
+   "for": "your first day at the tax centre and every promotion after it",
+   "what": "cra/ - a T1 line map (the 25 lines that matter, in order), a slip box card (T4, T4A, T5, T2202, RRSP receipt), a deductions-vs-credits sheet, a NOA/adjustment/objection timeline, a keyboard-shortcut card, a case-note template, your number-pad speed log and your WST error log - the binder you bring to training."
+  },
+  "taught": "how a CRA tax centre works and how an SP-03 is judged (accuracy, volume, procedure, confidentiality, quality review); taxpayer confidentiality under Income Tax Act s.241, the CRA Code of Integrity and Professional Conduct, CRA's four values, need-to-know access and why unauthorized looking ends careers; the T1 return's flow from total income (15000) to net income (23600), taxable income (26000), tax payable (43500) and refund (48400) or balance owing (48500); number-pad touch typing and data-entry accuracy (KPH); the slips and their key boxes (T4 14/16/16A/18/22/24/26/44/46/52, T4A, T5, T2202, RRSP and FHSA receipts); deductions (RRSP 20800, FHSA 20805, union dues 21200, child care 21400, moving 21900) versus non-refundable credits (basic personal amount 30000, CPP 30800, EI 31200, Canada employment amount 31260, tuition 32300, medical 33099, donations 34900) and the NL428 provincial return; completing his own return line by line with the SIN masked; Excel for case work (sort, filter, freeze panes, tables, absolute references, SUMIF/COUNTIF, XLOOKUP, pivot tables, conditional formatting, data validation); the notice of assessment, the RRSP deduction limit, changing a return (Change my return, ReFILE, T1-ADJ), reassessment, the 3-year normal reassessment period and the objection deadline; Windows/Outlook/Excel shortcuts, locking the screen, and the four-part case note; the benefits that depend on filing (GST/HST credit, CCB, Canada workers benefit) and how CRA impersonation scams work; the Tax Centre Clerical Test's number checking; the Writing Skills Test areas and shape; the Situational Judgement Test logic; the first 90 days: training, quality review, attendance, asking good questions, the union (PSAC-UTE), and the path from SP-03 to SP-04/SP-05",
+  "steps": [
+   {
+    "id": "CRA1-L1",
+    "kind": "lesson",
+    "title": "The tax centre and how a clerk is judged",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Describe what a CRA tax centre does with an individual return from arrival to assessment (receive, sort/scan or e-file intake, validate, review exceptions, assess, issue the notice) and where an SP-03 processing clerk sits in that line",
+     "Name the four things a processing clerk is measured on - accuracy, volume (production), following procedure, confidentiality - and explain why accuracy comes before speed"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the map of the job; because a new hire who knows where his piece fits learns the procedures faster and makes fewer errors that bounce back; for every step after this. He is a full-time cook with a BBA, a beginner with computers, and he has just interviewed for an SP-03 Assessment Processing Clerk role (letter, req. 62649327). ONE IDEA: most returns are filed electronically and assessed automatically; people handle the EXCEPTIONS - paper returns, returns that fail a validation, missing slips, adjustment requests - so a clerk's day is reading a case, checking it against procedure, fixing or routing it, and writing a short note. Production is counted, and a quality reviewer samples his work; an error found in review costs more than a slower correct case. CRA trains every hire on its internal systems - he cannot and should not try to learn those in advance; this module builds what training assumes. HE DOES: draws the line from 'return arrives' to 'notice of assessment issued' in his own words (cra/flow.md), marks where a clerk touches it, and says in one sentence why accuracy beats speed. EVIDENCE TO CLOSE: the flow in order in his words, the four measures named, the accuracy-first reason stated. Boundary Question: a clerk can finish 60 cases a day with 3 errors or 45 with none - which does a quality reviewer prefer and why (45; each error is re-work, a wrong notice to a taxpayer and a mark on his review).",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/educational-programs/after-sending-tax-return.html",
+      "label": "CRA - Learn about your taxes (free official lessons; start here and keep it open all module)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L2",
+    "kind": "lesson",
+    "title": "Confidentiality and integrity: the rule that ends careers",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "State what Income Tax Act section 241 protects (taxpayer information) and what 'need to know' means: you open only the files your assigned work requires",
+     "Name CRA's four values (integrity, professionalism, respect, collaboration) and the Code of Integrity and Professional Conduct, and apply them to three situations: a friend's file, a famous name, and a call asking for information"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the one rule with no second chance; because CRA logs every access to a taxpayer record and has dismissed employees for looking at files they had no work reason to open - curiosity counts; for every day of the job and for his security path (this is access control and insider risk, the defender's side he already studies). ONE IDEA: taxpayer information is protected by law (Income Tax Act s.241); an employee may see a record only when his assigned work needs it, may disclose it only as the law allows, and must verify identity before discussing an account. Habits: lock the screen (Windows key + L) every time he stands up, clean desk, no taxpayer detail in personal notes, phone or chat, never discuss cases outside work - not with family, not with names removed. HE DOES: reads the CRA values page, writes cra/integrity.md with the three situations and the right action for each (a friend's file in his queue -> tell the team leader and have it reassigned; a famous name -> do not open it unless assigned; a caller asking about someone else's account -> no disclosure without proper authorization). EVIDENCE TO CLOSE: s.241 and need-to-know in his words, the four values named, three situations resolved with the reason. Boundary Question: his own tax file or his wife's shows up in his work queue - may he work it (no; conflict of interest - flag it and have it reassigned) - the exact kind of question the SJT asks.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/about-canada-revenue-agency-cra/mission-vision-values.html",
+      "label": "CRA - mission, vision, promise and values"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L3",
+    "kind": "lesson",
+    "title": "The T1 return: from total income to refund",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Walk the T1 in order: identification, total income (line 15000), deductions to net income (23600), taxable income (26000), federal tax and non-refundable credits, provincial tax (NL428), total payable (43500), tax already deducted (43700) and the result - refund (48400) or balance owing (48500)",
+     "Explain in one sentence each why net income matters beyond tax (it sets benefits and credits) and why a refund is not a gift (it is over-deducted tax coming back)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the document he will read all day; because every case in a processing role is a T1 or a piece of one, and a clerk who knows the flow spots a wrong line in seconds; for the slips (L5), deductions and credits (L6) and his own return (L8). ONE IDEA: the T1 is a funnel - add up income, subtract deductions, apply tax rates, subtract credits, compare with what was already deducted at source. He opens the current T1 General (Newfoundland and Labrador) PDF from the package and traces the eight lines in order. HE DOES: writes cra/t1-map.md with each line number, its name and one line on what feeds it; then works a made-up case: employment income $40,000, RRSP deduction $2,000 -> net income $38,000; he states which later line the $38,000 drives. NUMBERS ARE MADE UP - never a real person's. EVIDENCE TO CLOSE: the eight lines in the right order with their numbers, the made-up net income right, the two one-sentence explanations. Boundary Question: a taxpayer has a large refund - does that mean they paid less tax than a neighbour with a balance owing (no; a refund only means more was deducted at source than was owed) - the confusion callers bring every day.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/general-income-tax-benefit-package/newfoundland-labrador.html",
+      "label": "CRA - T1 General package for Newfoundland and Labrador"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L4",
+    "kind": "lesson",
+    "title": "Quick win: the number pad, by touch",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Type digits on the number pad by touch with the home row 4-5-6 (5 has the bump), index on 1-4-7, middle on 2-5-8, ring on 3-6-9, thumb on 0, little finger on Enter",
+     "Run a timed numeric data-entry test, record keystrokes per hour (KPH) and accuracy, and set his own next-week target",
+     "Work the Number Checking samples of CRA's Tax Centre Clerical Test (version C2, 60 minutes) - comparing numbers and names for exact matches - a test tax-centre clerical processes can use"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: speed that comes from accuracy; because processing work is full of amounts, line numbers and dates, and a clerk who types numbers without looking is visibly faster in training; for every case. ONE IDEA: the number pad has a home row like the letters - fingers rest on 4-5-6, eyes stay on the paper or screen, never on the keys. He drills 10 minutes: eyes up, accuracy before speed. Data-entry work is commonly measured in keystrokes per hour; a sensible first target is 8,000 KPH at 98% accuracy or better, then his own last week plus a little - the same 'follow your own last week' rule as his warm-up. If his laptop has no number pad, the drill still works on the top row, and a cheap USB number pad is optional (his money, not the programme's). HE DOES: one baseline test, records KPH and accuracy in cra/numpad-log.md with the date, and writes his target; then does the Number Checking samples from CRA's Tax Centre Clerical Test booklet and checks them against its answer key (spotting one wrong digit in a long number is the job in miniature). EVIDENCE TO CLOSE: a logged baseline (KPH + accuracy) and a target, the clerical-test samples done and checked; the tutor checks he did not look at the keys (he says so honestly). Boundary Question: 12,000 KPH at 94% or 8,500 KPH at 99.5% - which is the better data-entry worker (the second; every wrong digit in an amount is a wrong assessment).",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/candidate-assessment/assessment-options-candidate/tax-centre-clerical-test-version-c2.html",
+      "label": "CRA - Tax Centre Clerical Test C2 (official samples and answer key)"
+     },
+     {
+      "url": "https://www.keybr.com/",
+      "label": "keybr - letter drill (for the number pad use any free 10-key test; log KPH and accuracy)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L5",
+    "kind": "lesson",
+    "title": "The slips: what each box feeds",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Read a T4 and map its key boxes to T1 lines: 14 employment income -> 10100; 22 income tax deducted -> 43700; 16 (and 16A) CPP contributions and 18 EI premiums -> the credits; 24 EI insurable and 26 CPP pensionable earnings; 44 union dues -> 21200; 46 charitable donations; 52 pension adjustment (cuts next year's RRSP room)",
+     "Name what the other common slips report - T4A (pension, other income), T5 (investment income), T2202 (tuition), RRSP and FHSA contribution receipts - and the rule that a missing slip is the most common reason a return needs follow-up"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the source documents; because a clerk's daily check is 'does what is on the return match what the slips say', and the slip boxes are numbered exactly so this can be done fast; for his own return (L8) and the NOA (L9). ONE IDEA: an employer, bank or school files a slip with CRA AND gives a copy to the taxpayer; CRA matches the two - so a box that does not match its line is a flag. Box 12 on a T4 is the SIN: in every practice, it is masked. HE DOES: takes his own T4 (paper, SIN covered with a sticky note, nothing typed into the tutor but box numbers and made-up or rounded amounts if he chooses), and builds cra/slips.md: each key box, what it means, which T1 line or credit it feeds. Then he states what T4A, T5, T2202 and an RRSP receipt each report in one line. EVIDENCE TO CLOSE: the T4 box map correct (14, 16/16A, 18, 22, 24, 26, 44, 46, 52), the four other slips named, the matching idea in his words. Boundary Question: a return reports $38,000 employment income but the T4s CRA received total $41,200 - what likely happened and what does the system do (a slip left off; it is flagged and the income added on assessment or reassessment) - the matching programme in one case.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-10100-employment-income.html",
+      "label": "CRA - line 10100 employment income (T4 boxes explained)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L6",
+    "kind": "lesson",
+    "title": "Deductions vs credits, and the NL428",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Explain the difference: a deduction lowers income before tax is calculated (RRSP 20800, FHSA 20805, union dues 21200, child care 21400, moving expenses 21900); a non-refundable credit lowers the tax itself at the lowest rate and cannot create a refund on its own (basic personal amount 30000, CPP 30800, EI 31200, Canada employment amount 31260, tuition 32300, medical 33099, donations 34900)",
+     "State why the same $1,000 is worth more as a deduction to a high earner, and that Newfoundland and Labrador has its own form (NL428) with its own rates and credits"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the logic under every line; because most adjustment requests a clerk sees are a missed deduction or credit, and knowing which kind it is tells him where on the return the change lands; for his own return and for case work. ONE IDEA: deductions shrink the income (they come off before tax rates apply, so they save tax at the taxpayer's top rate); credits shrink the tax (they are worth a fixed percentage, the lowest federal rate, whatever the income). Most credits are non-refundable - they can bring tax to zero but not below. Refundable credits (like the Canada workers benefit) can pay out even with no tax owing. HE DOES: sorts the twelve items above into two columns in cra/deductions-credits.md with their line numbers, and works one made-up comparison: $1,000 RRSP deduction for a person whose top combined rate is 30% saves about $300; a $1,000 credit amount at the 15% lowest federal rate saves $150 federally. He says why the two differ. EVIDENCE TO CLOSE: twelve items correctly sorted with line numbers, the $300/$150 reasoning stated, NL428 named. Boundary Question: a taxpayer with no tax owing claims a big medical credit and expects a refund - what happens (nothing extra; a non-refundable credit cannot go below zero tax) - a call or letter clerks answer constantly.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/taxes-deductions",
+      "label": "CRA - all deductions, credits and expenses by line number"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L7",
+    "kind": "lesson",
+    "title": "Excel I: the case sheet",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Open a sheet (Excel for the web with a free Microsoft account, or LibreOffice Calc on the Ubuntu Dell) and use the basics fast: freeze panes, sort, filter (Ctrl+Shift+L), format as a table (Ctrl+T), AutoSum (Alt+=), and move with Ctrl+arrow / select with Ctrl+Shift+arrow",
+     "Write SUM, COUNTIF and SUMIF, and explain relative versus absolute references (F4 locks a cell: $B$1)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the spreadsheet most offices run on; because team trackers, production counts and work lists live in Excel, and a new hire who filters and counts without the mouse stands out; for Excel II (L12). ONE IDEA: a sheet is a table - one row per case, one column per fact - and every useful thing (sort, filter, count, total) works on that shape. HE DOES: builds cra/case-tracker.xlsx (or .ods) with 20 MADE-UP cases: case number, date received, type (adjustment, missing slip, paper return), status (open, done, referred), minutes spent. He freezes the header, makes it a table, filters to 'open', counts cases by type with COUNTIF, totals minutes by type with SUMIF, and uses one absolute reference (minutes / a target cell). Keyboard first: the tutor asks him to do each with the shortcut, not the mouse. EVIDENCE TO CLOSE: the sheet exists, COUNTIF and SUMIF give correct answers he checks by hand for one type, he explains why the target cell needs $ signs. Boundary Question: a formula copied down the column suddenly shows wrong totals - what is the most likely cause (a reference that should have been absolute moved with the copy) - the commonest spreadsheet mistake in any office.",
+    "links": [
+     {
+      "url": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f",
+      "label": "Microsoft - Excel keyboard shortcuts"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L8",
+    "kind": "lesson",
+    "title": "Your hands: your own return, line by line",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Complete his own most recent T1 (2025) on paper or in free certified software, line by line from his slips, with the SIN and account numbers masked, and check it against the return he actually filed or his notice of assessment",
+     "Explain each line he used and where its number came from, in his own words"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the hands-on proof; because doing one real return end to end turns the line map into something he owns, and it is the single best preparation for a processing desk - and for CVITP volunteering this winter; for the NOA (L9) and the checkpoint. ONE IDEA: start from the slips, fill total income, deductions, net, taxable, credits, NL428, payable, deducted, result - and every number must trace to a slip or a calculation. PRIVACY, firm: he works on paper or in the software on his own machine; nothing personal goes into the tutor - no SIN, no address, no account numbers, no exact amounts if he prefers; he can tell the tutor 'line 15000 matches my NOA' rather than the figure. This teaches how the return works; it is not tax advice and he does not refile anything because of this step. HE DOES: completes the return, compares the result with his notice of assessment, and writes cra/my-return-check.md listing the lines he used, where each came from, and any line where his number differed from the NOA and why. EVIDENCE TO CLOSE: the return done, the comparison made, each used line explained in his words (no personal figures needed). Boundary Question: his figure for line 26000 differs from the NOA by exactly the amount of a T4A he forgot - what would CRA's matching have done (added it on assessment and explained the change on the notice) - he has now seen L5 from the taxpayer's side.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/e-services/digital-services-individuals/netfile-overview/certified-software-netfile-program.html",
+      "label": "CRA - certified tax software (several are free)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L9",
+    "kind": "lesson",
+    "title": "The notice of assessment, and how a return gets changed",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Read a notice of assessment: the summary, the explanation of changes, the RRSP/PRPP deduction limit for next year, and the amount owing or refund; and say what a notice of reassessment is",
+     "Describe the three ways a filed return is changed (Change my return in My Account, ReFILE through software, form T1-ADJ on paper), the normal reassessment period (3 years for most individuals) and the objection deadline (the later of 90 days after the notice date or one year after the filing due date)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: what happens after filing; because adjustment requests are bread-and-butter processing work and the deadlines decide what is allowed; for case work and the SJT. ONE IDEA: CRA assesses a return and sends a notice; if the taxpayer (or CRA) later changes something, the result is a reassessment and a new notice. A taxpayer changes a return through an adjustment request; if they DISAGREE with an assessment, that is an objection - a different process with a strict deadline. Key dates: filing due April 30 (June 15 if self-employed, but any balance is still due April 30). HE DOES: reads his own notice of assessment (paper or My Account, his own login, nothing shared with the tutor), labels its parts in cra/noa-timeline.md, and draws the timeline: filed -> assessed -> adjustment or objection -> reassessed, with the three-year and objection deadlines marked. EVIDENCE TO CLOSE: NOA parts named, the three change routes, adjustment vs objection distinguished, the two deadlines right. Boundary Question: a taxpayer wants to claim a tuition amount they forgot four years ago, and another disagrees with how CRA assessed last year - which is an adjustment request and which is an objection, and is the first still possible (forgotten claim = adjustment request, generally accepted for up to 10 prior years for many claims; disagreement = objection) - the distinction training spends a day on.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/change-your-return.html",
+      "label": "CRA - how to change a return"
+     },
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/notice-assessment-understand.html",
+      "label": "CRA - understanding your notice of assessment"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L10",
+    "kind": "lesson",
+    "title": "Quick win: shortcuts, the locked screen and the four-part case note",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Use the office shortcuts without the mouse: Windows key + L (lock), Alt+Tab, Windows key + E, Windows key + Shift + S (screenshot - never of taxpayer data outside work systems), Ctrl+F, Ctrl+C/V/Z; in Outlook Ctrl+N (new), Ctrl+R (reply), Ctrl+Shift+R (reply all), Ctrl+Enter (send, if enabled)",
+     "Write a case note in four parts - what was received, what was checked, what was done, what happens next - in plain, short sentences any colleague can act on"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the small things trainers notice first; because a hire who locks his screen without being told, moves without the mouse and writes notes the next person can use looks like he has done the job before; for every case and for the Writing Skills Test. ONE IDEA: a case note is for the NEXT person who opens the file - it says what happened and what is pending, nothing more, no opinions, no slang, no taxpayer detail beyond what the case needs. Template: 'Received: ... Checked: ... Action: ... Next: ...'. HE DOES: drills the shortcuts for 10 minutes (on his Windows PC or, on the Ubuntu Dell, the same Ctrl shortcuts plus Super key equivalents), puts the card in cra/shortcuts.md, then writes three case notes for made-up cases in cra/case-notes.md (a missing T4 found and added; an adjustment request referred to a senior because a receipt is missing; a return held because the signature is missing). EVIDENCE TO CLOSE: shortcuts shown or listed from memory, three notes in the four-part shape, each under 60 words. Boundary Question: a colleague's note says 'weird file, fixed it' - what is wrong and how would he rewrite it (no facts, no action, no next step; rewrite in four parts) - the note trainers hold up as the bad example.",
+    "links": [
+     {
+      "url": "https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec",
+      "label": "Microsoft - Windows keyboard shortcuts"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L11",
+    "kind": "lesson",
+    "title": "Benefits that depend on filing, and the scams that use CRA's name",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Name the main payments a return unlocks - GST/HST credit, Canada child benefit, Canada workers benefit, and provincial programs - and explain why a late or missing return stops them",
+     "Describe how CRA impersonation scams work (threats of arrest, demands for gift cards, crypto or e-transfer, links in texts) and what CRA actually does (it contacts by mail or My Account, verifies identity, never demands those payment methods)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the human side of the work and the defender's side of his security path; because many people who write or call are worried about benefits or a scam message, and a clerk who knows both answers stays calm and correct; for the SJT and for his cybersecurity strand (social engineering from the target's side). ONE IDEA: benefits are calculated from the return - no return, no calculation, payments stop; marital status changes (form RC65) and new children (RC66) also change them. Scammers copy CRA's name because people fear it: urgency + threat + unusual payment = scam. HE DOES: writes cra/benefits-scams.md: the three benefits and what each depends on in one line; then three red flags of a CRA scam and the real CRA channel for each. He finds CRA's official 'recognize a scam' page and checks his list against it (two sources - the SETUP1 habit). EVIDENCE TO CLOSE: three benefits explained, the filing link stated, three scam red flags and the real channel named, checked against CRA's page. Boundary Question: a taxpayer gets a text saying their refund is waiting and to click a link and enter banking details - what does he tell them (CRA does not send refund links by text; do not click; check My Account directly; report the scam) - the same phishing he studies in his security modules, from the victim's side.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/scams-fraud/recognize-scam",
+      "label": "CRA - recognize a scam (official)"
+     },
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/services/child-family-benefits.html",
+      "label": "CRA - benefits and credits"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L12",
+    "kind": "lesson",
+    "title": "Excel II: XLOOKUP, pivot tables and the clean report",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Use XLOOKUP (or VLOOKUP in LibreOffice) to pull a value from a second table by case number, and build a pivot table that counts and totals cases by type and status",
+     "Add conditional formatting (highlight cases open more than 10 days) and data validation (a drop-down for status), and explain why validation prevents errors"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the level that makes him the person the team asks; because most clerks never get past sorting, and a new hire who can turn a list into a one-glance count is useful to a team leader from week one; for any SP-04 role later. ONE IDEA: lookups join two tables by a shared key (the case number); a pivot table summarises a table without formulas; formatting makes the important rows stand out; validation stops wrong entries at the door - the spreadsheet version of 'accuracy first'. HE DOES: extends cra/case-tracker with a second sheet of MADE-UP assigned officers by case number, pulls the officer in with XLOOKUP, builds a pivot of cases by type x status, highlights open cases older than 10 days (a formula on date received vs TODAY()), and adds a status drop-down. Keyboard first where possible. EVIDENCE TO CLOSE: the lookup returns the right officer for three cases he checks, the pivot totals match COUNTIF from L7, the highlight and drop-down work, and he explains validation in one sentence. Boundary Question: XLOOKUP returns an error for one case number that 'is clearly there' - two likely causes (an extra space or text-vs-number mismatch) - the bug every office meets.",
+    "links": [
+     {
+      "url": "https://support.microsoft.com/en-us/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+      "label": "Microsoft - XLOOKUP"
+     },
+     {
+      "url": "https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576",
+      "label": "Microsoft - create a PivotTable"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L13",
+    "kind": "lesson",
+    "title": "The Writing Skills Test: the six areas and your error log",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Name what the WST assesses - spelling, grammar, vocabulary, punctuation, capitalization, and sentence sequencing - and its shape (106 multiple-choice questions, 90 minutes, result reported as a level from 1 to 3 - aim for Level 3)",
+     "Work the sample questions in CRA's candidate handbook, log every miss by area in an error log, and fix the top two areas with a short daily drill"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the test that opens doors; because the WST result stays valid indefinitely and is reused in later staffing processes - one strong score keeps working; for every application inside CRA. He writes in English as a second language (Bangla first) - so the error log, not general study, is the method: find HIS repeat mistakes and kill them. ONE IDEA: the test checks correctness, not style; most points are lost to a few repeat patterns (subject-verb agreement, apostrophes, commonly confused words like affect/effect, its/it's, comma splices, capital letters on titles). HE DOES: takes the handbook's sample questions under time, records each miss in cra/wst-errors.md as area + the rule in his words + a correct example, ranks the areas, and sets a 15-minute daily drill on the top two (his phone is enough). EVIDENCE TO CLOSE: sample done, error log with the misses classified, top two areas named with the rule he will drill, the test shape right. Boundary Question: 'Each of the clerks have their own queue' - correct it and name the rule (has; 'each' is singular) - the kind of item the test is full of.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/candidate-assessment/assessment-options-candidate/candidate-handbook-writing-skills-test.html",
+      "label": "CRA - Writing Skills Test candidate handbook (official)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L14",
+    "kind": "lesson",
+    "title": "The Situational Judgement Test: how CRA wants you to think",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Describe the SJT-R (102 questions, about 2 hours 20 minutes) and how its scenarios are scored: the best response follows procedure, protects confidentiality, serves the taxpayer, involves the team leader when unsure, and respects colleagues",
+     "Work official sample scenarios, explain the reason behind each answer, and name the four response traps (acting alone, shortcuts, avoiding the problem, over-escalating small things)"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the test of judgement; because the SJT is used across CRA staffing processes and results can be reused, and it rewards exactly the habits this module has built; for promotion to SP-04 and beyond. ONE IDEA: every scenario has a CRA answer - it is not what is fastest or most heroic, it is what a careful, honest, cooperative employee does inside the rules: follow the procedure, protect taxpayer information, be fair to the taxpayer, ask the team leader when the procedure does not cover it, deal with colleagues directly and respectfully, and do not bother the leader with what you can fix yourself. HE DOES: works the official samples, and for each writes one line in cra/sjt-reasons.md: the answer + which principle it follows; then names the four traps with an example from his restaurant years (he managed people - he has lived these scenarios). EVIDENCE TO CLOSE: samples done with reasons, the principles and the four traps named, one restaurant example mapped to a trap. Boundary Question: a colleague keeps leaving files open on his screen when he goes for coffee - best first action (speak to the colleague directly and politely about locking the screen; escalate only if it continues) - respect + confidentiality + right level.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/corporate/careers-cra/candidate-assessment/assessment-options-candidate/situational-judgement-test-recruitment.html",
+      "label": "CRA - Situational Judgement Test (official description and samples)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-L15",
+    "kind": "lesson",
+    "title": "The first 90 days, and the road to SP-04",
+    "time_box": 30,
+    "max_turns": 30,
+    "objectives": [
+     "Plan the first 90 days: training (take notes in his own words, ask one good question at the right time), quality review (thank the reviewer, log the error, never repeat it), reliability (on time, every shift), and the union (PSAC - Union of Taxation Employees) as the place for questions about the collective agreement",
+     "Name the path up: internal postings, the WST and SJT results he already holds, CVITP experience, and accounting courses later for SP-05 roles"
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: turning a foot in the door into a career; because most permanent CRA careers start with a term or seasonal job and grow through performance and internal processes, and the first three months set his reputation; for his stated plan - get in, then apply internally. ONE IDEA: a new clerk is noticed for three things - he gets it right, he learns from review without being told twice, and he is reliable; knowledge of the T1 makes the first easy, the error log habit (L13) makes the second automatic, and the third is his choice every day. HE DOES: writes cra/first-90-days.md: a week-by-week plan (week 1-2 training notes; weeks 3-6 his own error log from quality review; weeks 7-12 ask his team leader what SP-04 work looks like), three good questions he could ask a trainer, and the path to SP-04/SP-05 in his own words. EVIDENCE TO CLOSE: the plan written, three questions that show he did his homework (not ones the manual answers), the path stated. Boundary Question: in week two he finds a faster way to do a task that skips one check in the procedure - what does he do (follow the procedure; suggest the idea to his team leader, who decides) - the integrity and procedure rule one last time.",
+    "links": [
+     {
+      "url": "https://www.canada.ca/en/revenue-agency/campaigns/cvitp-taxes-volunteers.html",
+      "label": "CRA - become a CVITP volunteer (free; tax season)"
+     }
+    ],
+    "media": []
+   },
+   {
+    "id": "CRA1-C",
+    "kind": "check",
+    "title": "CRA-ready checkpoint",
+    "skills": [
+     "tax-centre-flow",
+     "how-a-clerk-is-judged",
+     "s241-and-need-to-know",
+     "cra-values-and-conflicts",
+     "t1-flow-lines",
+     "refund-vs-tax-paid",
+     "numpad-kph-accuracy",
+     "clerical-number-checking",
+     "t4-box-map",
+     "other-slips",
+     "slip-matching",
+     "deduction-vs-credit",
+     "non-refundable-credit-floor",
+     "excel-basics-and-absolute-refs",
+     "own-return-traced",
+     "noa-parts",
+     "adjustment-vs-objection",
+     "deadlines",
+     "case-note-four-parts",
+     "benefits-depend-on-filing",
+     "cra-scam-red-flags",
+     "xlookup-and-pivot",
+     "data-validation",
+     "wst-areas-and-shape",
+     "sjt-principles-and-traps",
+     "first-90-days"
+    ],
+    "count": 20
+   },
+   {
+    "id": "CRA1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Write cra/README.md as if briefing a friend who starts at the St. John's tax centre next month: how a return moves through the centre and where a processing clerk fits; how a clerk is judged and why accuracy beats speed; the confidentiality rule (s.241, need to know) and what to do if a friend's file appears; the T1 from line 15000 to 48400/48500; which T4 boxes feed which lines; deduction versus credit with one example; what a notice of assessment shows and the difference between an adjustment request and an objection; the four-part case note; three signs of a CRA scam; and how to prepare for the WST and SJT. 18-22 sentences, plain English, exact line and box numbers. Link your cra/ sheets. First line: this explains how the system works; it is not tax advice, and no real taxpayer data is in this folder."
+   }
+  ]
+ },
+ {
   "id": "IFC1",
   "phase": "Finance",
   "title": "Investment Funds in Canada (IFC): the whole exam, chapter by chapter",

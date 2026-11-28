@@ -354,7 +354,7 @@ function TypingGate({ typing, onDone, onClose }) {
   return (
     <main className="wrap narrow">
       <div className="eyebrow">daily warm-up · first · +XP</div>
-      <h2>{t.exam ? "Exam-day warm-up - about 5 minutes" : "Warm-up - about 10 minutes"}</h2>
+      <h2>{t.exam ? "Exam-day warm-up - about 5 minutes" : "Warm-up - about 15 minutes"}</h2>
       <p>{t.exam ? "Exam time: just the typing line and quick maths, so your fingers and your number sense stay warm. Your exams come first; your streak is safe." : t.adult ? "Your Python line and today's review questions - what you learned on earlier days comes back until it is yours. Then the session opens." : "Sit at your desk, on a chair. Both hands on the home row (feel the bumps on F and J), eyes on the screen. Then your lesson opens."}</p>
       {(all || t.optional) && <p><button className="btn primary" onClick={onClose} autoFocus={all}>{all ? "All done - back to the lesson" : "Back to the lesson"}</button></p>}
       {!all && !t.optional && <p className="small soft">The lesson opens by itself when every part below is done. Each part lets you through after three honest tries.</p>}
@@ -374,6 +374,7 @@ function TypingGate({ typing, onDone, onClose }) {
 
       {t.codeEnabled && <CodeLine t={t} onDone={onDone} />}
       {t.spine && <ReviewPart t={t} onDone={onDone} />}
+      {t.mathEnabled && <MathDrill t={t} onDone={onDone} />}
 
       {!t.adult && <div className="card" style={{ marginTop: 16, opacity: t.drillDone ? 0.6 : 1 }}>
         <p><strong>{t.exam ? "Part 1" : "Extra, if you want"} - all the keys.</strong> {t.drillDone && <span className="small">Done today - {Number(t.drillAccuracy)}%{t.drillWpm ? `, ${t.drillWpm} wpm` : ""}.{t.drillWpm && t.wpmTarget ? (t.drillWpm >= t.wpmTarget ? <b style={{ color: "var(--lime)" }}> Speed target hit ({t.wpmTarget} wpm)! +XP</b> : <span className="soft"> Speed target: {t.wpmTarget} wpm - tomorrow.</span>) : null}</span>}</p>
@@ -390,7 +391,6 @@ function TypingGate({ typing, onDone, onClose }) {
           <div style={{ marginTop: 12 }}><button className="btn primary" disabled={busy || !line.trim()} onClick={submitDrill}>Check the line</button></div>
         </>}
       </div>}
-      {t.mathEnabled && <MathDrill t={t} onDone={onDone} />}
       {t.shortcut && <KeyMove t={t} onDone={onDone} />}
       {t.vaultEnabled && (
         <div className="card" style={{ marginTop: 16, opacity: t.vaultAsked ? 0.6 : 1 }}>
@@ -435,12 +435,12 @@ function MathDrill({ t, onDone }) {
   const fmt = (n) => `${Math.floor(n / 60)}:${String(n % 60).padStart(2, "0")}`;
   if (t.mathDone && !res) return (
     <div className="card" style={{ marginTop: 16, opacity: 0.7 }}>
-      <p><strong>{t.exam ? "Part 2" : "Extra, if you want"} - quick maths.</strong> <span className="small">Done today: {t.mathScore}/{t.mathCount} in {fmt(Number(t.mathSeconds) || 0)}.{Number(t.mathScore) >= target.score && Number(t.mathSeconds) <= target.seconds ? <b style={{ color: "var(--lime)" }}> Target hit! +XP</b> : <span className="soft"> Target: {target.score}/{t.mathCount} inside {fmt(target.seconds)}.</span>}</span></p>
+      <p><strong>{t.exam ? "Part 2" : "Part 4"} - quick maths.</strong> <span className="small">Done today: {t.mathScore}/{t.mathCount} in {fmt(Number(t.mathSeconds) || 0)}.{Number(t.mathScore) >= target.score && Number(t.mathSeconds) <= target.seconds ? <b style={{ color: "var(--lime)" }}> Target hit! +XP</b> : <span className="soft"> Target: {target.score}/{t.mathCount} inside {fmt(target.seconds)}.</span>}</span></p>
     </div>
   );
   return (
     <div className="card" style={{ marginTop: 16 }}>
-      <p><strong>{t.exam ? "Part 2" : "Extra, if you want"} - quick maths.</strong> <span className="small soft">{qs.length} questions, in your head. Target: <b style={{ color: "var(--cyan)" }}>{target.score} right inside {fmt(target.seconds)}</b>. The clock starts at your first answer. Fractions like 3/4. <kbd>Enter</kbd> goes to the next one.</span></p>
+      <p><strong>{t.exam ? "Part 2" : "Part 4"} - quick maths.</strong> <span className="small soft">{qs.length} questions, in your head. Target: <b style={{ color: "var(--cyan)" }}>{target.score} right inside {fmt(target.seconds)}</b>. The clock starts at your first answer. Fractions like 3/4, binary like 1011. <kbd>Enter</kbd> goes to the next one.</span></p>
       {!res && <>
         <div className="mathgrid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(190px, 1fr))", gap: 8 }}>
           {qs.map((qq, i) => (
@@ -985,7 +985,7 @@ function OneAtATime({ questions, onAnswer, hints, start = 0, onMove }) {
   return (
     <div className="card">
       <div className="small soft">Question {i + 1} of {questions.length}</div>
-      <div className="question">{q.q}</div>
+      <div className={String(q.q).includes("\n") ? "question code" : "question"}>{q.q}</div>
       {hints && hintLevel > 0 && <div className="hint">{hintLevel === 1 ? q.hint : "Not yet. In your own words: what is this question asking for? Then try one more time."}</div>}
       <input className="big-input" inputMode="text" autoFocus value={val} onChange={(e) => setVal(e.target.value)} placeholder="Your answer" disabled={busy} onKeyDown={(e) => { if (e.key === "Enter" && !e.repeat) submit(); }} />
       <div style={{ marginTop: 12 }}><button className="btn primary" disabled={busy || !val.trim()} onClick={submit}>Next</button></div>
@@ -1119,7 +1119,7 @@ function Practice({ m, step, onDone }) {
     <div className="room">
       <div className="card amber">
         <div className="eyebrow" style={{ color: "var(--amber)" }}>two tries - so here is the answer, and why</div>
-        <div className="question" style={{ marginTop: 6 }}>{set.questions[i]?.q}</div>
+        <div className={String(set.questions[i]?.q || "").includes("\n") ? "question code" : "question"} style={{ marginTop: 6 }}>{set.questions[i]?.q}</div>
         <p style={{ fontSize: 22 }}>Answer: <strong>{reveal.answer}</strong></p>
         {reveal.why && <p>{reveal.why}</p>}
         <p className="small soft">Nothing is lost. Read it once more, then a similar question checks that it landed.</p>
@@ -1136,7 +1136,7 @@ function Practice({ m, step, onDone }) {
       <p className="small soft">Get {need} in a row for each skill. {left} skill{left === 1 ? "" : "s"} to go. A wrong answer resets that skill's count - that's normal, nothing is lost.</p>
       <div className="card">
         <div className="small soft">Question {i + 1} of {set.questions.length}</div>
-        <div className="question">{q.q}</div>
+        <div className={String(q.q).includes("\n") ? "question code" : "question"}>{q.q}</div>
         {hint && <div className="hint">{hint}</div>}
         {note && <div className="hint">{note} <button className="btn quiet" style={{ marginLeft: 8, padding: "2px 10px" }} onClick={() => { setNote(null); next(); }}>Try again</button></div>}
         <input className="big-input" autoFocus value={val} onChange={(e) => setVal(e.target.value)} placeholder="Your answer" disabled={busy} onKeyDown={(e) => { if (e.key === "Enter" && !e.repeat) submit(); }} />

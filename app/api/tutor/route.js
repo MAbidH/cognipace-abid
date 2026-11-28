@@ -13,7 +13,7 @@ import { computeRewards } from "../../../lib/rewards";
 import { buildHistory, newestFromBody, withCacheBreakpoint, OPENER } from "../../../lib/history";
 import { stripMarkers, markerStream } from "../../../lib/markers";
 import { selfStudy } from "../../../lib/selfstudy";
-import { nearSame, parseGrade } from "../../../lib/signals";
+import { nearSame, parseGrade, skillFits } from "../../../lib/signals";
 import { clampActive } from "../../../lib/timing";
 import { voiceLine } from "../../../lib/voice";
 import MACHINE from "../../../curriculum/machine.json";
@@ -24,6 +24,10 @@ import { after as afterResponse } from "next/server";
 import { TEACHING_HANDBOOK } from "../../../lib/teachingHandbook";
 import { allModules } from "../../../lib/curriculum";
 import { SPEND_LIMIT } from "../../../lib/cost";
+import { paperCheckSystem, paperMethodSystem, paperMethodUser, parsePaperCheck, parsePaperMethod } from "../../../lib/paper";
+import { STUDENT } from "../../../lib/student";
+import { gradeSet, reasonsSystem, reasonsUser, parseReasons } from "../../../lib/puzzles";
+import { PUZZLE_ITEMS } from "../../../lib/puzzleBank";
 
 export const runtime = "nodejs";
 // 26 Oct 2026: 60 s killed a practice-set generation (8 questions x 3 variants with hints) mid-way - Vercel returned a 504
@@ -252,6 +256,62 @@ Open warmly in two or three lines, pick the most surprising thing in it, and ask
       return NextResponse.json(await save(textOf(c.r)));
     }
 
+    // School maths on paper, checked from a photo (25 Nov 2026, lib/paper.js). No module needed; child mode only.
+    if (mode === "paper") {
+      if (STUDENT.mode !== "child") return NextResponse.json({ error: "not here" }, { status: 400 });
+      // Round 2: her explanation of HOW she got one answer - graded for the method, never a trap (one reply closes it).
+      if (body.answerFor != null) {
+        const id = Number(body.answerFor);
+        const text = String(body.text || "").slice(0, 1500);
+        if (!Number.isFinite(id) || text.trim().split(/\s+/).length < 3) return NextResponse.json({ error: "A few words at least - which steps did you do?" }, { status: 400 });
+        const [row] = await q("SELECT id, checked, question, answer FROM paper WHERE id=$1", [id]);
+        if (!row) return NextResponse.json({ error: "no such page" }, { status: 404 });
+        if (row.answer != null) return NextResponse.json({ ok: true, reply: "This one is already answered - well done. Tomorrow's page is next.", already: true });
+        const chk = Array.isArray(row.checked) ? row.checked : [];
+        const pick = chk.find((c) => row.question && c.problem && row.question.includes(c.problem)) || chk[0] || {};
+        const c = await create("paper", 1, { model: MODEL(), max_tokens: 900, system: paperMethodSystem({ name: STUDENT.name }),
+          messages: [{ role: "user", content: paperMethodUser({ problem: pick.problem || "the problem", herAnswer: pick.her_answer || "?", correct: pick.correct || "?", question: row.question || "", text }) }] });
+        if (c.limited) return NextResponse.json({ text: c.limited, limited: true }, { status: 429 });
+        const out = parsePaperMethod(textOf(c.r)) || { ok: null, reply: "Thank you - Abid will read your steps himself. Tomorrow's page is next." };
+        await q("UPDATE paper SET answer=$2, verdict=$3, method_ok=$4, answered_at=now() WHERE id=$1", [id, text, out.reply, out.ok]);
+        return NextResponse.json({ ok: out.ok, reply: out.reply });
+      }
+      // Round 1: the photo of the page.
+      const shot = parseShot(body.image);
+      if (!shot) return NextResponse.json({ error: "That picture could not be read. Take the photo again - closer, in good light, the page the right way up." }, { status: 400 });
+      const note = String(body.note || "").slice(0, 160);
+      const c = await create("paper", 2, { model: MODEL(), max_tokens: 2000, system: paperCheckSystem({ name: STUDENT.name }),
+        messages: [{ role: "user", content: [{ type: "image", source: { type: "base64", media_type: shot.type, data: shot.data } }, { type: "text", text: `Her note about the page: ${note || "(none)"}. Check the page.` }] }] });
+      if (c.limited) return NextResponse.json({ text: c.limited, limited: true }, { status: 429 });
+      const raw = textOf(c.r);
+      const out = parsePaperCheck(raw);
+      if (!out) { await logError("tutor:paper", new Error(`paper check unreadable (stop: ${c.r.stop_reason || ""}): ${raw.slice(0, 200)}`), false); return NextResponse.json({ error: "The checker could not read its own notes this time - not your mistake. Press Hand in again in a minute." }, { status: 502 }); }
+      if (out.unreadable) return NextResponse.json({ unreadable: out.unreadable });
+      const [ins] = await q(`INSERT INTO paper (day, note, pages, seen, right_n, wrong_n, checked, praise, question) VALUES ((now() AT TIME ZONE 'Asia/Dhaka')::date,$1,$2,$3,$4,$5,$6,$7,$8) RETURNING id`,
+        [note || null, out.pages, out.seen, out.right, out.wrong, JSON.stringify(out.checked), out.praise, out.question]);
+      return NextResponse.json({ id: ins.id, pages: out.pages, seen: out.seen, checked: out.checked, right: out.right, wrong: out.wrong, praise: out.praise, question: out.question });
+    }
+
+    // The Saturday puzzle set (25 Nov 2026, lib/puzzles.js): answers graded here, the four reasons by one model call.
+    if (mode === "puzzles") {
+      if (STUDENT.mode !== "child") return NextResponse.json({ error: "not here" }, { status: 400 });
+      const [row] = await q("SELECT day, level, items, done FROM puzzles WHERE day=$1", [dhakaDate()]);
+      if (!row) return NextResponse.json({ error: "no puzzle set today" }, { status: 400 });
+      if (row.done) return NextResponse.json({ error: "today's set is already done - well done; the next one is next Saturday" }, { status: 400 });
+      const ids = Array.isArray(row.items) ? row.items : [];
+      const g = gradeSet(PUZZLE_ITEMS, ids, Array.isArray(body.answers) ? body.answers : [], Array.isArray(body.reasons) ? body.reasons : []);
+      let grades = null;
+      try {
+        const c = await create("puzzles", 1, { model: MODEL(), max_tokens: 1500, system: reasonsSystem({ name: STUDENT.name }), messages: [{ role: "user", content: reasonsUser(PUZZLE_ITEMS, g.results) }] });
+        if (!c.limited) { grades = parseReasons(textOf(c.r), g.results.length); if (!grades) await logError("tutor:puzzles", new Error(`reasons grade unreadable: ${textOf(c.r).slice(0, 160)}`), false); }
+      } catch (e) { await logError("tutor:puzzles", e, false); }
+      const results = g.results.map((r, i) => ({ ...r, reason_ok: grades ? grades[i].ok : null, note: grades ? grades[i].note : "" }));
+      const reasonOk = grades ? grades.filter((x) => x.ok).length : null;
+      await q("UPDATE puzzles SET results=$2, score=$3, total=$4, reason_ok=$5, done=true, finished_at=now() WHERE day=$1", [row.day, JSON.stringify(results), g.score, g.total, reasonOk]);
+      await q("INSERT INTO journal (kind, title, body) VALUES ('puzzles', $1, $2)", [`Saturday puzzles: ${g.score} of ${g.total}`, results.map((r, i) => `${i + 1}. ${r.right ? "right" : "not yet"} - my reason: ${r.reason || "-"}`).join("\n")]).catch(() => {});
+      return NextResponse.json({ score: g.score, total: g.total, reasonOk, results });
+    }
+
     // The client never chooses the module/step: the server knows where she is.
     const cur = await currentModule();
     if (!cur) return NextResponse.json({ error: "no module" }, { status: 400 });
@@ -277,11 +337,15 @@ Open warmly in two or three lines, pick the most surprising thing in it, and ask
       // Round 2 (B, review 02 M3): a practice set whose every question (variants included) is answered right or revealed,
       // but which is still not done, is closed and a fresh one is made - also when the client says so with after:<id>.
       let pos = null;
+      // 27 Nov 2026: what she has already earned is carried into the next set. A new set used to start every skill at 0
+      // again, so one miss near the end of a set sent her round all four skills once more (CS2B-LC, 27 Nov: 15 answers,
+      // most of them right, and still on the step). Now the next set asks only for the skills still short of the count.
+      let carried = null;
       if (open.length && kind === "practice") {
         const qs0 = open[0].questions || [];
         const i0 = qs0.findIndex((x) => !x.solved && !x.revealed);
         const usedUp = i0 < 0 || String(body.after || "") === open[0].id;
-        if (usedUp) { await q("UPDATE qsets SET void=true WHERE id=$1 AND NOT done", [open[0].id]); open = []; }
+        if (usedUp) { carried = open[0].streak && typeof open[0].streak === "object" ? open[0].streak : null; await q("UPDATE qsets SET void=true WHERE id=$1 AND NOT done", [open[0].id]); open = []; }
         else pos = i0;
       }
       if (open.length) {
@@ -289,8 +353,11 @@ Open warmly in two or three lines, pick the most surprising thing in it, and ask
         return NextResponse.json({ qsetId: open[0].id, questions: stripAnswers(open[0].questions), streak: open[0].streak, reused: true, ...(pos != null ? { pos } : {}), ...(kind === "check" ? { draft: Array.isArray(open[0].draft) ? open[0].draft : null } : {}) });
       }
 
-      const skills = remediation && s.kind === "check" ? remediation : (s.skills || []);
-      const count = s.kind === "check" ? (remediation ? Math.max(5, skills.length * 2) : (s.count || 10)) : 8;
+      const allSkills = remediation && s.kind === "check" ? remediation : (s.skills || []);
+      const PRACTICE_NEED = Number(process.env.PRACTICE_STREAK || 2);
+      const short = s.kind === "practice" && carried ? allSkills.filter((k) => (Number(carried[k]) || 0) < PRACTICE_NEED) : [];
+      const skills = short.length ? short : allSkills;
+      const count = s.kind === "check" ? (remediation ? Math.max(5, skills.length * 2) : (s.count || 10)) : (short.length ? Math.max(4, short.length * 2) : 8);
       let questions;
       if (s.questions && s.kind === "check" && !remediation) {
         questions = s.questions; // fixed, hand-written bank
@@ -311,7 +378,7 @@ Rules: answers must be a single number, a fraction like "3/4" in lowest terms, o
         // 20 Oct 2026: a re-check after a fix lesson asked harder loops than the lesson taught (while with * 3, break, nested if)
         // and she scored 0% twice in one morning. A re-check tests the SIMPLEST form of each missed skill.
         const recheck = remediation && s.kind === "check" ? " THIS IS A RE-CHECK after a short fix lesson: every question is the SIMPLEST form of its skill - the same shape a first worked example would use (a for loop with range(n) or range(a, b) adding a fixed number or i; a while loop that counts up or down by a fixed step; one if with one comparison). No break, no nested if, no multiplying inside a loop, no step argument unless the skill is about it, numbers under 30." : "";
-        const user = `Module: ${m.title}. Skills to cover (spread evenly): ${skills.join(", ")}. Write exactly ${count} questions.${taught}${recheck}${avoid.length ? ` Do not repeat these: ${avoid.join(" | ")}` : ""}`;
+        const user = `Module: ${m.title}. Skills to cover (spread evenly): ${skills.join(", ")}. Write exactly ${count} questions. EVERY question (and each of its variants) must really use what its skill names: a while-loop skill shows a while loop, if-inside-loop shows an if inside a for or while loop, if-elif-else shows elif or else, for-range shows for with range(), a function skill shows def, modulo shows %, a list skill shows a list in [ ] - never the same kind of code under two different skill names.${taught}${recheck}${avoid.length ? ` Do not repeat these: ${avoid.join(" | ")}` : ""}`;
         // 19 Oct 2026: a 10-question checkpoint with three variants each ran past 6000 tokens; checkpoints give no hints or
         // variants anyway, so they are not asked for, and the ceiling is higher.
         let text;
@@ -333,9 +400,17 @@ Rules: answers must be a single number, a fraction like "3/4" in lowest terms, o
               variants: (Array.isArray(x.variants) ? x.variants : []).filter((v) => v && typeof v.q === "string" && (Array.isArray(v.a) || v.a != null)).slice(0, 4).map((v) => ({ q: String(v.q).slice(0, 400), a: (Array.isArray(v.a) ? v.a : [v.a]).map((z) => String(z).slice(0, 60)), hint: String(v.hint || "").slice(0, 300), explain: String(v.explain || "").slice(0, 400) })) }));
         } catch (e) { await logError("tutor:generate", e); return NextResponse.json({ error: "bad generation" }, { status: 502 }); }
         if (!questions.length) return NextResponse.json({ error: "bad generation" }, { status: 502 });
+        // 27 Nov 2026: her CS2B-LC set had for-loop accumulators filed under "cs2a-while-loop" and "cs2a-if-inside-loop" -
+        // two skills passed without one while or if. A question whose code does not show its skill's construct is dropped
+        // (and its bad variants); if that would leave a skill with nothing, the set is kept as it was and the miss is logged.
+        { const kept = questions.filter((x) => skillFits(x.skill, x.q)).map((x) => ({ ...x, variants: x.variants.filter((v) => skillFits(x.skill, v.q)) }));
+          const lost = questions.length - kept.length;
+          if (lost > 0) { const empty = skills.filter((k) => questions.some((x) => x.skill === k) && !kept.some((x) => x.skill === k));
+            await logError("tutor:generate", new Error(`${lost} of ${questions.length} questions on ${stepId} did not show their skill's construct${empty.length ? ` - kept anyway for: ${empty.join(", ")}` : " - dropped"}`), false);
+            if (!empty.length && kept.length >= Math.min(3, questions.length)) questions = kept; } }
       }
       const id = newId();
-      const streak = s.kind === "practice" ? Object.fromEntries(skills.map((k) => [k, 0])) : null;
+      const streak = s.kind === "practice" ? Object.fromEntries(allSkills.map((k) => [k, short.length ? Math.min(PRACTICE_NEED, Number(carried[k]) || 0) : 0])) : null;
       await q("INSERT INTO qsets (id, module_id, step_id, kind, questions, streak, stuck) VALUES ($1,$2,$3,$4,$5,$6,$7)", [id, m.id, stepId, s.kind, JSON.stringify(questions), streak ? JSON.stringify(streak) : null, streak ? "{}" : null]);
       return NextResponse.json({ qsetId: id, questions: stripAnswers(questions), streak, ...(s.kind === "check" ? { draft: null } : {}) });
     }

@@ -17,6 +17,7 @@ import { packSteps, PACK_STEPS } from "../../lib/offline";
 import { wpmTarget, mathTarget } from "../../lib/mathdrill";
 import { AGREEMENT_VERSION } from "../../lib/agreement";
 import { retention } from "../../lib/review";
+import { mathsBlock } from "../../lib/mathsBlock";
 import { MinuteBars, StreakCalendar } from "../../components/Viz";
 
 export const dynamic = "force-dynamic";
@@ -265,6 +266,18 @@ async function GuardianInner() {
     q("SELECT step_id, url, vote, at FROM video_votes ORDER BY at DESC LIMIT 60").catch(() => []),
     retention().catch(() => null), // the practice spine (9 Nov 2026)
   ]);
+  // THE MATHS BLOCK (25 Nov 2026, lib/mathsBlock.js): fluency, retention of maths skills, stretch problems, paper, puzzles.
+  const mathsToday = (await q("SELECT ((now() AT TIME ZONE 'Asia/Dhaka')::date)::text AS d").catch(() => [{ d: localYmd() }]))[0].d;
+  const [mTyping, mSkills, mAnswers, mStretch, mUnver, mPaper, mPuzzles] = await Promise.all([
+    q("SELECT to_char(day,'YYYY-MM-DD') AS day, math_done, math_score, math_seconds, math_hit FROM typing WHERE day > (now() AT TIME ZONE 'Asia/Dhaka')::date - 14 ORDER BY day DESC").catch(() => []),
+    q("SELECT skill, module_id, hits, misses, stage FROM skills WHERE module_id ~ '^M[0-9]' AND module_id NOT IN ('M1','M2')").catch(() => []),
+    q("SELECT ok, at FROM answers WHERE step_id LIKE 'review%' AND module_id ~ '^M[0-9]' AND module_id NOT IN ('M1','M2') AND at > now() - interval '30 days'").catch(() => []),
+    q("SELECT step_id, started_at, active_ms, attempts FROM events WHERE kind='lesson' AND step_id ~ '^M[0-9]+[A-Z]?-S1$' ORDER BY started_at DESC LIMIT 40").catch(() => []),
+    q("SELECT step_id FROM unverified WHERE step_id ~ '^M[0-9]+[A-Z]?-S1$'").then((r) => r.map((x) => x.step_id)).catch(() => []),
+    q("SELECT to_char(day,'YYYY-MM-DD') AS day, pages, right_n, wrong_n, answer, method_ok, question, verdict FROM paper WHERE day > (now() AT TIME ZONE 'Asia/Dhaka')::date - 14 ORDER BY id DESC").catch(() => []),
+    q("SELECT to_char(day,'YYYY-MM-DD') AS day, level, score, total, reason_ok, results, done FROM puzzles WHERE done ORDER BY day DESC LIMIT 12").catch(() => []),
+  ]);
+  const maths = mathsBlock({ today: mathsToday, typingRows: mTyping, skillRows: mSkills, answerRows: mAnswers, stretchRows: mStretch, unverified: mUnver, paperRows: mPaper, puzzleRows: mPuzzles });
   // Her verdict on step videos (5 Nov 2026): "long" or "off" twice is a cut; the title comes from the curriculum.
   const vidTitle = (stepId, url) => { const st = allModules().flatMap((m) => m.steps).find((x) => x.id === stepId); return (st?.media || []).find((md) => md.url === url)?.title || url.replace(/^.*\//, "video "); };
   const vidBad = vidVotes.filter((v) => v.vote !== "useful");
@@ -480,6 +493,21 @@ If she goes quiet, ask her what she is building - she has answers. If you can sh
           {ret.weak.length > 0 && <div className="small" style={{ marginTop: 6 }}><b>Weakest:</b> {ret.weak.map((w) => <span key={w.skill} className="mono" style={{ marginRight: 10 }}>{w.skill} <span className="soft">({w.misses} miss{w.misses === 1 ? "" : "es"}, {w.hits} right)</span></span>)}</div>}
           {ret.rechecks.length > 0 && <div className="small" style={{ marginTop: 6 }}><b>Monthly re-checks:</b> {ret.rechecks.map((r) => <span key={r.module_id + r.day} style={{ marginRight: 10 }}>{r.module_id} {Math.round(100 * Number(r.score))}% <span className="soft">({r.day})</span></span>)}</div>}
         </>}
+      </section>
+
+      <section className="card" style={{ marginTop: 14 }}>
+        <div className="eyebrow" style={{ color: "var(--lime)" }}>maths · the plan of 25 Nov 2026 (MATHS-PLAN)</div>
+        <p className="small soft" style={{ margin: "6px 0" }}>Five numbers, this week against last. Targets for mid-January: the drill at 18/20 inside 4 minutes on most days; maths skills 70%+ right in review; the stretch problems solved with a plan said first; paper pages 70%+ right; the Saturday set started.</p>
+        <div className="small"><b>Fluency (quick maths, required since 25 Nov):</b> {maths.fluency.daysThisWeek} day{maths.fluency.daysThisWeek === 1 ? "" : "s"} this week (last week {maths.fluency.daysLastWeek}), target hit {maths.fluency.hitsThisWeek}x
+          {maths.fluency.best ? <> · best this week <b>{maths.fluency.best.score}/20 in {Math.floor(maths.fluency.best.seconds / 60)}:{String(Math.round(maths.fluency.best.seconds % 60)).padStart(2, "0")}</b></> : <> · <span className="soft">not done this week</span></>}
+          {maths.fluency.bestLast ? <span className="soft"> (last week {maths.fluency.bestLast.score}/20 in {Math.floor(maths.fluency.bestLast.seconds / 60)}:{String(Math.round(maths.fluency.bestLast.seconds % 60)).padStart(2, "0")})</span> : null}</div>
+        <div className="small" style={{ marginTop: 4 }}><b>Retention (maths skills, 30 days):</b> {maths.retention.skills} maths skills on the ladder · {maths.retention.answers ? <><b style={{ color: maths.retention.pct < 70 ? "var(--amber)" : "var(--lime)" }}>{maths.retention.pct}% right</b> of {maths.retention.answers} review answers</> : <span className="soft">no review answers yet</span>}
+          {maths.retention.weak.length > 0 && <> · weakest: {maths.retention.weak.map((w) => <span key={w.skill} className="mono" style={{ marginLeft: 6 }}>{w.skill} <span className="soft">({w.misses}/{w.hits})</span></span>)}</>}</div>
+        <div className="small" style={{ marginTop: 4 }}><b>Stretch problems (one class above, before each maths check):</b> {maths.stretch.done ? <>{maths.stretch.done} done, {maths.stretch.onEvidence} closed on her evidence{maths.stretch.list.length > 0 && <> · {maths.stretch.list.map((d) => <span key={d.step} className="mono" style={{ marginLeft: 6 }}>{d.step} <span className="soft">{d.minutes} min{d.onEvidence ? "" : ", unverified"}</span></span>)}</>}</> : <span className="soft">none reached yet (M6-S1 is the first)</span>}</div>
+        <div className="small" style={{ marginTop: 4 }}><b>Maths on paper (14 days):</b> {maths.paper.handIns ? <>{maths.paper.days} day{maths.paper.days === 1 ? "" : "s"}, {maths.paper.pages} page{maths.paper.pages === 1 ? "" : "s"} · <b style={{ color: maths.paper.pct != null && maths.paper.pct < 70 ? "var(--amber)" : "var(--lime)" }}>{maths.paper.pct}% right</b> of {maths.paper.right + maths.paper.wrong} answers checked · her steps explained {maths.paper.explained}x ({maths.paper.methodOk} clear)
+          {maths.paper.last?.answer && <div className="soft" style={{ marginTop: 2 }}>Last ({maths.paper.last.day}): <i>{maths.paper.last.question}</i> - she wrote: "{String(maths.paper.last.answer).slice(0, 240)}"{maths.paper.last.verdict ? <> - tutor: {String(maths.paper.last.verdict).slice(0, 200)}</> : null}</div>}</> : <span className="soft">no page handed in yet (the card is on her home page every school day)</span>}</div>
+        <div className="small" style={{ marginTop: 4 }}><b>Saturday puzzles:</b> {maths.puzzles.sets ? <>{maths.puzzles.sets} set{maths.puzzles.sets === 1 ? "" : "s"} · answers <b>{maths.puzzles.pct}%</b> · reasons clear {maths.puzzles.reasonsPct == null ? "-" : `${maths.puzzles.reasonsPct}%`} · level {maths.puzzles.level}
+          {maths.puzzles.last && <div className="soft" style={{ marginTop: 2 }}>Last ({maths.puzzles.last.day}): {maths.puzzles.last.score}/{maths.puzzles.last.total}{maths.puzzles.last.results.filter((r) => r.reason).length ? <> · her reasons: {maths.puzzles.last.results.map((r, i) => <span key={i} style={{ marginLeft: 6 }}>{i + 1}. "{String(r.reason || "").slice(0, 120)}" {r.reason_ok === true ? "✓" : r.reason_ok === false ? "✗" : ""}</span>)}</> : null}</div>}</> : <span className="soft">none yet (the first Saturday is 5 Dec)</span>}</div>
       </section>
 
       {rw && <section style={{ marginTop: 18 }}>

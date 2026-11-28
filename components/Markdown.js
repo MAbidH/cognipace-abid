@@ -2,7 +2,8 @@
 import { useState } from "react";
 /* A small, safe Markdown renderer for tutor turns. No dependency, no raw HTML: everything becomes React elements,
    except drawings, which the tutor writes as ```svg fenced blocks and we render only after a whitelist sanitiser.
-   Supports: paragraphs, **bold**, `code`, # headings, - lists, 1. lists, > quotes, fenced code, ```svg drawings.
+   Supports: paragraphs, **bold**, `code`, # headings, - lists, 1. lists, > quotes, | tables |, --- rules, fenced code,
+   ```svg drawings.
    Keys written as `Ctrl+Enter`, `Enter`, `Win`, `Alt+Tab`... render as keycaps. */
 
 const KEY_NAMES = "Ctrl|Control|Alt|Shift|Win|Windows|Cmd|Fn|Tab|Enter|Return|Esc|Escape|Space|Spacebar|Backspace|Delete|Del|Insert|Home|End|PageUp|PageDown|PrtSc|Super|Up|Down|Left|Right|F\d{1,2}|[↑↓←→]";
@@ -87,6 +88,8 @@ function inline(text, keyBase) {
   return out;
 }
 
+const TABLE_ROW = /^\s*\|.*\|\s*$/, TABLE_SEP = /^\s*\|[\s:|-]+\|\s*$/;
+
 export default function Markdown({ text, live }) {
   const lines = String(text || "").replace(/\r/g, "").split("\n");
   const blocks = [];
@@ -106,6 +109,22 @@ export default function Markdown({ text, live }) {
       continue;
     }
     if (/^\s*$/.test(L)) { i++; continue; }
+    // 27 Nov 2026: tables. The tutor traces loops in a table ("pass | i | total") and she saw the raw pipes - and typed
+    // pipes back. A run of lines that start and end with | is a table; a |---|---| line under the first makes it the head.
+    if (TABLE_ROW.test(L)) {
+      const rows = [];
+      while (i < lines.length && TABLE_ROW.test(lines[i])) { rows.push(lines[i]); i++; }
+      const cells = (r) => r.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+      const hasHead = rows.length > 1 && TABLE_SEP.test(rows[1]);
+      const body = rows.filter((r, j) => !(TABLE_SEP.test(r) && j > 0)).slice(hasHead ? 1 : 0);
+      const kk = k++;
+      blocks.push(<div key={kk} className="mdtable"><table>
+        {hasHead && <thead><tr>{cells(rows[0]).map((c, j) => <th key={j}>{inline(c, `${kk}-h${j}`)}</th>)}</tr></thead>}
+        <tbody>{body.map((r, a) => <tr key={a}>{cells(r).map((c, j) => <td key={j}>{inline(c, `${kk}-${a}-${j}`)}</td>)}</tr>)}</tbody>
+      </table></div>);
+      continue;
+    }
+    if (/^\s*([-*_])(\s*\1){2,}\s*$/.test(L)) { blocks.push(<hr key={k++} />); i++; continue; }
     const h = L.match(/^\s*(#{1,6})\s+(.*)$/);
     if (h) { blocks.push(h[1].length <= 2 ? <h3 key={k++}>{inline(h[2], k)}</h3> : <h4 key={k++}>{inline(h[2], k)}</h4>); i++; continue; }
     if (/^\s*>/.test(L)) {
@@ -131,7 +150,7 @@ export default function Markdown({ text, live }) {
     }
     // paragraph: consecutive non-empty, non-special lines; single line breaks are kept (the tutor uses them for layout)
     const buf = [];
-    while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^\s*(```|#{1,6}\s|>|[-*•]\s|\d+[.)]\s)/.test(lines[i])) { buf.push(lines[i]); i++; }
+    while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^\s*(```|#{1,6}\s|>|[-*•]\s|\d+[.)]\s)/.test(lines[i]) && !(buf.length && TABLE_ROW.test(lines[i]))) { buf.push(lines[i]); i++; }
     blocks.push(<p key={k++}>{buf.map((t, j) => <span key={j}>{j > 0 && <br />}{inline(t, `${k}-${j}`)}</span>)}</p>);
   }
   return <div className="md">{blocks}{live && <span className="caret" aria-hidden="true" />}</div>;

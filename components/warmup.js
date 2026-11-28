@@ -10,6 +10,8 @@ export function warmupDone(t) {
   // are the required part; the drill line, quick maths, the key move and the vault question are extras she may do.
   // 9 Nov 2026 (practice spine): the day's review questions are part of the required warm-up (two a day, ten on Saturday);
   // each item closes after two tries, so it can never trap her.
-  return !!(t.keybrDone && (!t.codeEnabled || t.codeDone) && (!t.spine || t.spine.done));
+  // 25 Nov 2026 (MATHS-PLAN): quick maths is required too - one honest go (it is marked done on the first submit, so it
+  // can never trap her either); about 4 minutes. The drill line, the key move and the vault stay extras.
+  return !!(t.keybrDone && (!t.codeEnabled || t.codeDone) && (!t.spine || t.spine.done) && (!t.mathEnabled || t.mathDone));
 }
-export const WARMUP_LINE = "Daily warm-up - about 12 minutes: six minutes of typing, your Python line and two review questions, then your lesson";
+export const WARMUP_LINE = "Daily warm-up - about 15 minutes: six minutes of typing, your Python line, two review questions and quick maths, then your lesson";

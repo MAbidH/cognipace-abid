@@ -7,11 +7,17 @@ import { clampActive, MAX_EVENT_MS, FIRST_MS } from "../lib/timing.js";
 import { callCost, projectMonth, priceOf } from "../lib/cost.js";
 import { stripMarkers, markerStream } from "../lib/markers.js";
 import { buildHistory, newestFromBody, withCacheBreakpoint, OPENER, MAX_MSGS, CHUNK } from "../lib/history.js";
-import { nearSame, parseGrade, moodCounts } from "../lib/signals.js";
+import { nearSame, parseGrade, moodCounts, skillFits } from "../lib/signals.js";
 import { cleanVoice, voiceDue, voiceLine } from "../lib/voice.js";
 import { isRealAttempt, checkSummary } from "../lib/checks.js";
 import { selfStudy } from "../lib/selfstudy.js";
 import { mathSet, mathQuestions, gradeMath, sameAnswer, wpmTarget, mathTarget, MATH_COUNT } from "../lib/mathdrill.js";
+import { warmupDone } from "../components/warmup.js";
+import { parsePaperCheck, parsePaperMethod, paperSummary, firstJsonObject } from "../lib/paper.js";
+import { fluency, mathsRetention, stretch, mathsBlock } from "../lib/mathsBlock.js";
+import { cleanBank, KINDS as PUZZLE_KINDS, pickSet, publicItems, rightAnswer, gradeSet, levelFrom, parseReasons, parseBigNumber, puzzleSummary } from "../lib/puzzles.js";
+import fs from "fs";
+const PUZZLES = cleanBank(JSON.parse(fs.readFileSync(new URL("../curriculum/reasoning.json", import.meta.url), "utf8")));
 import { cleanAgreement } from "../lib/agreement.js";
 import { packSteps, validateSheet, fallbackSheet, renderPack, parseWork, countingOfflineDays, offlineWorkLine } from "../lib/offline.js";
 import { validateNotes, renderNotes, parseJsonObject, scrubSecrets, buildTranscript, cleanProfile, knowledgeBlock, selectSteps, stepsAhead, preparedSummary, taughtParts, onLaptop, spendRefusal, hasUrl, NOTES_MAX_CHARS } from "../lib/knowledge.js";
@@ -172,6 +178,7 @@ eq(weekOf("2026-10-26"), "2026-10-26", "weekOf Monday");
   eq(parseGrade('{"score": 8, "feedback": "x"}'), null, "score out of range -> null");
   eq(parseGrade('{"score": "high"}'), null, "non-numeric score -> null");
   eq(parseGrade('{"score": 0.9, "feedback": "unterminated'), null, "broken JSON -> null");
+  ok(!skillFits("cs2a-while-loop", "total = 0\nfor i in range(2, 5):\n    total = total + i\nprint(total)") && skillFits("cs2a-while-loop", "n = 3\nwhile n > 0:\n    n = n - 1\nprint(n)") && !skillFits("cs2a-if-inside-loop", "for i in range(3):\n    print(i)") && skillFits("cs2a-if-inside-loop", "for i in range(3):\n    if i > 1:\n        print(i)") && skillFits("cs2a-for-range", "for i in range(3, 8):\n    print(i)") && skillFits("add-like-fractions", "1/4 + 2/4") && !skillFits("predict-output-modulo", "print(7 + 2)") && skillFits("predict-output-modulo", "print(7 // 2)") && !skillFits("predict-output-loop", "x = 2\nprint(x)") && skillFits("predict-output-function", "def f(a):\n    return a\nprint(f(2))"), "generated questions: a code skill must show its construct (27 Nov 2026)");
 }
 
 // ---------- mood ----------
@@ -330,6 +337,56 @@ eq(weekOf("2026-10-26"), "2026-10-26", "weekOf Monday");
   ok(sameAnswer(" 38 ", "38") && sameAnswer("3,8", "3.8") && sameAnswer("0.50", "0.5") && !sameAnswer("2/4", "1/2", true) && sameAnswer("1/2", "1/2", true), "maths: answers compare as numbers; fractions must be simplest");
   let bad = 0; for (let d = 20000; d < 20500; d++) for (const x of mathSet(d)) { if (!/^-?\d+(\.\d+)?$|^\d+\/\d+$/.test(x.a)) bad++; }
   eq(bad, 0, "maths: 500 days of answers are all whole, decimal or fraction");
+  // 25 Nov 2026 (MATHS-PLAN): the new kinds are in every day's set, and the warm-up now needs the drill on a school day.
+  { const kinds = (d) => mathSet(d).map((x) => x.q); let miss = 0;
+    for (let d = 20000; d < 20100; d++) { const k = kinds(d).join("|"); if (!/Round \d+ to the nearest/.test(k) || !/About \d+ /.test(k) || !/Bigger: /.test(k) || !/in binary|Binary \d+/.test(k)) miss++; }
+    eq(miss, 0, "maths: rounding, an estimate, compare-fractions and binary are in every day's 20");
+    const b = mathSet(20780).find((x) => /Binary (\d+) as/.test(x.q)); ok(!b || String(parseInt(b.q.match(/Binary (\d+)/)[1], 2)) === b.a, "maths: binary -> number answers are right");
+    const base = { keybrDone: true, codeEnabled: true, codeDone: true, spine: { done: true }, mathEnabled: true };
+    ok(!warmupDone({ ...base, mathDone: false }) && warmupDone({ ...base, mathDone: true }) && warmupDone({ ...base, mathDone: false, mathEnabled: false }), "warm-up: quick maths is required on a school day (one go), not when the drill is off");
+    ok(warmupDone({ exam: true, drillDone: true, mathEnabled: true, mathDone: true }) && !warmupDone({ exam: true, drillDone: true, mathEnabled: true, mathDone: false }), "warm-up: exam day unchanged (drill line + quick maths)"); }
+  // 25 Nov 2026: school maths on paper (lib/paper.js) - the checker's reply is read strictly and never invents a mark.
+  { const good = 'Here: {"pages": 1, "seen": 6, "checked": [{"problem": "no. 3", "her_answer": "7/12", "right": true, "correct": "7/12", "note": "neat"}, {"problem": "no. 4", "her_answer": "5/16", "right": false, "correct": "5/8", "note": "bottoms added"}, {"problem": "no. 5", "her_answer": "1", "right": true, "correct": "1", "note": ""}], "question": "How did you get 7/12 in no. 3?", "praise": "Clear working on no. 3."}';
+    const o = parsePaperCheck(good);
+    ok(o && o.right === 2 && o.wrong === 1 && o.checked.length === 3 && o.pages === 1 && o.seen === 6 && /7\/12/.test(o.question), "paper: a good reply -> 2 right, 1 wrong, the question kept", JSON.stringify(o));
+    ok(parsePaperCheck('{"unreadable": "I see a wall"}')?.unreadable === "I see a wall", "paper: unreadable is passed through");
+    ok(parsePaperCheck("Nice page!") === null && parsePaperCheck('{"checked": []}') === null && parsePaperCheck('{"pages": 1, "checked": [{"problem": "x", "right": "yes"}]}')?.right === 0, "paper: no JSON or no checks -> null; right must be boolean true");
+    ok(parsePaperCheck(good.replace('"checked": [', '"checked": [{"problem": "a", "her_answer": "1", "right": true, "correct": "1", "note": ""}, ')).checked.length === 3, "paper: at most three checked");
+    ok(parsePaperMethod('{"ok": true, "reply": "Clear steps."}')?.ok === true && parsePaperMethod('{"reply": "x"}') === null && parsePaperMethod("no") === null, "paper: method grade needs a boolean ok");
+    ok(firstJsonObject('x {"a": "}"} y')?.a === "}" && firstJsonObject("{") === null, "paper: first balanced object, braces inside strings ignored");
+    const sum = paperSummary([{ day: "2026-12-06", pages: 1, right_n: 2, wrong_n: 1, answer: "I added", method_ok: true, question: "q", verdict: "v" }, { day: "2026-12-05", pages: 2, right_n: 3, wrong_n: 0, answer: null, method_ok: null }, { day: "2026-12-05", pages: 1, right_n: 1, wrong_n: 2, answer: "x", method_ok: false }]);
+    ok(sum.handIns === 3 && sum.days === 2 && sum.pages === 4 && sum.right === 6 && sum.wrong === 3 && sum.pct === 67 && sum.explained === 2 && sum.methodOk === 1 && sum.last.day === "2026-12-06", "paper: the guardian summary", JSON.stringify(sum));
+    ok(paperSummary([]).pct === null && paperSummary([]).last === null, "paper: empty summary is calm"); }
+  // 25 Nov 2026: the Saturday puzzle set (lib/puzzles.js, curriculum/reasoning.json).
+  { ok(PUZZLES.length >= 30 && PUZZLE_KINDS.every((k) => PUZZLES.filter((x) => x.kind === k).length >= 8), "puzzles: a bank of 30+, eight or more of each kind", PUZZLES.length);
+    const self = PUZZLES.filter((it) => !(Array.isArray(it.range) ? rightAnswer(it, String(it.range[0])) : rightAnswer(it, it.a[0])));
+    eq(self.map((x) => x.id), [], "puzzles: every item accepts its own answer");
+    ok(PUZZLES.every((it) => /Answer /.test(it.q) && it.explain && [1, 2, 3].includes(it.level)), "puzzles: every item names the answer shape, has an explanation and a level 1-3");
+    const passed = new Set(["M5", "CS1"]);
+    const s1 = pickSet(PUZZLES, "2026-12-05", { passed, level: 1 }), s2 = pickSet(PUZZLES, "2026-12-12", { used: s1, passed, level: 1 });
+    ok(s1.length === 4 && new Set(s1.map((id) => PUZZLES.find((x) => x.id === id).kind)).size === 4 && !s2.some((id) => s1.includes(id)), "puzzles: four kinds, nothing repeated the next week", JSON.stringify([s1, s2]));
+    ok(JSON.stringify(pickSet(PUZZLES, "2026-12-05", { passed, level: 1 })) === JSON.stringify(s1), "puzzles: the same day gives the same set");
+    ok(!pickSet(PUZZLES, "2026-12-05", { passed: new Set(), level: 3 }).includes("L07") && !pickSet(PUZZLES, "2026-12-05", { passed: new Set(), level: 3 }).includes("C08"), "puzzles: a problem that needs a module she has not passed is never picked");
+    ok(!JSON.stringify(publicItems(PUZZLES, s1)).includes('"a"') && !JSON.stringify(publicItems(PUZZLES, s1)).includes("explain"), "puzzles: she gets no answers");
+    const it = (id) => PUZZLES.find((x) => x.id === id);
+    ok(rightAnswer(it("E07"), "2 billion") && rightAnswer(it("E07"), "2,000 million") && rightAnswer(it("E07"), "200 crore") && !rightAnswer(it("E07"), "20 million"), "puzzles: estimates read millions, billions and crore");
+    ok(rightAnswer(it("L09"), "1, 3, 2, 4") && rightAnswer(it("C01"), "B.") && rightAnswer(it("L01"), "East") && rightAnswer(it("E02"), "31 buses") && !rightAnswer(it("E02"), "30") && !rightAnswer(it("P01"), ""), "puzzles: answers are read generously, never blank");
+    ok(parseBigNumber("1,100") === 1100 && parseBigNumber("2 lakh") === 200000 && parseBigNumber("abc") === null, "puzzles: big-number words");
+    const g = gradeSet(PUZZLES, ["L01", "P01", "C01", "E01"], ["east", "24", "b", "1100"], ["r", "r", "r", "r"]);
+    ok(g.score === 3 && g.total === 4 && g.results[1].correct === "25" && g.results[3].correct === "1000 to 1100", "puzzles: a set is graded with the right answers shown");
+    ok(levelFrom([]) === 1 && levelFrom([{ day: "2026-12-05", score: 3, total: 4 }, { day: "2026-12-12", score: 4, total: 4 }]) === 2 && levelFrom([{ day: "2026-12-05", score: 1, total: 4 }]) === 1 && levelFrom([{ day: "a", score: 4, total: 4 }, { day: "b", score: 4, total: 4 }, { day: "c", score: 4, total: 4 }, { day: "d", score: 4, total: 4 }, { day: "e", score: 4, total: 4 }, { day: "f", score: 4, total: 4 }]) === 3, "puzzles: the level follows two good sets up and a bad set down, 1-3");
+    ok(parseReasons('{"grades": [{"ok": true, "note": "clear"}, {"ok": false, "note": "say why"}]}', 4)?.length === 4 && parseReasons("none", 4) === null, "puzzles: reasons grade padded to four, no JSON -> null");
+    const ps = puzzleSummary([{ day: "2026-12-12", level: 1, score: 3, total: 4, reason_ok: 2, results: [], done: true }, { day: "2026-12-05", level: 1, score: 2, total: 4, reason_ok: 1, results: [], done: true }]);
+    ok(ps.sets === 2 && ps.pct === 63 && ps.reasonsPct === 38 && ps.last.day === "2026-12-12", "puzzles: the guardian summary", JSON.stringify(ps)); }
+  // 25 Nov 2026: the MATHS block (lib/mathsBlock.js).
+  { const fl = fluency([{ day: "2026-12-10", math_done: true, math_score: 18, math_seconds: 200, math_hit: true }, { day: "2026-12-09", math_done: true, math_score: 19, math_seconds: 230, math_hit: true }, { day: "2026-12-08", math_done: false }, { day: "2026-12-02", math_done: true, math_score: 15, math_seconds: 300, math_hit: false }], "2026-12-11");
+    ok(fl.daysThisWeek === 2 && fl.daysLastWeek === 1 && fl.hitsThisWeek === 2 && fl.best.score === 19 && fl.bestLast.score === 15 && fl.latest.day === "2026-12-10", "maths block: fluency this week vs last, best by score then time", JSON.stringify(fl));
+    const rt = mathsRetention([{ skill: "rounding", module_id: "M3", hits: 0, misses: 7 }, { skill: "add-like-fractions", module_id: "M6", hits: 3, misses: 1 }, { skill: "estimation", module_id: "M3", hits: 0, misses: 2 }, { skill: "x", module_id: "M4", hits: 2, misses: 0 }], [{ ok: true }, { ok: false }, { ok: true }, { ok: true }]);
+    ok(rt.skills === 4 && rt.answers === 4 && rt.pct === 75 && rt.weak.map((w) => w.skill).join() === "rounding,estimation,add-like-fractions", "maths block: retention on maths skills, three weakest", JSON.stringify(rt));
+    const st = stretch([{ step_id: "M7-S1", started_at: "x", active_ms: 900000 }, { step_id: "M7-S1", started_at: "w", active_ms: 600000 }, { step_id: "M6-S1", started_at: "y", active_ms: 900000 }], ["M7-S1"]);
+    ok(st.done === 2 && st.onEvidence === 1 && st.list[0].minutes === 25 && st.list[0].onEvidence === false, "maths block: stretch problems, unverified ones marked", JSON.stringify(st));
+    const mb = mathsBlock({ today: "2026-12-11", typingRows: [], skillRows: [], answerRows: [], stretchRows: [], unverified: [], paperRows: [], puzzleRows: [] });
+    ok(mb.fluency.daysThisWeek === 0 && mb.retention.pct === null && mb.stretch.done === 0 && mb.paper.handIns === 0 && mb.puzzles.sets === 0, "maths block: empty is calm"); }
   { const h = [{ ymd: "2026-11-02", drill_wpm: 13 }, { ymd: "2026-11-04", drill_wpm: 4 }, { ymd: "2026-11-05", drill_wpm: 8 }, { ymd: "2026-11-06", drill_wpm: 5 }, { ymd: "2026-11-07", drill_wpm: 7 },
       { ymd: "2026-11-04", math_score: 18, math_seconds: 155 }, { ymd: "2026-11-05", math_score: 18, math_seconds: 120 }, { ymd: "2026-11-06", math_score: 19, math_seconds: 97 }, { ymd: "2026-11-07", math_score: 17, math_seconds: 60 }];
     ok(wpmTarget("2026-11-03") === 8 && wpmTarget("2026-11-08", h) === 8 && wpmTarget("2026-11-30", h) === 8 && wpmTarget("2026-11-08", [{ ymd: "2026-11-07", drill_wpm: 40 }]) === 25, "typing target: her last-week median + 1 (8 to start, cap 25)", wpmTarget("2026-11-08", h));

@@ -65,11 +65,11 @@ export function StartSchool({ plan, goal, typing, onStarted }) {
        ["End session", "press End school - see today's numbers"]]
     : exam
     ? [["Warm-up, if you want", "the typing line and quick maths - about 5 minutes"], ["The Wonder or the cyber news", "10 minutes, if you want"], ["Your exams", "they come first today - your streak is safe"]]
-    : [["Warm-up", "six minutes of typing (both hands, eyes up) and your Python line - about 10 minutes; quick maths and the key move are extras"],
+    : [["Warm-up", "six minutes of typing (both hands, eyes up), your Python line, two review questions and quick maths - about 15 minutes; the key move is an extra"],
        ["Lesson block 1", `about 50 minutes${goal?.steps?.[0] ? ` - starting with "${goal.steps[0].title}"` : ""}. A 1-minute movement break comes every 25 minutes.`],
        ["Recess", "10 minutes, whenever you choose (Alt+R)"],
        ["Lesson block 2", "about 50 minutes - maths and code first"],
-       ...(vac ? [["School maths on paper", "25 minutes from your Grade 8 maths book, with a pencil - this is the backbone"]] : []),
+       ...(vac ? [["School maths on paper", "25 minutes from your school maths book, with a pencil - then photograph the page and hand it in below; the tutor checks three answers and asks you one question"]] : []),
        ...(vac ? [["Recess + outside", "go outside, eat, rest your eyes"], ["Lesson blocks 3-5", `about 50 minutes each - today's goal is ${Math.round((plan?.targetMinutes || 240) / 60)} hours; if you are in the middle of something you may go on, up to ${Math.round((plan?.cap || 360) / 60)}`]] : []),
        ["The Wonder + this week's cyber news", "10-15 minutes, with pictures and videos"],
        ["End school", "press End school - see what you did today"]];

@@ -85,3 +85,10 @@ write-ups; 5 applications.
     policy, disabling untrusted HID).
   - Capstone brief: audit the access controls he personally owns (home, car, accounts) and specify the upgrade - the
     builder-defender close.
+
+## Companion: CRA-ready (career track, 28 Nov 2026)
+- **CRA1 (shipped 28 Nov 2026)** - 17 steps, ~30 min each, placed right after SETUP1 (the CRA job is the nearest
+  real deadline). The tax centre and how a clerk is judged; confidentiality (s.241, need-to-know); the T1 line map;
+  number pad + Tax Centre Clerical Test number checking; slips; deductions vs credits, NL428; Excel I-II; his own
+  return (SIN masked); NOA and changing a return; shortcuts and case notes; benefits and scams; WST; SJT-R; first 90
+  days. Free only. Later, once employed: intermediate accounting (SP-05) if CRA supports it.

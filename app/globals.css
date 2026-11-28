@@ -357,7 +357,9 @@ details[open] summary { color: var(--ink); border-bottom: 1px solid var(--line);
 .ring .mid svg { transform: none; }
 
 /* 17 Oct 2026: practice questions with code keep their line breaks ("lives = 3\nlives = lives + 2\nprint(...)"). */
-.question { white-space: pre-line; }
+/* 27 Nov 2026: pre-line collapsed the 4-space indent of code in questions (print(i) lost its place under for). */
+.question { white-space: pre-wrap; }
+.question.code { font-family: var(--mono); font-size: 19px; }
 
 /* Offline banner (22 Oct 2026): rides inside the sticky top bar so it stays in view while she scrolls. */
 .offline-banner { box-sizing: border-box; width: calc(100% - 40px); max-width: 1040px; margin: 0 auto 8px; padding: 8px 14px; border-left: 3px solid var(--amber); background: rgba(251, 191, 36, 0.12); border-radius: 0 10px 10px 0; font-size: 14px; color: var(--ink); }
@@ -391,3 +393,10 @@ details[open] summary { color: var(--ink); border-bottom: 1px solid var(--line);
 .levelup { margin: 10px auto; max-width: 460px; }
 @media (prefers-reduced-motion: reduce) { .confetti { display: none; } .steptoast { animation: none; } }
 .newshead { display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap; } .newsart { width: 120px; flex: 0 0 120px; } .newsart svg { width: 100%; height: auto; }
+
+/* 27 Nov 2026: tables in tutor turns (components/Markdown.js) - a trace table for a loop, a comparison. */
+.md .mdtable { overflow-x: auto; margin: 8px 0 12px; }
+.md .mdtable table { border-collapse: collapse; font-family: var(--mono); font-size: 14.5px; }
+.md .mdtable th, .md .mdtable td { border: 1px solid var(--line-2); padding: 5px 12px; text-align: left; }
+.md .mdtable th { background: var(--panel-2); color: var(--cyan); font-weight: 600; }
+.md hr { border: 0; border-top: 1px solid var(--line-2); margin: 12px 0; }

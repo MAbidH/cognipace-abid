@@ -18,6 +18,8 @@ import { keyLabel } from "../components/keymap";
 import VoiceCard from "../components/VoiceCard";
 import OfflineCard from "../components/OfflineCard";
 import AgreeCard from "../components/AgreeCard";
+import PaperCard from "../components/PaperCard";
+import PuzzleCard from "../components/PuzzleCard";
 import { NEWS } from "../lib/news";
 
 export const dynamic = "force-dynamic";
@@ -114,7 +116,7 @@ export default async function Home(props) {
               {goal && goal.steps.length > 0 && (
                 <p className="small" style={{ color: goal.allDone ? "var(--lime)" : "var(--amber)" }}>
                   {goal.allDone ? "Today's goal is done." : <>Today, finish at least: {goal.steps.filter((s) => !s.done).map((s) => `${s.title} (~${s.minutes} min)`).join(", ")} - about {goal.remainingMinutes} minutes in all.</>}
-                  {goal.sooner && !goal.allDone && <span className="soft"> Keep this pace and {goal.sooner.reward.replace(/[-:].*$/, "").trim().toLowerCase()} arrives in about {goal.sooner.now} days, not {goal.sooner.was}.</span>}
+                  {goal.sooner && !goal.allDone && <span className="soft"> Keep this pace and your next reward ({goal.sooner.reward.replace(/\s[-:]\s.*$/, "").replace(/[.:]$/, "").trim()}) comes in about {goal.sooner.now} days, not {goal.sooner.was}.</span>}
                 </p>
               )}
               {cur.module.gift && <p className="small" style={{ color: "var(--amber)" }}><b>At the end of this module you make something for {cur.module.gift.for}:</b> {cur.module.gift.what}</p>}
@@ -130,7 +132,7 @@ export default async function Home(props) {
         {/* ---- The optional warm-up (29 Oct 2026): ~5 minutes, +XP, never a gate ---- */}
         {warmOffered && (
           <section className="card rise" style={{ marginTop: 14, borderColor: "rgba(34, 211, 238, 0.35)", display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ flex: 1, minWidth: 240 }}><div className="eyebrow">every day · first · +XP</div><h3 style={{ margin: "2px 0" }}>Daily warm-up - about 10 minutes, both hands, eyes on the screen</h3><p className="small soft" style={{ margin: 0 }}>Six minutes of typing{typing.codeEnabled ? " and your Python line" : ""} - then your lesson opens. Quick maths and the key move are extras.</p></div>
+            <div style={{ flex: 1, minWidth: 240 }}><div className="eyebrow">every day · first · +XP</div><h3 style={{ margin: "2px 0" }}>Daily warm-up - about 15 minutes, both hands, eyes on the screen</h3><p className="small soft" style={{ margin: 0 }}>Six minutes of typing{typing.codeEnabled ? ", your Python line" : ""}, two review questions and quick maths - then your lesson opens. The key move is an extra.</p></div>
             <a className="btn" href="/learn?warmup=1">Warm up</a>
           </section>
         )}
@@ -138,6 +140,10 @@ export default async function Home(props) {
         <VoiceCard />
         {/* ---- Her winter school agreement (3 Nov 2026) ---- */}
         <AgreeCard />
+        {/* ---- School maths on paper, checked from a photo (25 Nov 2026) ---- */}
+        <PaperCard />
+        {/* ---- The Saturday puzzle set (25 Nov 2026) ---- */}
+        <PuzzleCard />
         {/* ---- The offline pack (2 Nov 2026): worksheets for days without internet ---- */}
         <OfflineCard />
 

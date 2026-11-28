@@ -21,6 +21,8 @@ import AgreeCard from "../components/AgreeCard";
 import PaperCard from "../components/PaperCard";
 import PuzzleCard from "../components/PuzzleCard";
 import { NEWS } from "../lib/news";
+import { isAdult } from "../lib/student";
+import AdultHome from "../components/AdultHome";
 
 export const dynamic = "force-dynamic";
 
@@ -41,6 +43,8 @@ export default async function Home(props) {
       </main>
     );
   }
+  // 28 Nov 2026: Abid's instance has its own short home page (components/AdultHome.js); Faiza's map below is unchanged.
+  if (isAdult()) return <AdultHome />;
 
   const [progress, cur, mins, rw, byDay, wonder, arenaRows] = await Promise.all([getProgress(), currentModule(), minutesToday(), computeRewards().catch(() => null), dailyMinutes(14).catch(() => []), todaysWonder().catch(() => null), q("SELECT MAX(score)::int AS best FROM arena WHERE done").catch(() => [{ best: 0 }])]);
   const cans = await q("SELECT title, module_id, at FROM journal WHERE kind='can' ORDER BY id DESC LIMIT 60").catch(() => []);

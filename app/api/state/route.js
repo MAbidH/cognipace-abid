@@ -13,6 +13,7 @@ import { clampActive } from "../../../lib/timing";
 import { isRealAttempt } from "../../../lib/checks";
 import { warmupDone } from "../../../components/warmup";
 import { learned } from "../../../lib/review";
+import { isAdult } from "../../../lib/student";
 
 export const runtime = "nodejs";
 const NEED = Number(process.env.PRACTICE_STREAK || 2); // correct in a row per skill to finish a practice set (was 3; every miss resets it)
@@ -70,7 +71,7 @@ async function snapshot(extra = {}) {
     progress,
     current: cur ? { module: publicModule(cur.module), step_index: cur.row.step_index, remediation: cur.row.remediation } : null,
     minutesToday: mins,
-    day,                                                    // the school day (3 Nov 2026): started / ended / desk / moves
+    day: isAdult() ? null : day,                            // the school day (3 Nov 2026): started / ended / desk / moves; none for the adult (28 Nov)
     cap: dailyCap(), plan: todayPlan(), night: nightStatus(),
     name: process.env.STUDENT_NAME || "",
   });

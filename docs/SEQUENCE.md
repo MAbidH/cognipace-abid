@@ -1,3 +1,7 @@
+> **28 Nov 2026 - FOCUS CHANGED (Abid).** Career path now: CRA1 -> IFC1 (then new career modules, written 4-6 weeks
+> ahead: e.g. bookkeeping/accounting basics, CRA internal-test prep, banking and advisory work). Everything below this
+> note (cyber phases, FIN with Python) is the OPTIONAL hobby track - switchable from the home page, never required.
+
 # The sequence - cognipace-abid (19 Nov 2026)
 
 Six phases, Dec 2026 - May 2027, 20+ h/week. The order does not move; dates do. A module is written 4-6 weeks ahead;

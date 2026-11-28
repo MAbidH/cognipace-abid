@@ -3,7 +3,12 @@
 Abid's own CogniPace (19 Nov 2026): the same codebase as Faiza's school (C:\Users\ASUS\Projects\the-school, GitHub
 the-school), run as a second instance with its own profile (curriculum/student.json, mode "adult"), its own curriculum,
 its own Vercel project, Neon database and model API key (NVIDIA NIM, free). Live at: https://cognipace-abid.vercel.app (login link = that URL + ?t=STUDENT_TOKEN).
-The plan is the project doc ABID-PLAN-2026-11-19 (six phases, Dec 2026 - May 2027; a FIN module in every phase).
+FOCUS (28 Nov 2026, Abid's decision - supersedes ABID-PLAN-2026-11-19's six-phase cyber plan): ONE career path - the
+CRA job and finance (CRA1, then IFC1; next career modules written 4-6 weeks ahead). Tech/security (SETUP1, PY1, PY2,
+LNX1, FLIP1, FIN1, FIN2) is an OPTIONAL hobby track (module.track = "hobby"), switchable both ways from the home page
+(app/api/track, adult only). 3-5 hours a week, ~30-minute steps, short and direct: no warm-up, no school day, no
+XP/streak/rewards/wonder/arena/news UI (components/AdultHome.js; adult guards in Shell, warmup, state route).
+Faiza's work belongs to her own session: here, touch only instances/abid and adult-guarded code.
 
 ## How the two instances relate
 - CODE is shared: app/, components/, lib/, scripts/ are identical to the-school. Fix a bug in the-school, then

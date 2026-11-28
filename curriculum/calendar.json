@@ -1,6 +1,6 @@
 {
   "_note": "cognipace-abid calendar (19 Nov 2026). Adult instance: no exams, no vacations, no birthday card, no night rule. normalCapMinutes is a safety cap on tutor time per day, not a goal - the goal is 20+ hours a week (6 x 3 h, one day off).",
-  "normalCapMinutes": 480,
+  "normalCapMinutes": 120,
   "tutorModel": [
     {
       "from": "2026-11-22",

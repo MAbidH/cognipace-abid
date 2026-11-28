@@ -1,187 +1,5 @@
 [
  {
-  "id": "SETUP1",
-  "phase": "Setup",
-  "title": "Setup: your machine, your tools, your public record",
-  "hook": "Six months from now the proof of what you can do is a public record: a repository of programs, write-ups and a lab you built. Week one builds the tools that record it - and the habit of closing every step on evidence.",
-  "read": {
-   "url": "https://docs.github.com/en/get-started/start-your-journey/about-github-and-git",
-   "title": "Read: GitHub docs - about GitHub and Git (the vocabulary you will use every day)"
-  },
-  "gift": {
-   "for": "your future self and every recruiter who looks",
-   "what": "A public GitHub repository under your own name with a README that states the six-month plan and its gates - the first thing in the record."
-  },
-  "taught": "how this programme works (evidence closes a step; the 1/7/30/90-day review; the logbook); PowerShell basics (pwd, ls/Get-ChildItem, cd, mkdir, cat/Get-Content, tab completion, Ctrl+C); winget installs; python --version / git --version / code --version; Git: init, status, add, commit, log, remote, push; GitHub repository, README, .gitignore; gh auth login; TryHackMe account and the in-browser AttackBox; how to read official documentation (python docs, man pages at man7.org, an RFC's sections)",
-  "steps": [
-   {
-    "id": "SETUP1-L1",
-    "kind": "lesson",
-    "title": "How this school works - and why every step closes on evidence",
-    "time_box": 30,
-    "max_turns": 24,
-    "objectives": [
-     "State the three rules: one idea per step, a step closes on evidence in your own words, passed skills return on the 1/7/30/90-day ladder",
-     "Say what the six-month gate is and which phase you are in"
-    ],
-    "tutor_brief": "FIRST STEP OF THE PROGRAMME. WHAT/WHY/WHAT FOR: today you learn how the school itself works; because the method is the product - 520 hours spent without a closing rule produce tabs, not skills; for every step after this. ONE IDEA: a step closes when the one thing its objectives name has been done or said - a program printed the right thing, a command's output was pasted, an idea was explained in his words - never because time passed. Explain the practice spine in two lines: every skill a checkpoint passes comes back in the warm-up after 1, 7, 30 and 90 days; a miss pulls it back sooner. Explain the logbook: each step ends with his 'I CAN NOW' sentence plus the evidence; that log is exported to his repo monthly. State the six-month gate plainly (Security+ passed; 60+ programs public; a hardened Linux lab; networking at Network+ level; applied cryptography demonstrated; 30+ rooms and 20+ write-ups; the finance strand incl. a tokenization brief; 5+ job applications) and that he is in Phase 0 (setup, week 1) of six phases. Ask ONE question that proves he has the closing rule: 'what closes a step - and what never does?' EVIDENCE TO CLOSE: his sentence names evidence (not time, not message count). Then the usual close."
-   },
-   {
-    "id": "SETUP1-L2",
-    "kind": "lesson",
-    "title": "PowerShell: the terminal you already have",
-    "time_box": 45,
-    "max_turns": 40,
-    "objectives": [
-     "Open Windows Terminal/PowerShell and navigate with pwd, ls, cd, mkdir; read a file with cat; use Tab completion and Ctrl+C",
-     "Create the folder tree C:\\Users\\<you>\\sec-lab with notes/ and code/ inside, from the terminal only"
-    ],
-    "links": [
-     {
-      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started",
-      "label": "PowerShell 101 - getting started (Microsoft Learn)"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: the terminal, because every tool in security is a command first and a window second; for every day from now on. ONE IDEA: a shell is a program that takes a command line, runs it and prints what came back - the prompt shows where you are. MANUAL (numbered): 1) Win+X -> Terminal (or search 'PowerShell'); 2) `pwd` (Get-Location) - read the path; 3) `ls` - read the listing; 4) `mkdir sec-lab`, `cd sec-lab`, `mkdir notes, code`; 5) `echo \"day 1\" > notes\\log.txt` then `cat notes\\log.txt`; 6) type `cd se` and press Tab - completion; 7) run `ping 127.0.0.1 -t` and stop it with Ctrl+C. Each step: what he should see. Teach that PowerShell aliases ls/cat/pwd onto Get-ChildItem/Get-Content/Get-Location - the Linux names will carry over to Bandit and the VM. He pastes the output of `ls` inside sec-lab showing notes and code. EVIDENCE TO CLOSE: the pasted listing + his one-line explanation of what a shell is. Boundary Question: what happens if he runs `cd` to a folder that does not exist - have him try and read the error."
-   },
-   {
-    "id": "SETUP1-L3",
-    "kind": "lesson",
-    "title": "Install the toolchain: Python, Git, VS Code (winget)",
-    "time_box": 60,
-    "max_turns": 40,
-    "objectives": [
-     "Install Python 3.12+, Git for Windows and VS Code with winget; prove each with its --version",
-     "Open the sec-lab folder in VS Code from the terminal with `code .`"
-    ],
-    "links": [
-     {
-      "url": "https://learn.microsoft.com/en-us/windows/package-manager/winget/",
-      "label": "winget - Windows Package Manager (Microsoft Learn)"
-     },
-     {
-      "url": "https://docs.python.org/3/using/windows.html",
-      "label": "Using Python on Windows (docs.python.org)"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: the three tools of the whole programme; because installing from a package manager (not a browser download) is the professional habit and reproducible; for every code step. ONE IDEA: a package manager installs, upgrades and removes software from a trusted catalogue by name. ALREADY DONE? first: `python --version`, `git --version`, `code --version` - anything that answers is installed. MANUAL: 1) `winget install -e --id Python.Python.3.12`; 2) `winget install -e --id Git.Git`; 3) `winget install -e --id Microsoft.VisualStudioCode`; 4) close and reopen the terminal (PATH is read at start); 5) the three --version commands; 6) `cd ~\\sec-lab` then `code .`; 7) in VS Code: Extensions -> install 'Python' (Microsoft). If winget is missing (older Windows 10): App Installer from the Microsoft Store, then retry. If `python` opens the Store: Settings -> Apps -> App execution aliases -> turn off python.exe aliases. EVIDENCE TO CLOSE: the three version strings pasted. He states in one line why a package manager beats a browser download (one trusted source, upgrades, scriptable). SECRETS: no account is needed for any of this; if any installer asks to sign in, skip it."
-   },
-   {
-    "id": "SETUP1-L4",
-    "kind": "lesson",
-    "title": "Git: a history you can trust",
-    "time_box": 60,
-    "max_turns": 40,
-    "objectives": [
-     "Explain what a commit is (a snapshot with a message and a parent) and why a history matters",
-     "Run git init, status, add, commit and log in sec-lab, with your name and email set"
-    ],
-    "links": [
-     {
-      "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F",
-      "label": "Pro Git, ch. 1.3 - What is Git?"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: Git, because every program and write-up for six months goes into a history you can show and roll back; for the portfolio and for every job. ONE IDEA: a commit is a snapshot of the folder plus a message plus a pointer to the previous snapshot - the chain is the history. Draw it (three boxes, arrows back). MANUAL: 1) `git config --global user.name \"<his real name>\"` and `user.email` (the address he will use on GitHub); 2) `git config --global init.defaultBranch main`; 3) in sec-lab: `git init`; 4) `git status` - read 'untracked'; 5) `git add notes/log.txt`; 6) `git commit -m \"Day 1: lab folder and first note\"`; 7) `git log --oneline`. Then: change log.txt, `git status` (modified), `git diff`, add, commit again, `git log --oneline` shows two lines. Vocabulary he must say back: working tree, staging area (index), commit. EVIDENCE TO CLOSE: `git log --oneline` with two commits pasted and his one-line definition of a commit. Boundary Question: what does `git add .` stage that he might not want (secrets, big files) - this is why .gitignore exists (next step)."
-   },
-   {
-    "id": "SETUP1-L5",
-    "kind": "lesson",
-    "title": "GitHub: the public record begins",
-    "time_box": 60,
-    "max_turns": 40,
-    "objectives": [
-     "Create a public repository under your own name, push sec-lab to it with gh, and add a README that states the six-month plan",
-     "Explain the difference between Git (local) and GitHub (a remote host), and what a .gitignore is for"
-    ],
-    "links": [
-     {
-      "url": "https://cli.github.com/manual/gh_auth_login",
-      "label": "gh auth login (GitHub CLI manual)"
-     },
-     {
-      "url": "https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files",
-      "label": "Ignoring files - .gitignore (GitHub docs)"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: GitHub, because the record only counts if others can see it; for every recruiter and for his own 'did I really do this'. ONE IDEA: Git is the history on his disk; GitHub is a copy of that history on a server (a remote) that others can read. SECRETS LAW: authentication happens in the browser via `gh auth login` - he never pastes a token or password into this chat, and no token goes into a file in the repo. MANUAL: 1) `winget install -e --id GitHub.cli`; reopen terminal; 2) `gh auth login` -> GitHub.com -> HTTPS -> Login with a web browser - follow the code in the browser (he does this himself); 3) in sec-lab create `.gitignore` with `__pycache__/`, `.venv/`, `*.log`, `.env` - say why each; 4) write README.md: his name, 'Six months: cybersecurity, Python, cryptography, digital finance - Dec 2026 to May 2027', the eight gates as a checklist; 5) `git add .`, commit 'README: the plan'; 6) `gh repo create sec-lab --public --source=. --remote=origin --push`; 7) open the repo URL and read it. EVIDENCE TO CLOSE: the repository URL (public) and his one line on Git vs GitHub. If he already has a GitHub account under a handle, the repo still goes under his real-name account - this record is professional."
-   },
-   {
-    "id": "SETUP1-L6",
-    "kind": "lesson",
-    "title": "TryHackMe: your sanctioned target range",
-    "time_box": 60,
-    "max_turns": 40,
-    "objectives": [
-     "Create a free TryHackMe account, start the in-browser AttackBox and complete the 'Linux Fundamentals Part 1' room",
-     "State the sanctioned-targets rule and the two Criminal Code sections that make it law in Canada"
-    ],
-    "links": [
-     {
-      "url": "https://tryhackme.com/signup",
-      "label": "TryHackMe - sign up (free tier is enough for the first weeks)"
-     },
-     {
-      "url": "https://tryhackme.com/room/linuxfundamentalspart1",
-      "label": "Room: Linux Fundamentals Part 1"
-     },
-     {
-      "url": "https://laws-lois.justice.gc.ca/eng/acts/c-46/section-342.1.html",
-      "label": "Criminal Code s. 342.1 - unauthorized use of computer"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: TryHackMe, because hands-on practice needs a target that invites it, and the in-browser AttackBox gives him a Linux machine today with nothing installed on this PC; for every room and CTF until May. ONE IDEA: the sanctioned-targets rule - you touch only your own machines, your lab, and systems that explicitly invite testing; anything else is s. 342.1 (unauthorized use of a computer) and s. 430(1.1) (mischief to data) of the Criminal Code of Canada. Say it once, plainly, not as a lecture. MONEY: the free plan is enough now; if the site offers a paid plan, he picks free - no price, no card, is needed for this step (costs money only later, by his own decision outside the programme). MANUAL: 1) sign up (email + a password he creates in his own password manager - never typed here); 2) open the room, 'Start AttackBox' (browser machine); 3) work through tasks 1-8 - the commands (echo, whoami, ls, cd, cat, pwd, find, grep) are the ones he met in PowerShell; 4) answer the room's questions in the room, not here; 5) when complete, paste the room's completion line and his TryHackMe profile URL. EVIDENCE TO CLOSE: the profile URL showing the room completed + the rule in his words. Add the profile link to README (one commit)."
-   },
-   {
-    "id": "SETUP1-L7",
-    "kind": "lesson",
-    "title": "Reading the source: docs, man pages, RFCs",
-    "time_box": 45,
-    "max_turns": 30,
-    "objectives": [
-     "Find the answer to three questions in official documentation alone (python docs, man7.org, an RFC) and cite the section",
-     "Explain the structure of an RFC (status, abstract, sections, MUST/SHOULD language) and why primary sources beat blog posts"
-    ],
-    "links": [
-     {
-      "url": "https://docs.python.org/3/library/index.html",
-      "label": "The Python Standard Library (official)"
-     },
-     {
-      "url": "https://man7.org/linux/man-pages/",
-      "label": "Linux man pages online (man7.org)"
-     },
-     {
-      "url": "https://www.rfc-editor.org/rfc/rfc2119",
-      "label": "RFC 2119 - key words (MUST, SHOULD, MAY)"
-     }
-    ],
-    "tutor_brief": "WHAT/WHY/WHAT FOR: reading primary sources; because an expert is someone who reads the manual before the forum, and in security the standard IS the answer; for every later step where you point him to the docs instead of explaining. ONE IDEA: official documentation is organised, versioned and exact - learn its shape once and you can answer your own questions. Three finds, one per message, he answers with the citation: (a) in the Python docs: what does `str.strip()` remove when called with no argument? (library/stdtypes); (b) at man7.org: in `man ls`, which option sorts by modification time? (-t); (c) in RFC 2119: the exact difference between MUST and SHOULD. Teach the RFC skeleton: header/status, abstract, table of contents, numbered sections, security considerations, references. He says why a primary source beats a blog (exact, current, authoritative, the thing itself). EVIDENCE TO CLOSE: three correct answers with their sources named. This step has no code."
-   },
-   {
-    "id": "SETUP1-C",
-    "kind": "check",
-    "title": "Setup checkpoint",
-    "skills": [
-     "shell-navigation",
-     "git-commit-model",
-     "git-vs-github",
-     "gitignore-purpose",
-     "package-manager",
-     "sanctioned-targets-rule",
-     "reading-primary-sources"
-    ],
-    "count": 10
-   },
-   {
-    "id": "SETUP1-T",
-    "kind": "teach",
-    "title": "Teach it back",
-    "prompt": "Explain to a new colleague, in writing, how your working record is built: what a commit is, where the history lives, what GitHub adds, what .gitignore keeps out, and what the closing rule of this programme is. Use your own repo as the example. 6-10 sentences, exact vocabulary."
-   }
-  ]
- },
- {
   "id": "CRA1",
   "phase": "Finance",
   "title": "CRA-ready: the tax centre, the T1 and the tools, fluent before day one",
@@ -538,7 +356,8 @@
     "title": "Teach it back",
     "prompt": "Write cra/README.md as if briefing a friend who starts at the St. John's tax centre next month: how a return moves through the centre and where a processing clerk fits; how a clerk is judged and why accuracy beats speed; the confidentiality rule (s.241, need to know) and what to do if a friend's file appears; the T1 from line 15000 to 48400/48500; which T4 boxes feed which lines; deduction versus credit with one example; what a notice of assessment shows and the difference between an adjustment request and an objection; the four-part case note; three signs of a CRA scam; and how to prepare for the WST and SJT. 18-22 sentences, plain English, exact line and box numbers. Link your cra/ sheets. First line: this explains how the system works; it is not tax advice, and no real taxpayer data is in this folder."
    }
-  ]
+  ],
+  "track": "career"
  },
  {
   "id": "IFC1",
@@ -773,7 +592,191 @@
     "title": "Teach it back",
     "prompt": "Write ifc/README.md as if briefing a new bank hire who must pass IFC next month: the exam shape (questions, time, pass mark, attempts) and the three highest-weight topics; how the KYC process builds suitability and why risk capacity can override risk tolerance; the registered plans in one line each; what a mutual fund is and how NAVPS is priced; the fund risk ladder and what seg funds and ETFs add; how MER and distribution taxation eat returns; and who regulates the dealer today (CIRO). 18-22 sentences, exact vocabulary. Link your ifc/ formulas and plan-comparison sheets. State in the first line that suitability is a skill for advising clients, not personal investment advice."
    }
-  ]
+  ],
+  "track": "career"
+ },
+ {
+  "id": "SETUP1",
+  "phase": "Setup",
+  "title": "Setup: your machine, your tools, your public record",
+  "hook": "Six months from now the proof of what you can do is a public record: a repository of programs, write-ups and a lab you built. Week one builds the tools that record it - and the habit of closing every step on evidence.",
+  "read": {
+   "url": "https://docs.github.com/en/get-started/start-your-journey/about-github-and-git",
+   "title": "Read: GitHub docs - about GitHub and Git (the vocabulary you will use every day)"
+  },
+  "gift": {
+   "for": "your future self and every recruiter who looks",
+   "what": "A public GitHub repository under your own name with a README that states the six-month plan and its gates - the first thing in the record."
+  },
+  "taught": "how this programme works (evidence closes a step; the 1/7/30/90-day review; the logbook); PowerShell basics (pwd, ls/Get-ChildItem, cd, mkdir, cat/Get-Content, tab completion, Ctrl+C); winget installs; python --version / git --version / code --version; Git: init, status, add, commit, log, remote, push; GitHub repository, README, .gitignore; gh auth login; TryHackMe account and the in-browser AttackBox; how to read official documentation (python docs, man pages at man7.org, an RFC's sections)",
+  "steps": [
+   {
+    "id": "SETUP1-L1",
+    "kind": "lesson",
+    "title": "How this school works - and why every step closes on evidence",
+    "time_box": 30,
+    "max_turns": 24,
+    "objectives": [
+     "State the three rules: one idea per step, a step closes on evidence in your own words, passed skills return on the 1/7/30/90-day ladder",
+     "Say what the six-month gate is and which phase you are in"
+    ],
+    "tutor_brief": "FIRST STEP OF THE PROGRAMME. WHAT/WHY/WHAT FOR: today you learn how the school itself works; because the method is the product - 520 hours spent without a closing rule produce tabs, not skills; for every step after this. ONE IDEA: a step closes when the one thing its objectives name has been done or said - a program printed the right thing, a command's output was pasted, an idea was explained in his words - never because time passed. Explain the practice spine in two lines: every skill a checkpoint passes comes back in the warm-up after 1, 7, 30 and 90 days; a miss pulls it back sooner. Explain the logbook: each step ends with his 'I CAN NOW' sentence plus the evidence; that log is exported to his repo monthly. State the six-month gate plainly (Security+ passed; 60+ programs public; a hardened Linux lab; networking at Network+ level; applied cryptography demonstrated; 30+ rooms and 20+ write-ups; the finance strand incl. a tokenization brief; 5+ job applications) and that he is in Phase 0 (setup, week 1) of six phases. Ask ONE question that proves he has the closing rule: 'what closes a step - and what never does?' EVIDENCE TO CLOSE: his sentence names evidence (not time, not message count). Then the usual close."
+   },
+   {
+    "id": "SETUP1-L2",
+    "kind": "lesson",
+    "title": "PowerShell: the terminal you already have",
+    "time_box": 45,
+    "max_turns": 40,
+    "objectives": [
+     "Open Windows Terminal/PowerShell and navigate with pwd, ls, cd, mkdir; read a file with cat; use Tab completion and Ctrl+C",
+     "Create the folder tree C:\\Users\\<you>\\sec-lab with notes/ and code/ inside, from the terminal only"
+    ],
+    "links": [
+     {
+      "url": "https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started",
+      "label": "PowerShell 101 - getting started (Microsoft Learn)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the terminal, because every tool in security is a command first and a window second; for every day from now on. ONE IDEA: a shell is a program that takes a command line, runs it and prints what came back - the prompt shows where you are. MANUAL (numbered): 1) Win+X -> Terminal (or search 'PowerShell'); 2) `pwd` (Get-Location) - read the path; 3) `ls` - read the listing; 4) `mkdir sec-lab`, `cd sec-lab`, `mkdir notes, code`; 5) `echo \"day 1\" > notes\\log.txt` then `cat notes\\log.txt`; 6) type `cd se` and press Tab - completion; 7) run `ping 127.0.0.1 -t` and stop it with Ctrl+C. Each step: what he should see. Teach that PowerShell aliases ls/cat/pwd onto Get-ChildItem/Get-Content/Get-Location - the Linux names will carry over to Bandit and the VM. He pastes the output of `ls` inside sec-lab showing notes and code. EVIDENCE TO CLOSE: the pasted listing + his one-line explanation of what a shell is. Boundary Question: what happens if he runs `cd` to a folder that does not exist - have him try and read the error."
+   },
+   {
+    "id": "SETUP1-L3",
+    "kind": "lesson",
+    "title": "Install the toolchain: Python, Git, VS Code (winget)",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Install Python 3.12+, Git for Windows and VS Code with winget; prove each with its --version",
+     "Open the sec-lab folder in VS Code from the terminal with `code .`"
+    ],
+    "links": [
+     {
+      "url": "https://learn.microsoft.com/en-us/windows/package-manager/winget/",
+      "label": "winget - Windows Package Manager (Microsoft Learn)"
+     },
+     {
+      "url": "https://docs.python.org/3/using/windows.html",
+      "label": "Using Python on Windows (docs.python.org)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: the three tools of the whole programme; because installing from a package manager (not a browser download) is the professional habit and reproducible; for every code step. ONE IDEA: a package manager installs, upgrades and removes software from a trusted catalogue by name. ALREADY DONE? first: `python --version`, `git --version`, `code --version` - anything that answers is installed. MANUAL: 1) `winget install -e --id Python.Python.3.12`; 2) `winget install -e --id Git.Git`; 3) `winget install -e --id Microsoft.VisualStudioCode`; 4) close and reopen the terminal (PATH is read at start); 5) the three --version commands; 6) `cd ~\\sec-lab` then `code .`; 7) in VS Code: Extensions -> install 'Python' (Microsoft). If winget is missing (older Windows 10): App Installer from the Microsoft Store, then retry. If `python` opens the Store: Settings -> Apps -> App execution aliases -> turn off python.exe aliases. EVIDENCE TO CLOSE: the three version strings pasted. He states in one line why a package manager beats a browser download (one trusted source, upgrades, scriptable). SECRETS: no account is needed for any of this; if any installer asks to sign in, skip it."
+   },
+   {
+    "id": "SETUP1-L4",
+    "kind": "lesson",
+    "title": "Git: a history you can trust",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Explain what a commit is (a snapshot with a message and a parent) and why a history matters",
+     "Run git init, status, add, commit and log in sec-lab, with your name and email set"
+    ],
+    "links": [
+     {
+      "url": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F",
+      "label": "Pro Git, ch. 1.3 - What is Git?"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: Git, because every program and write-up for six months goes into a history you can show and roll back; for the portfolio and for every job. ONE IDEA: a commit is a snapshot of the folder plus a message plus a pointer to the previous snapshot - the chain is the history. Draw it (three boxes, arrows back). MANUAL: 1) `git config --global user.name \"<his real name>\"` and `user.email` (the address he will use on GitHub); 2) `git config --global init.defaultBranch main`; 3) in sec-lab: `git init`; 4) `git status` - read 'untracked'; 5) `git add notes/log.txt`; 6) `git commit -m \"Day 1: lab folder and first note\"`; 7) `git log --oneline`. Then: change log.txt, `git status` (modified), `git diff`, add, commit again, `git log --oneline` shows two lines. Vocabulary he must say back: working tree, staging area (index), commit. EVIDENCE TO CLOSE: `git log --oneline` with two commits pasted and his one-line definition of a commit. Boundary Question: what does `git add .` stage that he might not want (secrets, big files) - this is why .gitignore exists (next step)."
+   },
+   {
+    "id": "SETUP1-L5",
+    "kind": "lesson",
+    "title": "GitHub: the public record begins",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Create a public repository under your own name, push sec-lab to it with gh, and add a README that states the six-month plan",
+     "Explain the difference between Git (local) and GitHub (a remote host), and what a .gitignore is for"
+    ],
+    "links": [
+     {
+      "url": "https://cli.github.com/manual/gh_auth_login",
+      "label": "gh auth login (GitHub CLI manual)"
+     },
+     {
+      "url": "https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files",
+      "label": "Ignoring files - .gitignore (GitHub docs)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: GitHub, because the record only counts if others can see it; for every recruiter and for his own 'did I really do this'. ONE IDEA: Git is the history on his disk; GitHub is a copy of that history on a server (a remote) that others can read. SECRETS LAW: authentication happens in the browser via `gh auth login` - he never pastes a token or password into this chat, and no token goes into a file in the repo. MANUAL: 1) `winget install -e --id GitHub.cli`; reopen terminal; 2) `gh auth login` -> GitHub.com -> HTTPS -> Login with a web browser - follow the code in the browser (he does this himself); 3) in sec-lab create `.gitignore` with `__pycache__/`, `.venv/`, `*.log`, `.env` - say why each; 4) write README.md: his name, 'Six months: cybersecurity, Python, cryptography, digital finance - Dec 2026 to May 2027', the eight gates as a checklist; 5) `git add .`, commit 'README: the plan'; 6) `gh repo create sec-lab --public --source=. --remote=origin --push`; 7) open the repo URL and read it. EVIDENCE TO CLOSE: the repository URL (public) and his one line on Git vs GitHub. If he already has a GitHub account under a handle, the repo still goes under his real-name account - this record is professional."
+   },
+   {
+    "id": "SETUP1-L6",
+    "kind": "lesson",
+    "title": "TryHackMe: your sanctioned target range",
+    "time_box": 60,
+    "max_turns": 40,
+    "objectives": [
+     "Create a free TryHackMe account, start the in-browser AttackBox and complete the 'Linux Fundamentals Part 1' room",
+     "State the sanctioned-targets rule and the two Criminal Code sections that make it law in Canada"
+    ],
+    "links": [
+     {
+      "url": "https://tryhackme.com/signup",
+      "label": "TryHackMe - sign up (free tier is enough for the first weeks)"
+     },
+     {
+      "url": "https://tryhackme.com/room/linuxfundamentalspart1",
+      "label": "Room: Linux Fundamentals Part 1"
+     },
+     {
+      "url": "https://laws-lois.justice.gc.ca/eng/acts/c-46/section-342.1.html",
+      "label": "Criminal Code s. 342.1 - unauthorized use of computer"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: TryHackMe, because hands-on practice needs a target that invites it, and the in-browser AttackBox gives him a Linux machine today with nothing installed on this PC; for every room and CTF until May. ONE IDEA: the sanctioned-targets rule - you touch only your own machines, your lab, and systems that explicitly invite testing; anything else is s. 342.1 (unauthorized use of a computer) and s. 430(1.1) (mischief to data) of the Criminal Code of Canada. Say it once, plainly, not as a lecture. MONEY: the free plan is enough now; if the site offers a paid plan, he picks free - no price, no card, is needed for this step (costs money only later, by his own decision outside the programme). MANUAL: 1) sign up (email + a password he creates in his own password manager - never typed here); 2) open the room, 'Start AttackBox' (browser machine); 3) work through tasks 1-8 - the commands (echo, whoami, ls, cd, cat, pwd, find, grep) are the ones he met in PowerShell; 4) answer the room's questions in the room, not here; 5) when complete, paste the room's completion line and his TryHackMe profile URL. EVIDENCE TO CLOSE: the profile URL showing the room completed + the rule in his words. Add the profile link to README (one commit)."
+   },
+   {
+    "id": "SETUP1-L7",
+    "kind": "lesson",
+    "title": "Reading the source: docs, man pages, RFCs",
+    "time_box": 45,
+    "max_turns": 30,
+    "objectives": [
+     "Find the answer to three questions in official documentation alone (python docs, man7.org, an RFC) and cite the section",
+     "Explain the structure of an RFC (status, abstract, sections, MUST/SHOULD language) and why primary sources beat blog posts"
+    ],
+    "links": [
+     {
+      "url": "https://docs.python.org/3/library/index.html",
+      "label": "The Python Standard Library (official)"
+     },
+     {
+      "url": "https://man7.org/linux/man-pages/",
+      "label": "Linux man pages online (man7.org)"
+     },
+     {
+      "url": "https://www.rfc-editor.org/rfc/rfc2119",
+      "label": "RFC 2119 - key words (MUST, SHOULD, MAY)"
+     }
+    ],
+    "tutor_brief": "WHAT/WHY/WHAT FOR: reading primary sources; because an expert is someone who reads the manual before the forum, and in security the standard IS the answer; for every later step where you point him to the docs instead of explaining. ONE IDEA: official documentation is organised, versioned and exact - learn its shape once and you can answer your own questions. Three finds, one per message, he answers with the citation: (a) in the Python docs: what does `str.strip()` remove when called with no argument? (library/stdtypes); (b) at man7.org: in `man ls`, which option sorts by modification time? (-t); (c) in RFC 2119: the exact difference between MUST and SHOULD. Teach the RFC skeleton: header/status, abstract, table of contents, numbered sections, security considerations, references. He says why a primary source beats a blog (exact, current, authoritative, the thing itself). EVIDENCE TO CLOSE: three correct answers with their sources named. This step has no code."
+   },
+   {
+    "id": "SETUP1-C",
+    "kind": "check",
+    "title": "Setup checkpoint",
+    "skills": [
+     "shell-navigation",
+     "git-commit-model",
+     "git-vs-github",
+     "gitignore-purpose",
+     "package-manager",
+     "sanctioned-targets-rule",
+     "reading-primary-sources"
+    ],
+    "count": 10
+   },
+   {
+    "id": "SETUP1-T",
+    "kind": "teach",
+    "title": "Teach it back",
+    "prompt": "Explain to a new colleague, in writing, how your working record is built: what a commit is, where the history lives, what GitHub adds, what .gitignore keeps out, and what the closing rule of this programme is. Use your own repo as the example. 6-10 sentences, exact vocabulary."
+   }
+  ],
+  "track": "hobby"
  },
  {
   "id": "PY1",
@@ -1000,7 +1003,8 @@
     "title": "Teach it back",
     "prompt": "Write the README section for py1/ in your repository: in 8-12 sentences, explain to a non-programmer colleague what a variable, a loop, a dictionary and a function are, using your password checker as the single example. Then one sentence on what 'the Boundary Question' means and why you ask it of every program. Exact vocabulary; no filler."
    }
-  ]
+  ],
+  "track": "hobby"
  },
  {
   "id": "FIN1",
@@ -1163,7 +1167,8 @@
     "title": "Teach it back",
     "prompt": "Write fin1/README.md as a one-page explainer for a junior colleague at a bank: what money is on a ledger, how a loan creates a deposit, the difference between clearing, settlement and finality, which Canadian system carries what, and why deposit insurance exists. End with three sentences on what you would check first if someone told you a new payment product is 'instant and final'. 12-18 sentences, exact vocabulary, no advice about any product."
    }
-  ]
+  ],
+  "track": "hobby"
  },
  {
   "id": "PY2",
@@ -1353,7 +1358,8 @@
     "title": "Teach it back",
     "prompt": "Write the README for py2/: for each of the three tools (authparse, fhash/fim, report) one paragraph a hiring manager can read - what it does, how to run it, what it detects and what it cannot. Then four sentences explaining to a junior developer why specific exceptions beat bare except and why a hash is not encryption. Exact vocabulary."
    }
-  ]
+  ],
+  "track": "hobby"
  },
  {
   "id": "LNX1",
@@ -1505,7 +1511,8 @@
     "title": "Teach it back",
     "prompt": "Write linux1/README.md: explain to a Windows administrator, in 10-15 sentences, how to think in Linux - the single tree, text streams and pipes, users and the nine permission bits, what SUID is and why it is watched, where the logs live, and how ssh host keys protect a connection. Use two of your Bandit levels as examples (ideas and commands only - never a password or a flag)."
    }
-  ]
+  ],
+  "track": "hobby"
  },
  {
   "id": "FLIP1",
@@ -1661,7 +1668,8 @@
     "title": "Teach it back",
     "prompt": "Write flipper/README.md for a friend who just got the same device and thinks it is a magic hacking box. In your own words: what the device actually is (the microcontroller and its subsystems), which actions are passive reception and which are regulated transmission, the one rule about whose systems you may touch and the two Criminal Code sections plus the Radiocommunication Act point, the difference between official and custom firmware and the legal line a custom firmware can cross, and the two subsystems you have already mastered on your own gear (infrared, UART) with what each taught you. 12-16 sentences, exact vocabulary, no hype. End with the one sentence you would want a new owner to read first."
    }
-  ]
+  ],
+  "track": "hobby"
  },
  {
   "id": "FIN2",
@@ -1827,6 +1835,7 @@
     "title": "Teach it back",
     "prompt": "Write fin2/README.md for a colleague who is a good programmer and knows nothing about markets: how an order book makes a price, what the spread is, what happens after a trade (CCP, T+1) and who regulates it in Canada, how you size a position and why drawdown arithmetic is asymmetric, and what your matching engine and journal prove. 15-20 sentences. State the house rule in the first paragraph."
    }
-  ]
+  ],
+  "track": "hobby"
  }
 ]

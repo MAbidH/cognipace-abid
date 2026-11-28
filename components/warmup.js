@@ -5,7 +5,7 @@ export function warmupDone(t) {
   if (!t) return true;
   if (typeof t.allDone === "boolean") return t.allDone;
   if (t.exam) return !!(t.drillDone && (!t.mathEnabled || t.mathDone)); // exam day: the short warm-up (5 Nov 2026)
-  if (t.adult) return !!((!t.codeEnabled || t.codeDone) && (!t.spine || t.spine.done)); // 19 Nov 2026: the adult instance
+  if (t.adult) return true; // 28 Nov 2026 (Abid): no warm-up in his instance - short and direct. Was: Python line + review (19 Nov)
   // 8 Nov 2026 (Abid, after the audit: the warm-up took 13-21 min, 14-24% of her day): keybr (6 min) and the Python line
   // are the required part; the drill line, quick maths, the key move and the vault question are extras she may do.
   // 9 Nov 2026 (practice spine): the day's review questions are part of the required warm-up (two a day, ten on Saturday);

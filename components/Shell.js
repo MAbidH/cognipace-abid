@@ -9,22 +9,26 @@ import PageKeys from "./PageKeys";
 import { LevelMedal } from "./Art";
 import { PAGE_KEYS, keyLabel } from "./keymap";
 import { localDayIndex } from "../lib/time";
+import { isAdult } from "../lib/student";
 
 export default function Shell({ active, rw, mins, cap, children }) {
   // A Wonder every day (Abid, 5 Oct 2026); the Arena every second day. Same parity rule as lib/arena.js, kept
   // dependency-free here because this bar is also rendered inside client components.
   const arenaDay = localDayIndex() % 2 === 0;
   // "My voice" (/voice, 29 Oct 2026) is a permanent link: what she wants to become and learn. Meet stays a map card.
-  const links = PAGE_KEYS.filter(([, href]) => href !== "/meet" && (href !== "/arena" || arenaDay));
+  // 28 Nov 2026: Abid's instance shows only Home, Room and Logbook - no rewards, keys, wonder, arena, voice, meet.
+  const adult = isAdult();
+  const links = adult ? PAGE_KEYS.filter(([, href]) => ["/", "/learn", "/portfolio"].includes(href))
+    : PAGE_KEYS.filter(([, href]) => href !== "/meet" && (href !== "/arena" || arenaDay));
   return (
     <>
       <header className="topbar">
         <div className="in">
           <a className="brand" href="/" style={{ textDecoration: "none" }}><span className="dot" />COGNIPACE</a>
-          {rw && (
+          {rw && !adult && (
             <span className="pill" title="Level and XP" style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><LevelMedal n={rw.level.n} state="current" size={18} label={false} /> <b>L{rw.level.n}</b> {rw.level.name} · <b className="num">{rw.xp}</b> XP</span>
           )}
-          {rw && rw.session?.streak > 0 && <span className="pill" title="Days in a row with a complete session">🔥 <b>{rw.session.streak}</b></span>}
+          {rw && !adult && rw.session?.streak > 0 && <span className="pill" title="Days in a row with a complete session">🔥 <b>{rw.session.streak}</b></span>}
           <Clock />
           {mins != null && cap != null && <span className="pill" title="Minutes of real work today"><b className="num">{mins}</b>/{cap} min</span>}
           <nav className="nav" aria-label="pages">
@@ -38,7 +42,7 @@ export default function Shell({ active, rw, mins, cap, children }) {
         <VersionWatch />
       </header>
       <PageKeys />
-      <div className="wonderbar-wrap"><WonderBanner active={active} /></div>
+      {!adult && <div className="wonderbar-wrap"><WonderBanner active={active} /></div>}
       {children}
       <Broken page={active || "/"} />
     </>

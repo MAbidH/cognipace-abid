@@ -1,0 +1,377 @@
+{
+  "_note": "The Saturday puzzle set (25 Nov 2026, MATHS-PLAN item 6; lib/puzzles.js). Four original problems a Saturday - one logic (a rule to follow, Bebras-style), one number pattern (junior-olympiad style), one 'which claim is right' and one estimate - each with one sentence of her reasoning. Scored, never gating. B1 English, the answer shape named. `level` 1-3 (the set follows her results); `needs` = a module that must be passed first (the taught fence); `a` = accepted answers (lower-case, no spaces); estimates give a range. Written by us, never copied from a contest paper. Add more at the end; ids never change.",
+  "items": [
+    {
+      "id": "L01",
+      "kind": "logic",
+      "level": 1,
+      "q": "A robot follows these orders: go 2 steps forward, turn right, go 1 step forward. It starts facing north. Which direction does it face at the end? Answer with a direction, like south.",
+      "a": [
+        "east",
+        "e"
+      ],
+      "explain": "Turning right from north points you east. Walking does not change the direction you face."
+    },
+    {
+      "id": "L02",
+      "kind": "logic",
+      "level": 1,
+      "q": "Four friends sit in a row of seats 1, 2, 3, 4 (1 is the left end). Rima is not at either end. Tuhin is to the right of everyone. Nadia is next to Tuhin. Which seat is Rima in? Answer with a number, like 3.",
+      "a": [
+        "2"
+      ],
+      "explain": "Tuhin is right of everyone, so seat 4. Nadia is next to him: seat 3. Rima is not at an end, so not 1 - she is in seat 2."
+    },
+    {
+      "id": "L03",
+      "kind": "logic",
+      "level": 2,
+      "q": "A machine takes a number, doubles it, then takes away 3. You put in 5 and get 7. You put in a different number and get 17. What did you put in? Answer with a number, like 12.",
+      "a": [
+        "10"
+      ],
+      "explain": "Work backwards: 17 + 3 = 20, and half of 20 is 10. Check: 10 doubled is 20, take away 3 is 17."
+    },
+    {
+      "id": "L04",
+      "kind": "logic",
+      "level": 3,
+      "q": "Three closed boxes are labelled APPLES, ORANGES and BOTH. Every label is wrong. You take one fruit from the box labelled BOTH and it is an apple. What is really inside the box labelled ORANGES? Answer with one word: apples, oranges or both.",
+      "a": [
+        "both"
+      ],
+      "explain": "The BOTH box cannot hold both (label wrong) and gave an apple, so it holds only apples. The ORANGES box is not oranges (label wrong) and not apples (that is the BOTH box) - so it holds both."
+    },
+    {
+      "id": "L05",
+      "kind": "logic",
+      "level": 1,
+      "q": "A password rule says: at least 8 characters AND at least one number. Which of these passes? A) sunshine  B) sun2024  C) sunshine7. Answer with a letter, like A.",
+      "a": [
+        "c"
+      ],
+      "explain": "sunshine has 8 letters but no number; sun2024 has a number but only 7 characters; sunshine7 has 9 characters and a number."
+    },
+    {
+      "id": "L06",
+      "kind": "logic",
+      "level": 2,
+      "q": "A lift starts at floor 0 and follows: up 4, down 2, up 5, down 6. Which floor is it on at the end? Answer with a number, like 3.",
+      "a": [
+        "1"
+      ],
+      "explain": "0 + 4 = 4, 4 - 2 = 2, 2 + 5 = 7, 7 - 6 = 1."
+    },
+    {
+      "id": "L07",
+      "kind": "logic",
+      "level": 3,
+      "needs": "CS1",
+      "q": "A row of 5 lamps shows a number in binary. The left lamp is worth 16, then 8, 4, 2, 1. Only the first lamp and the last lamp are ON. What number is it? Answer with a normal number, like 9.",
+      "a": [
+        "17"
+      ],
+      "explain": "ON lamps are worth 16 and 1. 16 + 1 = 17 (binary 10001)."
+    },
+    {
+      "id": "L08",
+      "kind": "logic",
+      "level": 2,
+      "q": "Every day a water plant doubles in size. On day 10 it covers the whole pond. On which day did it cover exactly half the pond? Answer with a number, like 5.",
+      "a": [
+        "9"
+      ],
+      "explain": "It doubles every day, so the day before it was full it was half full: day 9."
+    },
+    {
+      "id": "L09",
+      "kind": "logic",
+      "level": 3,
+      "q": "A sorting rule: look at each pair of neighbours from left to right; if the left one is bigger, swap them. Go through the list ONCE. Start: 4, 1, 3, 2. Answer with the list after that one pass, with commas, like 1,2,3,4.",
+      "a": [
+        "1,3,2,4"
+      ],
+      "explain": "4 and 1: swap -> 1,4,3,2. Then 4 and 3: swap -> 1,3,4,2. Then 4 and 2: swap -> 1,3,2,4. The biggest number 'bubbles' to the end in one pass."
+    },
+    {
+      "id": "P01",
+      "kind": "pattern",
+      "level": 1,
+      "q": "1, 4, 9, 16, ... What is the next number? Answer with a number, like 30.",
+      "a": [
+        "25"
+      ],
+      "explain": "They are the square numbers: 1x1, 2x2, 3x3, 4x4, so next is 5x5 = 25."
+    },
+    {
+      "id": "P02",
+      "kind": "pattern",
+      "level": 1,
+      "q": "Dots in triangles: 1, 3, 6, 10, ... What is the next number? Answer with a number, like 12.",
+      "a": [
+        "15"
+      ],
+      "explain": "Each time you add one more than last time: +2, +3, +4, so next is +5: 10 + 5 = 15."
+    },
+    {
+      "id": "P03",
+      "kind": "pattern",
+      "level": 2,
+      "q": "What is the LAST digit of 7 x 7 x 7 x 7? (You do not need the whole number.) Answer with one digit, like 3.",
+      "a": [
+        "1"
+      ],
+      "explain": "7x7 = 49 (ends in 9); 49x7 = 343 (ends in 3); 343x7 = 2401 (ends in 1). Only the last digits matter: 9, 3, 1."
+    },
+    {
+      "id": "P04",
+      "kind": "pattern",
+      "level": 2,
+      "q": "Add all the whole numbers from 1 to 20. Shortcut: pair the first with the last (1+20), the second with the second last (2+19)... Answer with a number, like 150.",
+      "a": [
+        "210"
+      ],
+      "explain": "Every pair makes 21, and there are 10 pairs: 10 x 21 = 210."
+    },
+    {
+      "id": "P05",
+      "kind": "pattern",
+      "level": 2,
+      "q": "A number is between 30 and 50, it is in the 7 times table, and its two digits add up to 6. What is it? Answer with a number, like 36.",
+      "a": [
+        "42"
+      ],
+      "explain": "The 7 times table between 30 and 50: 35, 42, 49. Digit sums: 8, 6, 13. So 42."
+    },
+    {
+      "id": "P06",
+      "kind": "pattern",
+      "level": 3,
+      "q": "Today is Monday. What day of the week is it 100 days from now? (Hint: how many whole weeks are in 100 days, and what is left over?) Answer with a day, like Friday.",
+      "a": [
+        "wednesday"
+      ],
+      "explain": "100 = 14 weeks (98 days) + 2 days. 14 whole weeks later is a Monday again; 2 more days is Wednesday."
+    },
+    {
+      "id": "P07",
+      "kind": "pattern",
+      "level": 1,
+      "q": "Fill the gap: 80, 40, 20, __, 5. Answer with a number, like 15.",
+      "a": [
+        "10"
+      ],
+      "explain": "Each number is half of the one before: 20 halved is 10, and 10 halved is 5."
+    },
+    {
+      "id": "P08",
+      "kind": "pattern",
+      "level": 2,
+      "q": "How many two-digit numbers have both digits the same (like 33)? Answer with a number, like 7.",
+      "a": [
+        "9"
+      ],
+      "explain": "11, 22, 33, 44, 55, 66, 77, 88, 99 - nine of them (00 is not a two-digit number)."
+    },
+    {
+      "id": "P09",
+      "kind": "pattern",
+      "level": 3,
+      "q": "A square is cut into 4 equal smaller squares. Then each small square is cut into 4 equal squares again. How many of the smallest squares are there? Answer with a number, like 12.",
+      "a": [
+        "16"
+      ],
+      "explain": "4 squares, each cut into 4: 4 x 4 = 16."
+    },
+    {
+      "id": "P10",
+      "kind": "pattern",
+      "level": 2,
+      "q": "I think of a number. Half of it, plus 7, is 15. What is my number? Answer with a number, like 20.",
+      "a": [
+        "16"
+      ],
+      "explain": "Work backwards: 15 - 7 = 8 is half of the number, so the number is 16."
+    },
+    {
+      "id": "C01",
+      "kind": "claims",
+      "level": 1,
+      "q": "Which claim is right? A) 3/8 is bigger than 1/2.  B) 1/2 is bigger than 3/8. Answer with a letter, like A.",
+      "a": [
+        "b"
+      ],
+      "explain": "1/2 = 4/8, and 4/8 is more than 3/8. So B."
+    },
+    {
+      "id": "C02",
+      "kind": "claims",
+      "level": 1,
+      "q": "Which claim is right? A) The bigger the bottom number of a fraction, the bigger each piece.  B) The bigger the bottom number, the smaller each piece. Answer with a letter.",
+      "a": [
+        "b"
+      ],
+      "explain": "The bottom number says how many equal pieces the whole was cut into. More pieces means smaller pieces: 1/8 is smaller than 1/4."
+    },
+    {
+      "id": "C03",
+      "kind": "claims",
+      "level": 2,
+      "needs": "M5",
+      "q": "Four notebooks cost the same each. Shop A says: buy 3, get 1 free. Shop B says: a quarter off every notebook. For 4 notebooks, which shop costs less? Answer A, B or same.",
+      "a": [
+        "same"
+      ],
+      "explain": "Shop A: you pay for 3 of 4, that is 3/4 of the price. Shop B: a quarter off leaves 3/4 of the price. The same."
+    },
+    {
+      "id": "C04",
+      "kind": "claims",
+      "level": 2,
+      "q": "Which claim is right? A) Doubling a number and then halving the answer gives you the number back.  B) Adding 10 and then taking away 5 gives you the number back. Answer with a letter.",
+      "a": [
+        "a"
+      ],
+      "explain": "Halving undoes doubling exactly. Adding 10 and taking away 5 leaves you 5 too high. Try it with 6."
+    },
+    {
+      "id": "C05",
+      "kind": "claims",
+      "level": 2,
+      "q": "An email says: 'Your account closes in 1 hour unless you click here.' Which claim is right? A) Hurry is a sign of a scam - go to the real site yourself and check.  B) A real bank also hurries people, so click the link to be safe. Answer with a letter.",
+      "a": [
+        "a"
+      ],
+      "explain": "Pressure and a deadline are the scammer's tools. A real company lets you check by going to its site or app yourself - never through the link in the message."
+    },
+    {
+      "id": "C06",
+      "kind": "claims",
+      "level": 3,
+      "q": "Which is good reasoning? A) 'If it rained, the road is wet. The road is wet, so it rained.'  B) 'If it rained, the road is wet. The road is dry, so it did not rain.' Answer with a letter.",
+      "a": [
+        "b"
+      ],
+      "explain": "A wet road can have other causes (a water truck, a burst pipe), so A does not follow. But if rain always makes the road wet, a dry road proves there was no rain - B follows."
+    },
+    {
+      "id": "C07",
+      "kind": "claims",
+      "level": 2,
+      "q": "Two friends talk about passwords. A) 'A long password of only small letters is always weaker than a short one with symbols.'  B) 'A 16-letter password of random small letters can be stronger than an 8-character one with symbols.' Which claim is right? Answer with a letter.",
+      "a": [
+        "b"
+      ],
+      "explain": "Length multiplies the possibilities more than symbols do: 26 choices 16 times is far more than 95 choices 8 times. Long and random beats short and fancy."
+    },
+    {
+      "id": "C08",
+      "kind": "claims",
+      "level": 3,
+      "needs": "M7",
+      "q": "Which claim is right? A) 0.5 is less than 0.25, because 25 is bigger than 5.  B) 0.5 is a half and 0.25 is a quarter, so 0.5 is bigger. Answer with a letter.",
+      "a": [
+        "b"
+      ],
+      "explain": "0.5 = 5 tenths = 50 hundredths; 0.25 = 25 hundredths. Line the points up: 0.50 against 0.25."
+    },
+    {
+      "id": "C09",
+      "kind": "claims",
+      "level": 1,
+      "q": "Which claim is right? A) A backup saved on the same laptop is safe if the laptop breaks.  B) A backup must be on a different drive to help when the laptop breaks. Answer with a letter.",
+      "a": [
+        "b"
+      ],
+      "explain": "If the laptop dies, everything on it dies with it - the copy too. A backup lives somewhere else (your SSD)."
+    },
+    {
+      "id": "E01",
+      "kind": "estimate",
+      "level": 1,
+      "q": "About how many days are there in 3 years? Answer to the nearest 100, like 800.",
+      "range": [
+        1000,
+        1100
+      ],
+      "explain": "365 x 3 = 1095, which is about 1,100. An estimate: 3 x 400 = 1,200 is a bit too high; 3 x 350 = 1,050 is close."
+    },
+    {
+      "id": "E02",
+      "kind": "estimate",
+      "level": 1,
+      "q": "A bus carries 40 people. How many buses are needed for 1,230 people? Answer with a whole number of buses, like 25.",
+      "range": [
+        31,
+        31
+      ],
+      "explain": "1230 / 40 = 30.75 - thirty buses carry 1,200, and the last 30 people still need a bus: 31. A part of a bus is not a bus."
+    },
+    {
+      "id": "E03",
+      "kind": "estimate",
+      "level": 2,
+      "q": "A page has about 30 lines with about 12 words on each line. About how many words are on 10 pages? Answer to the nearest 1,000, like 7000.",
+      "range": [
+        3000,
+        4000
+      ],
+      "explain": "30 x 12 = 360 words a page; 10 pages is 3,600, which is about 4,000."
+    },
+    {
+      "id": "E04",
+      "kind": "estimate",
+      "level": 2,
+      "q": "You read 25 pages a day. About how many weeks does a 300-page book take? Answer with a whole number of weeks, like 3.",
+      "range": [
+        2,
+        2
+      ],
+      "explain": "300 / 25 = 12 days, and 12 days is a bit under 2 weeks - so 2 weeks."
+    },
+    {
+      "id": "E05",
+      "kind": "estimate",
+      "level": 1,
+      "q": "Your heart beats about 70 times a minute. About how many times does it beat in one hour? Answer to the nearest 100, like 3000.",
+      "range": [
+        4000,
+        4400
+      ],
+      "explain": "70 x 60 = 4,200. An estimate: 70 x 60 is 7 x 6 with two zeros."
+    },
+    {
+      "id": "E06",
+      "kind": "estimate",
+      "level": 2,
+      "q": "A 1 TB drive is about 1,000,000 MB. A photo is about 4 MB. About how many photos fit on the drive? Answer to the nearest 100,000, like 600000.",
+      "range": [
+        200000,
+        300000
+      ],
+      "explain": "1,000,000 / 4 = 250,000 photos - a quarter of a million."
+    },
+    {
+      "id": "E07",
+      "kind": "estimate",
+      "level": 3,
+      "q": "Dhaka has about 20 million people. If each person uses about 100 litres of water a day, about how many litres does the city use in a day? Answer in millions, like 500 million.",
+      "range": [
+        2000000000,
+        2000000000
+      ],
+      "explain": "20 million x 100 = 2,000 million = 2 billion litres a day. Multiplying by 100 adds two zeros."
+    },
+    {
+      "id": "E08",
+      "kind": "estimate",
+      "level": 2,
+      "q": "Six minutes of keybr every day. About how many HOURS is that in a year? Answer to the nearest 10 hours, like 20.",
+      "range": [
+        30,
+        40
+      ],
+      "explain": "6 x 365 = 2,190 minutes; divided by 60 is about 36 hours, which rounds to 40 - a working week of typing a year."
+    }
+  ]
+}
